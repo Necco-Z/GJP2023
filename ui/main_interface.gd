@@ -11,15 +11,7 @@ func _ready() -> void:
 	for i in ingredient_list.get_children():
 		i.connect("pressed", _on_ingredient_chosen.bind(i.name))
 	$FinishButtons/StartOver.connect("pressed", _on_start_over)
-
-
-func _on_ingredient_chosen(ingredient := "") -> void:
-	if ingredient != "":
-		if list.text == "":
-			list.text = ingredient
-		else:
-			list.text += "\n" + ingredient
-		chosen_ingredients.append(ingredient)
+	$FinishButtons/Deliver.connect("pressed", _on_deliver)
 
 
 func _update_drink() -> void:
@@ -32,6 +24,29 @@ func _update_drink() -> void:
 	list.text = result
 
 
+func _show_result(msg: String) -> void:
+	notification.text = msg
+	await get_tree().create_timer(3).timeout
+	notification.text = ""
+
+
+func _on_ingredient_chosen(ingredient := "") -> void:
+	if ingredient != "":
+		if list.text == "":
+			list.text = ingredient
+		else:
+			list.text += "\n" + ingredient
+		chosen_ingredients.append(ingredient)
+
+
 func _on_start_over() -> void:
 	chosen_ingredients.clear()
 	_update_drink()
+
+
+func _on_deliver() -> void:
+	var result = Data.compare_recipes(chosen_ingredients)
+	if result == "":
+		_show_result("Wrong recipe")
+	else:
+		_show_result(result)
