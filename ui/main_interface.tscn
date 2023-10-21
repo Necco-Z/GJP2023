@@ -1,0 +1,88 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxcmyau4j1qbs"]
+
+[ext_resource type="Script" path="res://ui/main_interface.gd" id="1_vj2th"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pqh58"]
+font_size = 26
+
+[node name="MainInterface" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vj2th")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.25
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = 40.0
+offset_bottom = -40.0
+
+[node name="Ingredients" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="Milk" type="Button" parent="ScrollContainer/Ingredients"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Milk"
+
+[node name="Coffee" type="Button" parent="ScrollContainer/Ingredients"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Coffee"
+
+[node name="Chocolate" type="Button" parent="ScrollContainer/Ingredients"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Chocolate"
+
+[node name="List" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.3
+anchor_right = 0.6
+anchor_bottom = 0.6
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Notification" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7
+anchor_right = 1.0
+anchor_bottom = 0.2
+grow_horizontal = 0
+label_settings = SubResource("LabelSettings_pqh58")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FinishButtons" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.7
+anchor_right = 0.75
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_right = -20.0
+offset_bottom = -40.0
+theme_override_constants/separation = 20
+
+[node name="StartOver" type="Button" parent="FinishButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Start over"
+
+[node name="Deliver" type="Button" parent="FinishButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Deliver"
