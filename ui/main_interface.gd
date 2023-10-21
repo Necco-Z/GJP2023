@@ -1,26 +1,31 @@
 extends Control
 
-var chosen_ingredients := []
+var custom_recipe : Recipe
 
 @onready var list := $List as Label
 @onready var notification := $Notification as Label
-@onready var ingredient_list := $ScrollContainer/Ingredients as VBoxContainer
+@onready var ingredient_list := $ScrollContainer/Ingredients as GridContainer
 
 
 func _ready() -> void:
 	for i in ingredient_list.get_children():
-		i.connect("pressed", _on_ingredient_chosen.bind(i.name))
+		i.connect("pressed", _on_ingredient_chosen.bind(i.text))
 	$FinishButtons/StartOver.connect("pressed", _on_start_over)
 	$FinishButtons/Deliver.connect("pressed", _on_deliver)
 
 
 func _update_drink() -> void:
+	if custom_recipe == null:
+		list.text = ""
+		return
+
+	var ingredients = custom_recipe.list_ingredients()
 	var result = ""
-	for i in range(chosen_ingredients.size()):
-		if i == chosen_ingredients.size() - 1:
-			result += chosen_ingredients[i]
+	for i in range(ingredients.size()):
+		if i == ingredients.size() - 1:
+			result += ingredients[i]
 		else:
-			result += chosen_ingredients[i] + "\n"
+			result += ingredients[i] + "\n"
 	list.text = result
 
 
@@ -31,21 +36,23 @@ func _show_result(msg: String) -> void:
 
 
 func _on_ingredient_chosen(ingredient := "") -> void:
-	if ingredient != "":
-		if list.text == "":
-			list.text = ingredient
-		else:
-			list.text += "\n" + ingredient
-		chosen_ingredients.append(ingredient)
+	if ingredient == "":
+		return
+
+	if custom_recipe == null:
+		custom_recipe = Recipe.new([ingredient])
+	else:
+		custom_recipe.add_ingredient(ingredient)
+	_update_drink()
 
 
 func _on_start_over() -> void:
-	chosen_ingredients.clear()
+	custom_recipe = null
 	_update_drink()
 
 
 func _on_deliver() -> void:
-	var result = Data.compare_recipes(chosen_ingredients)
+	var result = Data.compare_recipes(custom_recipe)
 	if result == "":
 		_show_result("Wrong recipe")
 	else:

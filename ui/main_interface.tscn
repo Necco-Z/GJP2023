@@ -23,26 +23,47 @@ offset_left = 40.0
 offset_top = 40.0
 offset_bottom = -40.0
 
-[node name="Ingredients" type="VBoxContainer" parent="ScrollContainer"]
+[node name="Ingredients" type="GridContainer" parent="ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_constants/separation = 20
-
-[node name="Milk" type="Button" parent="ScrollContainer/Ingredients"]
-layout_mode = 2
-size_flags_vertical = 3
-text = "Milk"
+columns = 2
 
 [node name="Coffee" type="Button" parent="ScrollContainer/Ingredients"]
 layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Coffee"
+text = "Café"
 
-[node name="Chocolate" type="Button" parent="ScrollContainer/Ingredients"]
+[node name="Cinnamon" type="Button" parent="ScrollContainer/Ingredients"]
 layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Chocolate"
+text = "Canela"
+
+[node name="Milk" type="Button" parent="ScrollContainer/Ingredients"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Leite"
+
+[node name="Honey" type="Button" parent="ScrollContainer/Ingredients"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Mel"
+
+[node name="GreenTea" type="Button" parent="ScrollContainer/Ingredients"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Chá Verde"
+
+[node name="Ginger" type="Button" parent="ScrollContainer/Ingredients"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Gengibre"
 
 [node name="List" type="Label" parent="."]
 layout_mode = 1

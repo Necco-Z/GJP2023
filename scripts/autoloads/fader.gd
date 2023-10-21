@@ -5,8 +5,6 @@ signal fade_finished
 var fade_time := 0.5
 var is_fading := false
 
-var _t
-
 @onready var color = $Color
 
 
@@ -30,7 +28,7 @@ func _fade(fading_in: bool):
 		is_fading = true
 		color.modulate = prev
 		var tween = create_tween()
-		_t = tween.tween_property(color, "modulate", col, 0.5)
+		tween.tween_property(color, "modulate", col, 0.5)
 		await tween.finished
 		is_fading = false
 		fade_finished.emit()
