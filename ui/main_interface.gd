@@ -4,7 +4,7 @@ var custom_recipe : Recipe
 
 @onready var list := $List as Label
 @onready var notification := $Notification as Label
-@onready var ingredient_list := $ScrollContainer/Ingredients as GridContainer
+@onready var ingredient_list := $Ingredients as Control
 
 
 func _ready() -> void:
@@ -52,9 +52,12 @@ func _on_start_over() -> void:
 
 
 func _on_deliver() -> void:
+	if custom_recipe == null:
+		return
 	var result = Data.compare_recipes(custom_recipe)
 	if result == "":
 		_show_result("Wrong recipe")
 	else:
 		_show_result(result)
 	custom_recipe = null
+	_update_drink()

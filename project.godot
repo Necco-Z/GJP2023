@@ -23,6 +23,15 @@ Loader="*res://scripts/autoloads/loader.gd"
 Dialogic="*res://addons/dialogic/Other/DialogicGameHandler.gd"
 Data="*res://scripts/autoloads/data.gd"
 
+[dialogic]
+
+layout/styles={
+"Default": {
+"inherits": ""
+}
+}
+layout/default_style="Default"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")

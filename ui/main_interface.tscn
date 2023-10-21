@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dxcmyau4j1qbs"]
+[gd_scene load_steps=4 format=3 uid="uid://dxcmyau4j1qbs"]
 
 [ext_resource type="Script" path="res://ui/main_interface.gd" id="1_vj2th"]
+[ext_resource type="Texture2D" uid="uid://cvwybmybnk1pt" path="res://assets/sprites/interface.png" id="2_rqby5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_pqh58"]
 font_size = 26
@@ -14,52 +15,59 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vj2th")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="."]
+[node name="BG" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_rqby5")
+stretch_mode = 6
+
+[node name="Ingredients" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.25
-anchor_bottom = 1.0
+anchor_right = 1.0
+anchor_bottom = 0.3
 offset_left = 40.0
 offset_top = 40.0
-offset_bottom = -40.0
-
-[node name="Ingredients" type="GridContainer" parent="ScrollContainer"]
-layout_mode = 2
+offset_right = -40.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-columns = 2
+theme_override_constants/separation = 20
 
-[node name="Coffee" type="Button" parent="ScrollContainer/Ingredients"]
+[node name="Coffee" type="Button" parent="Ingredients"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Café"
 
-[node name="Cinnamon" type="Button" parent="ScrollContainer/Ingredients"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-text = "Canela"
-
-[node name="Milk" type="Button" parent="ScrollContainer/Ingredients"]
+[node name="Milk" type="Button" parent="Ingredients"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Leite"
 
-[node name="Honey" type="Button" parent="ScrollContainer/Ingredients"]
+[node name="GreenTea" type="Button" parent="Ingredients"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Chá"
+
+[node name="Cinnamon" type="Button" parent="Ingredients"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Canela"
+
+[node name="Honey" type="Button" parent="Ingredients"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Mel"
 
-[node name="GreenTea" type="Button" parent="ScrollContainer/Ingredients"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-text = "Chá Verde"
-
-[node name="Ginger" type="Button" parent="ScrollContainer/Ingredients"]
+[node name="Ginger" type="Button" parent="Ingredients"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -68,19 +76,23 @@ text = "Gengibre"
 [node name="List" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.3
-anchor_top = 0.3
-anchor_right = 0.6
-anchor_bottom = 0.6
+anchor_top = 0.5
+anchor_right = 0.3
+anchor_bottom = 0.8
+offset_left = 40.0
 grow_horizontal = 2
 grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Notification" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.7
+anchor_left = 0.4
+anchor_top = 0.45
 anchor_right = 1.0
-anchor_bottom = 0.2
+anchor_bottom = 0.7
+offset_right = -40.0
 grow_horizontal = 0
 label_settings = SubResource("LabelSettings_pqh58")
 horizontal_alignment = 1
@@ -89,12 +101,11 @@ vertical_alignment = 1
 [node name="FinishButtons" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.25
-anchor_top = 0.7
-anchor_right = 0.75
+anchor_top = 0.8
+anchor_right = 0.3
 anchor_bottom = 1.0
-offset_left = 20.0
-offset_right = -20.0
+offset_left = 40.0
+offset_top = 20.0
 offset_bottom = -40.0
 theme_override_constants/separation = 20
 
