@@ -57,3 +57,4 @@ func _on_deliver() -> void:
 		_show_result("Wrong recipe")
 	else:
 		_show_result(result)
+	custom_recipe = null

@@ -101,9 +101,9 @@ theme_override_constants/separation = 20
 [node name="StartOver" type="Button" parent="FinishButtons"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Start over"
+text = "Recomeçar"
 
 [node name="Deliver" type="Button" parent="FinishButtons"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Deliver"
+text = "Entregar"

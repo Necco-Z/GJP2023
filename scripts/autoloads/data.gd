@@ -23,7 +23,6 @@ func _ready() -> void:
 		var r = Recipe.new(recipe_dict[i])
 		r.name = i
 		recipes.append(r)
-	print(recipes.size())
 
 
 func compare_recipes(base: Recipe) -> String:
