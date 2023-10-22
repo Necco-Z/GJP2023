@@ -69,6 +69,9 @@ else:
 	barista: Prometo então da próxima vez fazer algo melhor.
 	vitoria: É... Queria poder fazer algo, mas não entendo muito de bebidas...
 	# Colocar aqui um sinal para chamar o evento de alguém na multidão se mexendo.
+	[call_node path="root/GameScreen" method="call_event" args="["vitoria"]"]
+	[end_timeline]
+	label Event
 	figurante: Aí, Cacique! Que vergonha ontem, hein?
 	barista: Cacique? Hmm... Eu não sabia.
 	vitoria: Tudo bem... Do jeito que minha fama está faz sentido que outros tenham esquecido.

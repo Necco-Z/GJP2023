@@ -2,7 +2,7 @@ extends Node
 
 @export var timeline_delay := 2.0
 
-var timeline_list := ["ivan", "vitoria"]
+var timeline_list := ["vitoria"]
 var current_timeline := ""
 var dialog : Node
 
@@ -24,12 +24,19 @@ func hide_interface() -> void:
 	$UI/MainInterface.hide_interface()
 
 
+func call_event(event: String) -> void:
+	match event:
+		"vitoria":
+			# TODO: Adicionar evento
+			await get_tree().create_timer(1).timeout
+			Dialogic.start_timeline("vitoria", "Event")
+
+
 func _get_new_timeline() -> void:
 	if timeline_list.size() > 0:
 		await get_tree().create_timer(timeline_delay).timeout
 		current_timeline = timeline_list.pop_front()
 		dialog = Dialogic.start(current_timeline)
-
 
 
 func _on_drink_delivered() -> void:
