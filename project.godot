@@ -47,7 +47,7 @@ choices/reveal_delay=0
 choices/reveal_by_input=false
 save/autosave_delay=60.0
 text/autopauses={}
-layout/end_behaviour=1
+layout/end_behaviour=0
 variables={
 "current_drink": ""
 }

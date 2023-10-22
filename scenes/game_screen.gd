@@ -1,7 +1,10 @@
 extends Node
 
+@export var timeline_delay := 2.0
+
 var timeline_list := ["ivan", "vitoria"]
 var current_timeline := ""
+var dialog : Node
 
 @onready var interface = $UI/MainInterface
 
@@ -12,6 +15,7 @@ func _ready() -> void:
 
 
 func show_interface() -> void:
+	dialog.queue_free()
 	interface.show_interface()
 #	await $UI/MainInterface.interface_hidden
 
@@ -22,8 +26,9 @@ func hide_interface() -> void:
 
 func _get_new_timeline() -> void:
 	if timeline_list.size() > 0:
+		await get_tree().create_timer(timeline_delay).timeout
 		current_timeline = timeline_list.pop_front()
-		Dialogic.start(current_timeline)
+		dialog = Dialogic.start(current_timeline)
 
 
 
