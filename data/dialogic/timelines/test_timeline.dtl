@@ -1,0 +1,9 @@
+join test_character 1
+test_character: Testando aqui
+[call_node path="root/GameScreen" method="show_interface"]
+[end_timeline]
+label Continue
+if {test_variable} == "Café Latte":
+	test_character: deu certo!
+else:
+	test_character: não deu certo \:(

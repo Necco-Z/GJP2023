@@ -1,29 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://dxcmyau4j1qbs"]
+[gd_scene load_steps=3 format=3 uid="uid://dxcmyau4j1qbs"]
 
 [ext_resource type="Script" path="res://ui/main_interface.gd" id="1_vj2th"]
-[ext_resource type="Texture2D" uid="uid://cvwybmybnk1pt" path="res://assets/sprites/interface.png" id="2_rqby5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_pqh58"]
 font_size = 26
 
 [node name="MainInterface" type="Control"]
 layout_mode = 3
-anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vj2th")
-
-[node name="BG" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_rqby5")
-stretch_mode = 6
 
 [node name="Ingredients" type="HBoxContainer" parent="."]
 layout_mode = 1
