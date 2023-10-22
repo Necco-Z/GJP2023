@@ -23,6 +23,13 @@ Loader="*res://scripts/autoloads/loader.gd"
 Dialogic="*res://addons/dialogic/Other/DialogicGameHandler.gd"
 Data="*res://scripts/autoloads/data.gd"
 
+[dialogic]
+
+variables={
+"current_variable": ""
+}
+glossary/default_case_sensitive=true
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")

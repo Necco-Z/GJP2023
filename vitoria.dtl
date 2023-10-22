@@ -11,52 +11,74 @@ vitoria: É bem mais complexo que isso... Também não é algo que eu tenha cont
 vitoria: Só queria poder sumir.
 barista: Bem. Isso eu não consigo ti ajudar. Mas, vai alguma bebida?
 vitoria: Pode ser... Me vê algo aí que deixe minha cabeça mais leve, que seja doce...
+[wait_input]
 # Iniciar aqui a booleana: Ela deve receber 
-if {} == "Acertou Bebida":
-vitoria: Hmm... Nossa. Tão suave.
-vitoria: E bem docinho. *risada*
-barista: Você pediu algo doce e calmo.
-vitoria: É... Eu pedi mesmo.
-barista: Bem. Quer falar sobre o que anda atormentando essa cabeça jovem?
-vitoria: Você não me reconhece?
-barista: Com todo respeito. Nunca a vi na vida.
-vitoria: Eu me chamo Vitória. Recentemente me tornei líder dessa comunidade que vivemos.
-barista: Ah. É você quem vai representar a comunidade local? Eu não ando muito acompanhando a política, mas Caciques hoje em dia são como Governadores nas sociedades democratas do exterior?
-vitoria: É, pode-se dizer que sim. A grosso modo pode-se dizer isso. Uma vez que nós entramos em uma sociedade como a atual onde desde muitos anos atrás as comunidades se uniram para viver juntas em cidades não se perdeu a necessidade de represantantes.
-barista: E não é tão fácil como parecia?
-vitoria: Queria que esse fosse o problema...\
-Minha vida inteira foi vivida pra esse momento. Desde que meu pai se tornou Cacique quando eu ainda era muito novinha. E eu agora estou sucedendo ele. Mas...
-vitoria: Eu não sei se dou conta da pressão...
-barista: Tem algum problema dando dor de cabeça?
-vitoria: O que mais me doi são algumas facções dentro da nossa comunidade. Já ouviu falar dos Cacira?
-barista: Sei. Já tive alguns deles por aqui. Jovens como você, agressivos, baderneiros. Já quebraram os vidros daqui uma vez.
-vitoria: Pois é. Eles andam tendo contato com estrangeiros.
-vitoria: Mas esse não é o pior. Recentemente houveram casos de desconfiança dos meios de comunicação.\
-Pessoas não estão mais conseguindo confiar nos jornais locais, tanto impressos quanto da T.V. Uma rede tão forte de jornalistas sendo ignorada por alguns erros.
-barista: Não creio que sejam erros simples.
-vitoria: São! Mas a desconfiança realmente começou quando os Caciras se tornaram mais ativos. Principalmente quando o conflito contra os Andirá reiniciou.
-vitoria: E o problema é esse. Eu tenho certeza que esse conflito intensificou a desconfiança nos jornais e até mesmo chegou a me afetar.
-vitoria: É como se ninguém mais acreditasse em ninguém, apenas nos seus próprios pensamentos.
-barista: Você pode fazer algo, não? Sendo Cacique.
-vitoria: Sem provas, a situação se complica.\
-E eu também não sei se consigo ficar a frente de um conflito desses, mesmo buscando por uma resolução.
-barista: Você havia dito que é filha do antigo Cacique. Ele não comentou algo sobre situações como essas?
-vitoria: Não... Antes era tudo mais simples...
-vitoria: Mas, eu quero fazer algo. Não posso ficar parada. Eu fui ontem em um local afetado pelos conflitos dessas duas facções.\
-Vi crianças sem pais... Pessoas sem saber o que fazer, sem saber em quem confiar.
-vitoria: Caso isso se escale é possível que mais pessoas inocentes possam ser afetadas. A crise de desconfiança piore por conta das palavras dos Cacira. E isso não pode acontecer! Preciso fazer algo.
-barista: E o que falta? Não é só preciso a sua ordem pra acabar com a situação?
-vitoria: Não... A confiança sobre minha gerência também tá sendo afetada. E eu não sei se consigo aguentar toda essa pressão...
-barista: E você tem alguma equipe que lhe ajuda na administração geral? Aliados, pessoas que possam ajudar.
-vitoria: Se eu pedir ajuda só vai ficar mais a tona que não sou capaz de manter minha função. E minha equipe também a algum tempo vem perdendo esperanças em mim...
-barista: Me diga. Você quer fazer a diferença? Realmente fazer algo pra proteger outras crianças a manterém seus pais por perto?
-vitoria: Claro que quero! O que eu vi lá me marcou muito... Não é um destino digno de ninguém!
-barista: Então busque ajuda. Fale com seus aliados. Entender que não se pode fazer tudo só mostra maturidade e interesse de ter outros pontos de vista por perto.\
-Não vale a pena fazer tudo só, o peso é grande demais e muitos podem ajudar a carregar.
-vitoria: Eu não sei se consigo.
-barista: Bem. Se eu consigo administrar uma dúzia de pessoas que vem pra cá trabalhar comigo nos finais de semana só pra consegui mais alguns trocados, você pode conseguir falar com seus aliados.\
-Principalmente porque cozinha é tão estressante quanto política, dentro do microcosmos dessa cafeteria os riscos são grandes, mas vale a pena ter gente por perto pra ajudar a melhorar a experiência e diminuir o impacto dos riscos.
-vitoria: É... você tem razão. Eu devo pensar mais sobre isso em casa...
-vitoria: Bem, preciso sair. Já fiquei por aqui demais. Obrigado pelo chá. Estava uma delícia.
-barista: Volte sempre.
+if {current_variable} == "Chá Verde com Leite":
+	vitoria: Hmm... Nossa. Tão suave.
+	vitoria: E bem docinho. *risada*
+	barista: Você pediu algo doce e calmo.
+	vitoria: É... Eu pedi mesmo.
+	barista: Bem. Quer falar sobre o que anda atormentando essa cabeça jovem?
+	vitoria: Você não me reconhece?
+	barista: Com todo respeito. Nunca a vi na vida.
+	vitoria: Eu me chamo Vitória. Recentemente me tornei líder dessa comunidade que vivemos.
+	barista: Ah. É você quem vai representar a comunidade local? Eu não ando muito acompanhando a política, mas Caciques hoje em dia são como Governadores nas sociedades democratas do exterior?
+	vitoria: É, pode-se dizer que sim. A grosso modo pode-se dizer isso. Uma vez que nós entramos em uma sociedade como a atual onde desde muitos anos atrás as comunidades se uniram para viver juntas em cidades não se perdeu a necessidade de represantantes.
+	barista: E não é tão fácil como parecia?
+	vitoria: Queria que esse fosse o problema...\
+	Minha vida inteira foi vivida pra esse momento. Desde que meu pai se tornou Cacique quando eu ainda era muito novinha. E eu agora estou sucedendo ele. Mas...
+	vitoria: Eu não sei se dou conta da pressão...
+	barista: Tem algum problema dando dor de cabeça?
+	vitoria: O que mais me doi são algumas facções dentro da nossa comunidade. Já ouviu falar dos Cacira?
+	barista: Sei. Já tive alguns deles por aqui. Jovens como você, agressivos, baderneiros. Já quebraram os vidros daqui uma vez.
+	vitoria: Pois é. Eles andam tendo contato com estrangeiros.
+	vitoria: Mas esse não é o pior. Recentemente houveram casos de desconfiança dos meios de comunicação.\
+	Pessoas não estão mais conseguindo confiar nos jornais locais, tanto impressos quanto da T.V. Uma rede tão forte de jornalistas sendo ignorada por alguns erros.
+	barista: Não creio que sejam erros simples.
+	vitoria: São! Mas a desconfiança realmente começou quando os Caciras se tornaram mais ativos. Principalmente quando o conflito contra os Andirá reiniciou.
+	vitoria: E o problema é esse. Eu tenho certeza que esse conflito intensificou a desconfiança nos jornais e até mesmo chegou a me afetar.
+	vitoria: É como se ninguém mais acreditasse em ninguém, apenas nos seus próprios pensamentos.
+	barista: Você pode fazer algo, não? Sendo Cacique.
+	vitoria: Sem provas, a situação se complica.\
+	E eu também não sei se consigo ficar a frente de um conflito desses, mesmo buscando por uma resolução.
+	barista: Você havia dito que é filha do antigo Cacique. Ele não comentou algo sobre situações como essas?
+	vitoria: Não... Antes era tudo mais simples...
+	vitoria: Mas, eu quero fazer algo. Não posso ficar parada. Eu fui ontem em um local afetado pelos conflitos dessas duas facções.\
+	Vi crianças sem pais... Pessoas sem saber o que fazer, sem saber em quem confiar.
+	vitoria: Caso isso se escale é possível que mais pessoas inocentes possam ser afetadas. A crise de desconfiança piore por conta das palavras dos Cacira. E isso não pode acontecer! Preciso fazer algo.
+	barista: E o que falta? Não é só preciso a sua ordem pra acabar com a situação?
+	vitoria: Não... A confiança sobre minha gerência também tá sendo afetada. E eu não sei se consigo aguentar toda essa pressão...
+	barista: E você tem alguma equipe que lhe ajuda na administração geral? Aliados, pessoas que possam ajudar.
+	vitoria: Se eu pedir ajuda só vai ficar mais a tona que não sou capaz de manter minha função. E minha equipe também a algum tempo vem perdendo esperanças em mim...
+	barista: Me diga. Você quer fazer a diferença? Realmente fazer algo pra proteger outras crianças a manterém seus pais por perto?
+	vitoria: Claro que quero! O que eu vi lá me marcou muito... Não é um destino digno de ninguém!
+	barista: Então busque ajuda. Fale com seus aliados. Entender que não se pode fazer tudo só mostra maturidade e interesse de ter outros pontos de vista por perto.\
+	Não vale a pena fazer tudo só, o peso é grande demais e muitos podem ajudar a carregar.
+	vitoria: Eu não sei se consigo.
+	barista: Bem. Se eu consigo administrar uma dúzia de pessoas que vem pra cá trabalhar comigo nos finais de semana só pra consegui mais alguns trocados, você pode conseguir falar com seus aliados.\
+	Principalmente porque cozinha é tão estressante quanto política, dentro do microcosmos dessa cafeteria os riscos são grandes, mas vale a pena ter gente por perto pra ajudar a melhorar a experiência e diminuir o impacto dos riscos.
+	vitoria: É... você tem razão. Eu devo pensar mais sobre isso em casa...
+	vitoria: Bem, preciso sair. Já fiquei por aqui demais. Obrigado pelo chá. Estava uma delícia.
+	barista: Volte sempre.
 else:
+	vitoria: Erm... Não foi exatamente o que pedi...
+	vitoria: M-Mas é bom... Erm...
+	barista: Não é do seu gosto?
+	vitoria: Não muito...
+	barista: Prometo então da próxima vez fazer algo melhor.
+	vitoria: É... Queria poder fazer algo, mas não entendo muito de bebidas...
+	# Colocar aqui um sinal para chamar o evento de alguém na multidão se mexendo.
+	figurante: Aí, Cacique! Que vergonha ontem, hein?
+	barista: Cacique? Hmm... Eu não sabia.
+	vitoria: Tudo bem... Do jeito que minha fama está faz sentido que outros tenham esquecido.
+	barista: Eu que não me envolvo tanto com a política.
+	barista: Então é você quem vai representar a comunidade local? Caciques hoje em dia são como Governadores nas sociedades democratas do exterior?
+	vitoria: Sim. Cacique Vitória. A seu dispor... Com tanta coisa acontecendo por aí eu não sei se faz mais sentido falar isso...
+	barista: Porque? Tem algo rolando lá fora?
+	vitoria: Bastante coisa. As pessoas não estão mais confiando nos jornais ou nas palavras de algumas lideranças. Facções estão brigando por aí e uma delas ainda incentiva a desconfiança... Tem vezes que eu só queria sumir...
+	barista: E o conselho não consegue fazer nada pra ti ajudar?
+	vitoria: Meu desejo é esse, mas sinto muitas vezes que se eu precisar pedir é porque algo precisa mudar...
+	barista: Como assim?
+	vitoria: Nada...
+	vitoria: Olha. Obrigado pela bebida, estava muito boa. Vou voltar pro trabalho. Até uma próxima.
+	barista: Até mais! Volte sempre.
