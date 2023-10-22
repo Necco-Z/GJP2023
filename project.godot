@@ -51,6 +51,7 @@ layout/end_behaviour=1
 variables={
 "current_drink": ""
 }
+text/autocolor_names=false
 
 [editor_plugins]
 

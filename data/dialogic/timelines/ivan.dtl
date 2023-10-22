@@ -1,43 +1,46 @@
 ivan: Eu sei, eu sei. não deveria estar aqui agora, mas espero que você possa me ajudar.Não estou com coragem de voltar para casa.
 ivan: as crianças...
 ivan: elas estão chateadas comigo.
-barrista: Me conte mais.
+barista: Me conte mais.
 ivan: A minha mais velha parece impossível, me lembro de quando ela era menor, tão doce e alegre.
 ivan: Desde que me separei ela não é mais a mesma, as palavras dela me doem o coração. Palavras duras, grossas e mal educadas.
-barrista: Adolescentes, não conseguem perceber o todo.
-barrista: E quanto ao mais novo?
+barista: Adolescentes, não conseguem perceber o todo.
+barista: E quanto ao mais novo?
 ivan: O meu pequeno...‘suspiro’
 ivan: Hoje de manhã ele olhou para mim com lágrimas nos olhos e disse que me odeia enquanto saia para a escola.
 ivan: Não entendo onde estou errando, trabalho tanto para dar o melhor para eles. ‘suspiro’
 ivan: Sinto falta dos bons e velhos tempos...
-barrista: Imagino que uma bebida remanescente dos velhos tempos vá lhe fazer bem então.
+barista: Imagino que uma bebida remanescente dos velhos tempos vá lhe fazer bem então.
 ivan: Sim, por favor.
 ivan: Vou querer um Café Latte.
-if {current_variable} == "Café Latte":
+[call_node path="root/GameScreen" method="show_interface"]
+[end_timeline]
+label Continue
+if {current_drink} == "Café Latte":
 	ivan: Esse café me lembra deles, quando eu ainda era casado, eu cozinhava e fazia o café da manhã. Minha mais velha vinha até mim toda alegre e pedia para fazer café para ela também.
 	ivan: Ela dizia “mais leite!mais açúcar!” e quando eu percebia, ela estava tomando mais um doce do que uma bebida.
 	ivan: Mas depois que me separei, não consigo mais ficar em casa tanto tempo, busquei por um emprego, um que pagasse bem, afinal, tinha uma casa e crianças para sustentar sozinho agora.
 	ivan: Fiz um bom trabalho e fui promovido, mas a promoção veio com mais afazeres, tive que ficar mais no trabalho, volto mais tarde, sair mais cedo. comprei um animatrônico para fazer os deveres de casa, eles gostavam de gorilas, achei um modelo parecido.
-	ivan:  O mais novo parecia ter gostado na época, mas a mais velha por algum motivo não.
+	ivan: O mais novo parecia ter gostado na época, mas a mais velha por algum motivo não.
 	ivan: Conforme o tempo foi passando, percebi que ela ia se afastando de mim, eu não sabia porque mas quis compensar melhorando a vida para eles, a melhor escola, melhor materiais, os melhores servos robóticos.
 	ivan: Mas quanto mais eu dava mais ela parecia se irritar comigo, quando chegava em casa ela não queria falar comigo, recebi também reclamações da escola de que ela não estava indo bem.
-	barrista: E o que você fez?
+	barista: E o que você fez?
 	ivan: Tentei falar com ela.
 	ivan: Porém, quanto mais eu falava da importância dela aprender para se dar bem na vida mais ela ficava irritada.
 	ivan: Não bastasse ela, ontem foi aniversário do mais novo, comprei um brinquedo de última geração para ele, afinal é disso que as crianças gostam, não?
-	barrista: Sim. Amanda, outra cliente minha, disse que comprou um dos novos modelos de Onça pra pequena dela e disse que ela enlouqueceu de alegria com o presente.
-	barrista: O seu não teve a mesma reação, não é?
+	barista: Sim. Amanda, outra cliente minha, disse que comprou um dos novos modelos de Onça pra pequena dela e disse que ela enlouqueceu de alegria com o presente.
+	barista: O seu não teve a mesma reação, não é?
 	ivan: Não, mandei entregar para ele pelo serviço de entregas.
 	ivan: Quando cheguei em casa, perto da meia noite, ele e a mais nova estavam deitados no sofá da sala,dormindo, o bolo de aniversário estava cortado, mas o presente estava empacotado.
 	ivan: Vi que tinha um pedaço de bolo sobrando e comi naquela noite, achei que era para mim...
 	ivan: Quando eles acordaram o mais novo veio correndo para a cozinha e ao ver que o bolo não estava por lá perguntou o que aconteceu com o bolo.
 	ivan: Eu disse que tinha comido, ele olhou para mim como se quisesse algo, mas ao invés disso me olhou com os olhos em lágrimas e disse que me odiava.
-	barrista: Você já sabe o porque dele ter dito aquilo?
+	barista: Você já sabe o porque dele ter dito aquilo?
 	ivan: Não tenho certeza ainda.
-	barrista: Quando foi a última vez que você parou e casa e preparou algo para eles?
+	barista: Quando foi a última vez que você parou e casa e preparou algo para eles?
 	ivan: Faz muito tempo que não paro em casa, eu não preparo um café para os meus pequenos a um bom tempo.
-	barrista: E quanto ao bolo?
-	barrista: Já entendeu o porque dele ter ficado chateado?
+	barista: E quanto ao bolo?
+	barista: Já entendeu o porque dele ter ficado chateado?
 	ivan: Não tinha dado tanta atenção antes, mas agora que você me fez essas perguntas...
 	ivan: Acredito que o que o mais novo queria não era o bolo, e sim compartilhar o momento.
 	ivan: Acho que depois daqui vou para casa.
@@ -49,14 +52,15 @@ else:
 	ivan: Isso não foi bem o que eu esperava...
 	ivan: Acho que assim como em casa, eu não sei bem o que eu esperava vindo aqui.
 	ivan: Ontem foi aniversário do mais novo, comprei um brinquedo de última geração para ele, afinal é disso que as crianças gostam, não?
-	barrista: Sim. Amanda, outra cliente minha, disse que comprou um dos novos modelos de Onça pra pequena dela e disse que ela enlouqueceu de alegria com o presente.
-	barrista: O seu não teve a mesma reação, não é?
+	barista: Sim. Amanda, outra cliente minha, disse que comprou um dos novos modelos de Onça pra pequena dela e disse que ela enlouqueceu de alegria com o presente.
+	barista: O seu não teve a mesma reação, não é?
 	ivan: Não, sequer abriu o presente.
 	ivan: Ele está ficando cada vez mais parecido com a mais velha.
 	ivan: Obrigado pelo café.
-	barrista: Você tem certeza de que não foi por outro motivo?
+	barista: Você tem certeza de que não foi por outro motivo?
 	ivan: Não sei.
 	ivan: Mas não tenho tempo para descobrir.
 	ivan: Vou contratar alguém para diciplinar eles, se as coisas continuarem como estão eles vão ter dificuldades quando virarem adultos e tiverem que trabalhar.
-	barrista: Você quer conversar sobre mais alguma coisa?
+	barista: Você quer conversar sobre mais alguma coisa?
 	ivan: Não. Precisava beber algo para esclarecer meus pensamentos e agora vejo que preciso ser um pouco mais sério na forma como educo meus pequenos.
+[call_node path="root/GameScreen" method="_on_character_finished"]

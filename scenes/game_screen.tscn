@@ -22,5 +22,4 @@ stretch_mode = 6
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="MainInterface" parent="UI" instance=ExtResource("2_l0eg5")]
-anchors_preset = 15
 start_hidden = true

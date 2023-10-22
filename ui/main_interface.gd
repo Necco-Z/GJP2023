@@ -1,6 +1,7 @@
 extends Control
 
 signal interface_hidden
+signal drink_delivered
 
 @export var start_hidden := false
 
@@ -82,8 +83,8 @@ func _on_deliver() -> void:
 	if custom_recipe == null:
 		return
 	var result = Data.compare_recipes(custom_recipe)
-	Dialogic.VAR.test_variable = result
+	Dialogic.VAR.current_drink = result
 	custom_recipe = null
 	_update_drink()
 	await hide_interface()
-	Dialogic.start_timeline("test_timeline", "Continue")
+	drink_delivered.emit()
