@@ -55,6 +55,7 @@ func _on_deliver() -> void:
 	if custom_recipe == null:
 		return
 	var result = Data.compare_recipes(custom_recipe)
+	Dialogic.VAR.current_drink = result
 	if result == "":
 		_show_result("Wrong recipe")
 	else:
