@@ -32,9 +32,6 @@ layout/styles={
 }
 layout/default_style="Default"
 glossary/default_case_sensitive=true
-variables={
-"test_variable": ""
-}
 text/letter_speed=0.01
 text/skippable=true
 text/skippable_delay=0.1
@@ -51,6 +48,9 @@ choices/reveal_by_input=false
 save/autosave_delay=60.0
 text/autopauses={}
 layout/end_behaviour=1
+variables={
+"current_drink": ""
+}
 
 [editor_plugins]
 
