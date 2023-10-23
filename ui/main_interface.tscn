@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dxcmyau4j1qbs"]
+[gd_scene load_steps=5 format=3 uid="uid://dxcmyau4j1qbs"]
 
 [ext_resource type="Script" path="res://ui/main_interface.gd" id="1_vj2th"]
+[ext_resource type="PackedScene" uid="uid://cy88nmejb4ot8" path="res://assets/models/chao_e_paredes/amazoncafe_chao_e_paredes.gltf" id="2_x13is"]
+[ext_resource type="PackedScene" uid="uid://dqg1x8alw3ysp" path="res://assets/models/arvore/amazoncafe_arvore.gltf" id="3_2huab"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_pqh58"]
 font_size = 26
@@ -107,3 +109,9 @@ text = "Recomeçar"
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Entregar"
+
+[node name="amazoncafe_chao_e_paredes" parent="." instance=ExtResource("2_x13is")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0183778, 0, -0.0929852)
+
+[node name="amazoncafe_arvore" parent="." instance=ExtResource("3_2huab")]
+transform = Transform3D(0.278069, 0, 0.960561, 0, 1, 0, -0.960561, 0, 0.278069, -4.41711, 0, -1.552)
