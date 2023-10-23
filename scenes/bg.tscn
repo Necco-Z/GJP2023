@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dgasuc5c34kkx"]
+[gd_scene load_steps=15 format=3 uid="uid://dgasuc5c34kkx"]
 
 [ext_resource type="PackedScene" uid="uid://cy88nmejb4ot8" path="res://assets/models/chao_e_paredes/amazoncafe_chao_e_paredes.gltf" id="2_8l181"]
 [ext_resource type="PackedScene" uid="uid://dqg1x8alw3ysp" path="res://assets/models/arvore/amazoncafe_arvore.gltf" id="3_r8lst"]
@@ -13,8 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://by7ckehi2h8bk" path="res://assets/models/cafeteira/amazoncafe_cafeteira.gltf" id="11_vm7ny"]
 [ext_resource type="PackedScene" uid="uid://cvdbe43cfd2ct" path="res://assets/models/caixa/amazoncafe_caixa.gltf" id="12_xk4kf"]
 [ext_resource type="PackedScene" uid="uid://c6wy1dq1x00r5" path="res://assets/models/capivara/amazonfaca_capivara.gltf" id="13_hyj4c"]
+[ext_resource type="PackedScene" uid="uid://qsfrt6ikn6a5" path="res://assets/models/characters/IvanAnimations.gltf" id="14_lvh3x"]
 
-[node name="MainInterface" type="Node3D"]
+[node name="3Dbackground" type="Node3D"]
 
 [node name="amazoncafe_chao_e_paredes" parent="." instance=ExtResource("2_8l181")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0183778, 0, -0.0929852)
@@ -210,3 +211,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.130865, 0, -12.3769)
 
 [node name="amazoncafe_banco2" parent="." instance=ExtResource("9_b7fub")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.25156, 0, -1.17771)
+
+[node name="Characters" type="Node3D" parent="."]
+
+[node name="IvanAnimations" parent="Characters" instance=ExtResource("14_lvh3x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.23132, -2.38419e-07, 1.25819)
+
+[node name="IvanAnimations2" parent="Characters" instance=ExtResource("14_lvh3x")]
+transform = Transform3D(-0.997599, 0, 0.0692515, 0, 1, 0, -0.0692515, 0, -0.997599, 3.99546, -2.38419e-07, 3.27791)
