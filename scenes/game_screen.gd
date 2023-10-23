@@ -10,6 +10,7 @@ var dialog : Node
 
 
 func _ready() -> void:
+	MusicPlayer.set_current($Music)
 	interface.connect("drink_delivered", _on_drink_delivered)
 	_get_new_timeline()
 
@@ -28,7 +29,7 @@ func call_event(event: String) -> void:
 	match event:
 		"vitoria":
 			# TODO: Adicionar evento
-			await get_tree().create_timer(2).timeout
+			await get_tree().create_timer(1).timeout
 			Dialogic.start("vitoria", "Event")
 
 

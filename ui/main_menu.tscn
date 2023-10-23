@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://c5lm4v1oojhjm"]
+[gd_scene load_steps=3 format=3 uid="uid://c5lm4v1oojhjm"]
+
+[ext_resource type="AudioStream" uid="uid://b4a106pos1n7t" path="res://assets/music/menu.wav" id="1_6ttst"]
+[ext_resource type="Script" path="res://ui/main_menu.gd" id="1_ukxmd"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -7,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ukxmd")
 
 [node name="BG" type="TextureRect" parent="."]
 layout_mode = 1
@@ -47,3 +51,6 @@ text = "Options"
 layout_mode = 2
 size_flags_vertical = 3
 text = "Exit"
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_6ttst")
