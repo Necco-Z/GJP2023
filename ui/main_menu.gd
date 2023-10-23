@@ -1,11 +1,14 @@
 extends Control
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	MusicPlayer.set_current($Music)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _on_start_pressed() -> void:
+	Loader.load_scene("res://scenes/game_screen.tscn")
+
+
+func _on_exit_pressed() -> void:
+	await Fader.fade_out()
+	get_tree().quit()
