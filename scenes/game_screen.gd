@@ -28,8 +28,8 @@ func call_event(event: String) -> void:
 	match event:
 		"vitoria":
 			# TODO: Adicionar evento
-			await get_tree().create_timer(1).timeout
-			Dialogic.start_timeline("vitoria", "Event")
+			await get_tree().create_timer(2).timeout
+			Dialogic.start("vitoria", "Event")
 
 
 func _get_new_timeline() -> void:
