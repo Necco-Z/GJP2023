@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://c5lm4v1oojhjm"]
+[gd_scene load_steps=6 format=3 uid="uid://c5lm4v1oojhjm"]
 
 [ext_resource type="AudioStream" uid="uid://b4a106pos1n7t" path="res://assets/music/menu.wav" id="1_6ttst"]
 [ext_resource type="Script" path="res://ui/main_menu.gd" id="1_ukxmd"]
+[ext_resource type="Texture2D" uid="uid://d34twnrkia86n" path="res://assets/sprites/game_logo.png" id="2_ysg3o"]
+
+[sub_resource type="Gradient" id="Gradient_g3y0y"]
+colors = PackedColorArray(0.129558, 0.129558, 0.129558, 1, 0.18359, 0.18359, 0.18359, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_lgj3a"]
+gradient = SubResource("Gradient_g3y0y")
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -19,6 +26,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = SubResource("GradientTexture1D_lgj3a")
 
 [node name="Title" type="TextureRect" parent="."]
 layout_mode = 1
@@ -27,6 +35,9 @@ anchor_left = 0.2
 anchor_top = 0.1
 anchor_right = 0.8
 anchor_bottom = 0.6
+texture = ExtResource("2_ysg3o")
+expand_mode = 1
+stretch_mode = 6
 
 [node name="Buttons" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -41,11 +52,6 @@ theme_override_constants/separation = 8
 layout_mode = 2
 size_flags_vertical = 3
 text = "Start"
-
-[node name="Options" type="Button" parent="Buttons"]
-layout_mode = 2
-size_flags_vertical = 3
-text = "Options"
 
 [node name="Exit" type="Button" parent="Buttons"]
 layout_mode = 2
