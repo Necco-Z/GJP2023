@@ -38,6 +38,9 @@ func _get_new_timeline() -> void:
 		await get_tree().create_timer(timeline_delay).timeout
 		current_timeline = timeline_list.pop_front()
 		dialog = Dialogic.start(current_timeline)
+	else:
+		await get_tree().create_timer(timeline_delay).timeout
+		Loader.load_scene("res://ui/main_menu.tscn")
 
 
 func _on_drink_delivered() -> void:
