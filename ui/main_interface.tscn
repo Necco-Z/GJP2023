@@ -1,9 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dxcmyau4j1qbs"]
+[gd_scene load_steps=4 format=3 uid="uid://dxcmyau4j1qbs"]
 
 [ext_resource type="Script" path="res://ui/main_interface.gd" id="1_vj2th"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_pqh58"]
-font_size = 26
+[ext_resource type="Texture2D" uid="uid://cvwybmybnk1pt" path="res://assets/sprites/interface.png" id="2_87ew8"]
+[ext_resource type="Texture2D" uid="uid://c6m7r284si40e" path="res://icon.svg" id="3_f555s"]
 
 [node name="MainInterface" type="Control"]
 layout_mode = 3
@@ -14,52 +13,74 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vj2th")
 
-[node name="Ingredients" type="HBoxContainer" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_87ew8")
+expand_mode = 3
+stretch_mode = 6
+
+[node name="Ingredients" type="GridContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 0.3
-offset_left = 40.0
-offset_top = 40.0
-offset_right = -40.0
+anchor_left = 0.05
+anchor_top = 0.2
+anchor_right = 0.35
+anchor_bottom = 0.65
+offset_left = 36.4
+offset_top = 40.4
+offset_right = -42.2
+offset_bottom = -37.2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_constants/separation = 20
+theme_override_constants/h_separation = 36
+theme_override_constants/v_separation = 56
+columns = 3
 
 [node name="Coffee" type="Button" parent="Ingredients"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_font_sizes/font_size = 9
 text = "Café"
 
 [node name="Milk" type="Button" parent="Ingredients"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_font_sizes/font_size = 9
 text = "Leite"
 
 [node name="GreenTea" type="Button" parent="Ingredients"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_font_sizes/font_size = 9
 text = "Chá"
 
 [node name="Cinnamon" type="Button" parent="Ingredients"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_font_sizes/font_size = 9
 text = "Canela"
 
 [node name="Honey" type="Button" parent="Ingredients"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_font_sizes/font_size = 9
 text = "Mel"
 
 [node name="Ginger" type="Button" parent="Ingredients"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_font_sizes/font_size = 9
 text = "Gengibre"
 
 [node name="List" type="Label" parent="."]
@@ -74,19 +95,6 @@ grow_vertical = 2
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Notification" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.4
-anchor_top = 0.45
-anchor_right = 1.0
-anchor_bottom = 0.7
-offset_right = -40.0
-grow_horizontal = 0
-label_settings = SubResource("LabelSettings_pqh58")
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="FinishButtons" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
@@ -98,12 +106,24 @@ offset_top = 20.0
 offset_bottom = -40.0
 theme_override_constants/separation = 20
 
-[node name="StartOver" type="Button" parent="FinishButtons"]
+[node name="StartOver" type="TextureButton" parent="."]
 layout_mode = 2
+anchor_left = 0.315972
+anchor_top = 0.675926
+anchor_right = 0.315972
+anchor_bottom = 0.675926
+offset_right = 128.0
+offset_bottom = 128.0
 size_flags_horizontal = 3
-text = "Recomeçar"
+texture_normal = ExtResource("3_f555s")
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
 
-[node name="Deliver" type="Button" parent="FinishButtons"]
+[node name="Deliver" type="TextureButton" parent="."]
 layout_mode = 2
+offset_left = 598.0
+offset_top = 531.0
+offset_right = 726.0
+offset_bottom = 659.0
 size_flags_horizontal = 3
-text = "Entregar"
+texture_normal = ExtResource("3_f555s")
