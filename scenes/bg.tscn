@@ -1,0 +1,212 @@
+[gd_scene load_steps=14 format=3 uid="uid://dgasuc5c34kkx"]
+
+[ext_resource type="PackedScene" uid="uid://cy88nmejb4ot8" path="res://assets/models/chao_e_paredes/amazoncafe_chao_e_paredes.gltf" id="2_8l181"]
+[ext_resource type="PackedScene" uid="uid://dqg1x8alw3ysp" path="res://assets/models/arvore/amazoncafe_arvore.gltf" id="3_r8lst"]
+[ext_resource type="PackedScene" uid="uid://dr2d4cj3xprfo" path="res://assets/models/balcao/amazoncafe_balcao.glb" id="4_wr6s3"]
+[ext_resource type="PackedScene" uid="uid://b6hwasm0wfn8s" path="res://assets/models/copo/amazoncafe_copo.gltf" id="5_hp7ut"]
+[ext_resource type="PackedScene" uid="uid://bpk2v1c1nthpk" path="res://assets/models/mesao_janela/amazoncafe_mesa_janela.glb" id="5_sl4m3"]
+[ext_resource type="PackedScene" uid="uid://cucgal5sycjmh" path="res://assets/models/mesa/amazoncafe_mesa.gltf" id="6_wcaju"]
+[ext_resource type="PackedScene" uid="uid://dus63ob0rp652" path="res://assets/models/grafico_holografico/amazoncafe_grafico_holografico.gltf" id="7_usct4"]
+[ext_resource type="PackedScene" uid="uid://borexyequ1g2o" path="res://assets/models/prateleira_traseira/amazoncafe_estante_traseira.gltf" id="8_tsnkj"]
+[ext_resource type="PackedScene" uid="uid://bmvlrweostm32" path="res://assets/models/banco/amazoncafe_banco.glb" id="9_b7fub"]
+[ext_resource type="PackedScene" uid="uid://bwmr8xsfo1e1" path="res://assets/models/cardapio_holografico/amazoncafe_cardapio.glb" id="10_20xgh"]
+[ext_resource type="PackedScene" uid="uid://by7ckehi2h8bk" path="res://assets/models/cafeteira/amazoncafe_cafeteira.gltf" id="11_vm7ny"]
+[ext_resource type="PackedScene" uid="uid://cvdbe43cfd2ct" path="res://assets/models/caixa/amazoncafe_caixa.gltf" id="12_xk4kf"]
+[ext_resource type="PackedScene" uid="uid://c6wy1dq1x00r5" path="res://assets/models/capivara/amazonfaca_capivara.gltf" id="13_hyj4c"]
+
+[node name="MainInterface" type="Node3D"]
+
+[node name="amazoncafe_chao_e_paredes" parent="." instance=ExtResource("2_8l181")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0183778, 0, -0.0929852)
+
+[node name="amazoncafe_arvore" parent="." instance=ExtResource("3_r8lst")]
+transform = Transform3D(0.0348239, 0, 0.839278, 0, 0.84, 0, -0.839278, 0, 0.0348239, -4.17559, 0.176439, 1.57625)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.960918, 0.123384, -0.247814, 0.00770507, 0.882914, 0.469471, 0.276724, -0.453033, 0.847458, -1.224, 7.85, 10.175)
+fov = 43.3
+
+[node name="amazoncafe_balcao" parent="." instance=ExtResource("4_wr6s3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.50109, 0, 3.68259)
+
+[node name="amazoncafe_copo" parent="amazoncafe_balcao" instance=ExtResource("5_hp7ut")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.56109, 0.964307, -1.07645)
+
+[node name="amazoncafe_copo2" parent="amazoncafe_balcao" instance=ExtResource("5_hp7ut")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.66084, 0.964307, -1.38426)
+
+[node name="amazoncafe_copo3" parent="amazoncafe_balcao" instance=ExtResource("5_hp7ut")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.88858, 0.964307, -1.07898)
+
+[node name="amazoncafe_grafico_holografico" parent="amazoncafe_balcao" instance=ExtResource("7_usct4")]
+transform = Transform3D(-0.880833, 0, 0.473427, 0, 1, 0, -0.473427, 0, -0.880833, 1.08066, 0.932895, -1.35627)
+
+[node name="amazoncafe_cafeteira" parent="amazoncafe_balcao" instance=ExtResource("11_vm7ny")]
+transform = Transform3D(0.729721, 0, -0.683745, 0, 1, 0, 0.683745, 0, 0.729721, 2.9204, 0.973561, -1.24829)
+
+[node name="amazoncafe_cafeteira2" parent="amazoncafe_balcao" instance=ExtResource("11_vm7ny")]
+transform = Transform3D(0.729721, 0, -0.683745, 0, 1, 0, 0.683745, 0, 0.729721, 2.46773, 0.973561, -1.24829)
+
+[node name="amazoncafe_cafeteira3" parent="amazoncafe_balcao" instance=ExtResource("11_vm7ny")]
+transform = Transform3D(0.729721, 0, -0.683745, 0, 1, 0, 0.683745, 0, 0.729721, 1.95399, 0.973561, -1.24829)
+
+[node name="amazoncafe_cafeteira4" parent="amazoncafe_balcao" instance=ExtResource("11_vm7ny")]
+transform = Transform3D(0.604946, 0, 0.796266, 0, 1, 0, -0.796266, 0, 0.604946, -1.96254, 0.979514, -0.504002)
+
+[node name="amazoncafe_cafeteira5" parent="amazoncafe_balcao" instance=ExtResource("11_vm7ny")]
+transform = Transform3D(0.604946, 0, 0.796266, 0, 1, 0, -0.796266, 0, 0.604946, -1.91592, 0.979514, -0.0537381)
+
+[node name="amazoncafe_cafeteira6" parent="amazoncafe_balcao" instance=ExtResource("11_vm7ny")]
+transform = Transform3D(0.604946, 0, 0.796266, 0, 1, 0, -0.796266, 0, 0.604946, -1.863, 0.979514, 0.457269)
+
+[node name="amazoncafe_mesa_janela" parent="." instance=ExtResource("5_sl4m3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.775, 7.37259, 0, -5.41705)
+
+[node name="amazoncafe_cardapio" parent="amazoncafe_mesa_janela" instance=ExtResource("10_20xgh")]
+transform = Transform3D(0.255007, 0, 0.966939, 0, 1, 0, -1.24766, 0, 0.329041, -0.0454645, 1.25195, 5.68572)
+
+[node name="amazoncafe_cardapio3" parent="amazoncafe_mesa_janela" instance=ExtResource("10_20xgh")]
+transform = Transform3D(-0.605586, 0, 0.79578, 0, 1, 0, -1.02681, 0, -0.781401, -0.0454645, 1.25195, -3.75444)
+
+[node name="amazoncafe_copo2" parent="amazoncafe_mesa_janela" instance=ExtResource("5_hp7ut")]
+transform = Transform3D(0.12749, -0.941949, 0.31061, 0.990965, 0.134125, 0, -0.0537554, 0.397166, 1.2265, 0.0409985, 1.29715, -2.51819)
+
+[node name="amazoncafe_copo" parent="amazoncafe_mesa_janela" instance=ExtResource("5_hp7ut")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.29032, 0.0409985, 1.25004, 4.77393)
+
+[node name="amazoncafe_mesa_janela2" parent="." instance=ExtResource("5_sl4m3")]
+transform = Transform3D(-4.37114e-08, 0, 0.775, 0, 1, 0, -1, 0, -3.38763e-08, -2.84844, 0, -13.4363)
+
+[node name="amazoncafe_cardapio" parent="amazoncafe_mesa_janela2" instance=ExtResource("10_20xgh")]
+transform = Transform3D(0.255007, 0, 0.966939, 0, 1, 0, -1.24766, 0, 0.329041, -0.0454645, 1.25195, 4.05091)
+
+[node name="amazoncafe_cardapio3" parent="amazoncafe_mesa_janela2" instance=ExtResource("10_20xgh")]
+transform = Transform3D(-0.605586, 0, 0.79578, 0, 1, 0, -1.02681, 0, -0.781401, -0.0454645, 1.25195, -4.87572)
+
+[node name="amazoncafe_copo2" parent="amazoncafe_mesa_janela2" instance=ExtResource("5_hp7ut")]
+transform = Transform3D(0.12749, -0.941949, 0.31061, 0.990965, 0.134125, 0, -0.0537554, 0.397166, 1.2265, 0.0409985, 1.29715, 2.77391)
+
+[node name="amazoncafe_copo" parent="amazoncafe_mesa_janela2" instance=ExtResource("5_hp7ut")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.29032, 0.0409985, 1.25004, 3.13913)
+
+[node name="amazoncafe_mesa" parent="." instance=ExtResource("6_wcaju")]
+transform = Transform3D(0.934553, 0, 0.355825, 0, 1, 0, -0.355825, 0, 0.934553, -1.60955, 0, -3.25061)
+
+[node name="amazoncafe_cardapio" parent="amazoncafe_mesa" instance=ExtResource("10_20xgh")]
+transform = Transform3D(-1.3343, 0, 0.37129, 0, 1.385, 0, -0.37129, 0, -1.3343, -0.013439, 0.77206, -0.0879397)
+
+[node name="amazoncafe_banco" parent="amazoncafe_mesa" instance=ExtResource("9_b7fub")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0211562, 0, 1.17807)
+
+[node name="amazoncafe_banco2" parent="amazoncafe_mesa" instance=ExtResource("9_b7fub")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.927831, 0, -0.775725)
+
+[node name="amazoncafe_banco3" parent="amazoncafe_mesa" instance=ExtResource("9_b7fub")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.942231, 0, -0.775725)
+
+[node name="amazoncafe_mesa4" parent="." instance=ExtResource("6_wcaju")]
+transform = Transform3D(0.867184, 0, -0.497988, 0, 1, 0, 0.497988, 0, 0.867184, -3.66127, 0, -8.38151)
+
+[node name="amazoncafe_cardapio" parent="amazoncafe_mesa4" instance=ExtResource("10_20xgh")]
+transform = Transform3D(-1.3343, 0, 0.37129, 0, 1.385, 0, -0.37129, 0, -1.3343, -0.013439, 0.77206, -0.0879397)
+
+[node name="amazoncafe_banco" parent="amazoncafe_mesa4" instance=ExtResource("9_b7fub")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0211562, 0, 1.17807)
+
+[node name="amazoncafe_banco2" parent="amazoncafe_mesa4" instance=ExtResource("9_b7fub")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.927831, 0, -0.775725)
+
+[node name="amazoncafe_banco3" parent="amazoncafe_mesa4" instance=ExtResource("9_b7fub")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.942231, 0, -0.775725)
+
+[node name="amazoncafe_mesa3" parent="." instance=ExtResource("6_wcaju")]
+transform = Transform3D(0.916684, 0, -0.399613, 0, 1, 0, 0.399613, 0, 0.916684, 1.49094, 0, -6.72932)
+
+[node name="amazoncafe_cardapio" parent="amazoncafe_mesa3" instance=ExtResource("10_20xgh")]
+transform = Transform3D(-1.3343, 0, 0.37129, 0, 1.385, 0, -0.37129, 0, -1.3343, -0.013439, 0.77206, -0.0879397)
+
+[node name="amazoncafe_banco" parent="amazoncafe_mesa3" instance=ExtResource("9_b7fub")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0211562, 0, 1.17807)
+
+[node name="amazoncafe_banco2" parent="amazoncafe_mesa3" instance=ExtResource("9_b7fub")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.927831, 0, -0.775725)
+
+[node name="amazoncafe_banco3" parent="amazoncafe_mesa3" instance=ExtResource("9_b7fub")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.942231, 0, -0.775725)
+
+[node name="amazoncafe_mesa2" parent="." instance=ExtResource("6_wcaju")]
+transform = Transform3D(0.585311, 0, 0.810809, 0, 1, 0, -0.810809, 0, 0.585311, 1.75235, 0, -1.08701)
+
+[node name="amazoncafe_cardapio" parent="amazoncafe_mesa2" instance=ExtResource("10_20xgh")]
+transform = Transform3D(-1.3343, 0, 0.37129, 0, 1.385, 0, -0.37129, 0, -1.3343, -0.013439, 0.77206, -0.0879397)
+
+[node name="amazoncafe_banco" parent="amazoncafe_mesa2" instance=ExtResource("9_b7fub")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0211562, 0, 1.17807)
+
+[node name="amazoncafe_banco2" parent="amazoncafe_mesa2" instance=ExtResource("9_b7fub")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.927831, 0, -0.775725)
+
+[node name="amazoncafe_banco3" parent="amazoncafe_mesa2" instance=ExtResource("9_b7fub")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.942231, 0, -0.775725)
+
+[node name="amazoncafe_mesa5" parent="." instance=ExtResource("6_wcaju")]
+transform = Transform3D(0.921382, 0, 0.388658, 0, 1, 0, -0.388658, 0, 0.921382, -5.52076, 0, -3.94363)
+
+[node name="amazoncafe_cardapio" parent="amazoncafe_mesa5" instance=ExtResource("10_20xgh")]
+transform = Transform3D(-1.3343, 0, 0.37129, 0, 1.385, 0, -0.37129, 0, -1.3343, -0.013439, 0.77206, -0.0879397)
+
+[node name="amazoncafe_banco" parent="amazoncafe_mesa5" instance=ExtResource("9_b7fub")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0211562, 0, 1.17807)
+
+[node name="amazoncafe_banco2" parent="amazoncafe_mesa5" instance=ExtResource("9_b7fub")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.927831, 0, -0.775725)
+
+[node name="amazoncafe_banco3" parent="amazoncafe_mesa5" instance=ExtResource("9_b7fub")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.942231, 0, -0.775725)
+
+[node name="amazoncafe_estante_traseira" parent="." instance=ExtResource("8_tsnkj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.68052, 0, 5.42146)
+
+[node name="amazoncafe_caixa" parent="amazoncafe_estante_traseira" instance=ExtResource("12_xk4kf")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -0.352479, 1.61103, -0.0327001)
+
+[node name="amazoncafe_caixa2" parent="amazoncafe_estante_traseira" instance=ExtResource("12_xk4kf")]
+transform = Transform3D(0.495, 0, 0, 0, 0.495, 0, 0, 0, 0.495, -0.677305, 1.61103, -0.037971)
+
+[node name="amazoncafe_copo3" parent="amazoncafe_estante_traseira" instance=ExtResource("5_hp7ut")]
+transform = Transform3D(-0.0196361, 0.426022, -0.9045, 0.99894, 0.046043, 0, 0.0416459, -0.903541, -0.426474, -1.06064, 1.69822, 0.0614967)
+
+[node name="amazoncafe_copo5" parent="amazoncafe_estante_traseira" instance=ExtResource("5_hp7ut")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.21343, 1.64033, -0.0847263)
+
+[node name="amazoncafe_caixa" parent="." instance=ExtResource("12_xk4kf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.33177, 0, 2.95425)
+
+[node name="amazoncafe_caixa2" parent="." instance=ExtResource("12_xk4kf")]
+transform = Transform3D(0.735, 0, 0, 0, 0.735, 0, 0, 0, 0.735, 6.81388, 0, 2.95425)
+
+[node name="amazoncafe_caixa3" parent="." instance=ExtResource("12_xk4kf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7474, 0.965348, 4.91009)
+
+[node name="amazoncafe_caixa4" parent="." instance=ExtResource("12_xk4kf")]
+transform = Transform3D(0.625, 0, 0, 0, 0.625, 0, 0, 0, 0.625, 2.7474, 0.945598, 5.3792)
+
+[node name="copos_espalhados" type="Node3D" parent="."]
+
+[node name="amazoncafe_copo3" parent="copos_espalhados" instance=ExtResource("5_hp7ut")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3307, 0.771401, -0.641144)
+
+[node name="amazoncafe_copo4" parent="copos_espalhados" instance=ExtResource("5_hp7ut")]
+transform = Transform3D(0.0801989, 0.992986, 0.0868751, 0, 0.0871558, -0.996195, -0.996779, 0.0798937, 0.0069898, -1.31321, 0.839802, -3.62165)
+
+[node name="amazonfaca_capivara" parent="." instance=ExtResource("13_hyj4c")]
+transform = Transform3D(-0.153628, 0, 0.083806, 0, 0.175, 0, -0.083806, 0, -0.153628, -2.39691, 0.706706, 2.25652)
+
+[node name="amazoncafe_banco" parent="." instance=ExtResource("9_b7fub")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.25156, 0, -7.968)
+
+[node name="amazoncafe_banco3" parent="." instance=ExtResource("9_b7fub")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.130865, 0, -12.3769)
+
+[node name="amazoncafe_banco2" parent="." instance=ExtResource("9_b7fub")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.25156, 0, -1.17771)
