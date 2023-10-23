@@ -2,7 +2,7 @@ extends Node
 
 @export var timeline_delay := 2.0
 
-var timeline_list := ["vitoria"]
+var timeline_list := ["ivan", "vitoria"]
 var current_timeline := ""
 var dialog : Node
 

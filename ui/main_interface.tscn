@@ -1,8 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://dxcmyau4j1qbs"]
+[gd_scene load_steps=9 format=3 uid="uid://dxcmyau4j1qbs"]
 
 [ext_resource type="Script" path="res://ui/main_interface.gd" id="1_vj2th"]
-[ext_resource type="Texture2D" uid="uid://cvwybmybnk1pt" path="res://assets/sprites/interface.png" id="2_87ew8"]
-[ext_resource type="Texture2D" uid="uid://c6m7r284si40e" path="res://icon.svg" id="3_f555s"]
+[ext_resource type="Texture2D" uid="uid://saokd3fofm10" path="res://assets/sprites/start_over_normal.png" id="3_hm1kj"]
+[ext_resource type="Texture2D" uid="uid://b2ms732rprmw6" path="res://assets/sprites/ingredients.png" id="3_nrkvh"]
+[ext_resource type="Texture2D" uid="uid://ckoviwuce3to7" path="res://assets/sprites/drink_bg.png" id="4_7tx2i"]
+[ext_resource type="Texture2D" uid="uid://0ed2ymuc3nos" path="res://assets/sprites/start_over_hover.png" id="4_pyyv0"]
+[ext_resource type="Texture2D" uid="uid://bwbqd0ebat7eb" path="res://assets/sprites/deliver_normal.png" id="5_2rs5w"]
+[ext_resource type="Texture2D" uid="uid://cfvj6lixo0gdf" path="res://assets/sprites/deliver_hover.png" id="6_a2q2o"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dimya"]
 
 [node name="MainInterface" type="Control"]
 layout_mode = 3
@@ -12,71 +18,69 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vj2th")
+metadata/_edit_horizontal_guides_ = []
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="IngredientsBG" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 123.0
+offset_right = 400.0
+offset_bottom = 417.0
+texture = ExtResource("3_nrkvh")
+
+[node name="Ingredients" type="GridContainer" parent="IngredientsBG"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 37.0
+offset_top = 44.0
+offset_right = -32.0
+offset_bottom = -44.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_87ew8")
-expand_mode = 3
-stretch_mode = 6
-
-[node name="Ingredients" type="GridContainer" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.05
-anchor_top = 0.2
-anchor_right = 0.35
-anchor_bottom = 0.65
-offset_left = 36.4
-offset_top = 40.4
-offset_right = -42.2
-offset_bottom = -37.2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_constants/h_separation = 36
-theme_override_constants/v_separation = 56
+theme_override_constants/h_separation = 34
+theme_override_constants/v_separation = 54
 columns = 3
 
-[node name="Coffee" type="Button" parent="Ingredients"]
+[node name="Coffee" type="Button" parent="IngredientsBG/Ingredients"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 9
 text = "Café"
 
-[node name="Milk" type="Button" parent="Ingredients"]
+[node name="Milk" type="Button" parent="IngredientsBG/Ingredients"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 9
 text = "Leite"
 
-[node name="GreenTea" type="Button" parent="Ingredients"]
+[node name="GreenTea" type="Button" parent="IngredientsBG/Ingredients"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 9
 text = "Chá"
 
-[node name="Cinnamon" type="Button" parent="Ingredients"]
+[node name="Cinnamon" type="Button" parent="IngredientsBG/Ingredients"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 9
 text = "Canela"
 
-[node name="Honey" type="Button" parent="Ingredients"]
+[node name="Honey" type="Button" parent="IngredientsBG/Ingredients"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 9
 text = "Mel"
 
-[node name="Ginger" type="Button" parent="Ingredients"]
+[node name="Ginger" type="Button" parent="IngredientsBG/Ingredients"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -95,35 +99,82 @@ grow_vertical = 2
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="FinishButtons" type="HBoxContainer" parent="."]
+[node name="DrinkBG" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.8
-anchor_right = 0.3
-anchor_bottom = 1.0
-offset_left = 40.0
-offset_top = 20.0
-offset_bottom = -40.0
-theme_override_constants/separation = 20
+anchor_left = 0.05
+anchor_top = 0.7
+anchor_right = 0.45
+anchor_bottom = 0.9
+offset_left = 10.4
+offset_top = -0.600006
+offset_right = 24.6
+offset_bottom = 24.8
+texture = ExtResource("4_7tx2i")
 
 [node name="StartOver" type="TextureButton" parent="."]
 layout_mode = 2
-anchor_left = 0.315972
-anchor_top = 0.675926
-anchor_right = 0.315972
-anchor_bottom = 0.675926
-offset_right = 128.0
-offset_bottom = 128.0
+anchor_left = 0.431
+anchor_top = 0.717
+anchor_right = 0.431
+anchor_bottom = 0.717
+offset_left = 4.48798
+offset_top = 10.384
+offset_right = 36.488
+offset_bottom = 42.384
 size_flags_horizontal = 3
-texture_normal = ExtResource("3_f555s")
+texture_normal = ExtResource("3_hm1kj")
+texture_pressed = ExtResource("4_pyyv0")
+texture_hover = ExtResource("4_pyyv0")
 stretch_mode = 0
-metadata/_edit_use_anchors_ = true
 
 [node name="Deliver" type="TextureButton" parent="."]
 layout_mode = 2
-offset_left = 598.0
-offset_top = 531.0
-offset_right = 726.0
-offset_bottom = 659.0
+anchor_left = 0.428
+anchor_top = 0.71
+anchor_right = 0.428
+anchor_bottom = 0.71
+offset_left = 16.944
+offset_top = 41.92
+offset_right = 76.944
+offset_bottom = 102.92
 size_flags_horizontal = 3
-texture_normal = ExtResource("3_f555s")
+texture_normal = ExtResource("5_2rs5w")
+texture_pressed = ExtResource("6_a2q2o")
+texture_hover = ExtResource("6_a2q2o")
+
+[node name="DrinkItems" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 103.0
+offset_top = -167.0
+offset_right = 496.0
+offset_bottom = -62.0
+grow_vertical = 0
+theme_override_constants/separation = 42
+
+[node name="Item1" type="Label" parent="DrinkItems"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+label_settings = SubResource("LabelSettings_dimya")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Item2" type="Label" parent="DrinkItems"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+label_settings = SubResource("LabelSettings_dimya")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Item3" type="Label" parent="DrinkItems"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+label_settings = SubResource("LabelSettings_dimya")
+horizontal_alignment = 1
+vertical_alignment = 1

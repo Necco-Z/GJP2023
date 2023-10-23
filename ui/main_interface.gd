@@ -9,8 +9,8 @@ var custom_recipe : Recipe
 var tween_time := 0.5
 
 @onready var list := $List as Label
-@onready var notification := $Notification as Label
-@onready var ingredient_list := $Ingredients as Control
+@onready var ingredient_list := $IngredientsBG/Ingredients as Control
+@onready var drink_items := $DrinkItems as Control
 
 
 # built-in
@@ -20,8 +20,8 @@ func _ready() -> void:
 		anchor_bottom = 0
 	for i in ingredient_list.get_children():
 		i.connect("pressed", _on_ingredient_chosen.bind(i.text))
-	$FinishButtons/StartOver.connect("pressed", _on_start_over)
-	$FinishButtons/Deliver.connect("pressed", _on_deliver)
+	$StartOver.connect("pressed", _on_start_over)
+	$Deliver.connect("pressed", _on_deliver)
 
 
 # public
@@ -47,19 +47,9 @@ func _update_drink() -> void:
 		return
 
 	var ingredients = custom_recipe.list_ingredients()
-	var result = ""
+	var labels = drink_items.get_children()
 	for i in range(ingredients.size()):
-		if i == ingredients.size() - 1:
-			result += ingredients[i]
-		else:
-			result += ingredients[i] + "\n"
-	list.text = result
-
-
-func _show_result(msg: String) -> void:
-	notification.text = msg
-	await get_tree().create_timer(3).timeout
-	notification.text = ""
+		labels[i].text = ingredients[i]
 
 
 # signals
