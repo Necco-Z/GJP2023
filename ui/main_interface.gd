@@ -8,9 +8,8 @@ signal drink_delivered
 var custom_recipe : Recipe
 var tween_time := 0.5
 
-@onready var list := $List as Label
 @onready var ingredient_list := $IngredientsBG/Ingredients as Control
-@onready var drink_items := $DrinkItems as Control
+@onready var drink_items := $DrinkBG/DrinkItems as Control
 
 
 # built-in
@@ -20,8 +19,8 @@ func _ready() -> void:
 		anchor_bottom = 0
 	for i in ingredient_list.get_children():
 		i.connect("pressed", _on_ingredient_chosen.bind(i.text))
-	$StartOver.connect("pressed", _on_start_over)
-	$Deliver.connect("pressed", _on_deliver)
+	$DrinkBG/StartOver.connect("pressed", _on_start_over)
+	$DrinkBG/Deliver.connect("pressed", _on_deliver)
 
 
 # public
@@ -42,12 +41,13 @@ func hide_interface() -> void:
 
 # private
 func _update_drink() -> void:
+	var labels = drink_items.get_children()
 	if custom_recipe == null:
-		list.text = ""
+		for i in labels:
+			i.text = ""
 		return
 
 	var ingredients = custom_recipe.list_ingredients()
-	var labels = drink_items.get_children()
 	for i in range(ingredients.size()):
 		labels[i].text = ingredients[i]
 
