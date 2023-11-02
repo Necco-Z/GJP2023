@@ -7,22 +7,22 @@ var current_timeline := ""
 var dialog : Node
 
 @onready var interface = $UI/MainInterface
+@onready var bg = get_node("BG/3Dbackground")
 
 
 func _ready() -> void:
 	MusicPlayer.set_current($Music)
 	interface.connect("drink_delivered", _on_drink_delivered)
-	_get_new_timeline()
+	_get_new_timeline(true)
 
 
 func show_interface() -> void:
 	dialog.queue_free()
 	interface.show_interface()
-#	await $UI/MainInterface.interface_hidden
 
 
 func hide_interface() -> void:
-	$UI/MainInterface.hide_interface()
+	interface.hide_interface()
 
 
 func call_event(event: String) -> void:
@@ -33,10 +33,16 @@ func call_event(event: String) -> void:
 			Dialogic.start("vitoria", "Event")
 
 
-func _get_new_timeline() -> void:
+func _get_new_timeline(first_timeline := false) -> void:
 	if timeline_list.size() > 0:
-		await get_tree().create_timer(timeline_delay).timeout
 		current_timeline = timeline_list.pop_front()
+		if not first_timeline:
+			await get_tree().create_timer(0.8).timeout
+			await Fader.fade_out()
+			bg.set_char_anim(current_timeline)
+			await get_tree().create_timer(0.2).timeout
+			await Fader.fade_in()
+		await get_tree().create_timer(timeline_delay).timeout
 		dialog = Dialogic.start(current_timeline)
 	else:
 		await get_tree().create_timer(timeline_delay).timeout

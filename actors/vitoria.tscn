@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dud8hcd58patx"]
+
+[ext_resource type="PackedScene" uid="uid://ce5vbspa5s40g" path="res://assets/models/characters/VitoriaAnimations.gltf" id="1_kdskr"]
+
+[node name="Vitoria" instance=ExtResource("1_kdskr")]
+
+[node name="Copo" parent="." index="0"]
+visible = false
+
+[node name="Skeleton3D" parent="Armature_vitoria" index="0"]
+bones/5/rotation = Quaternion(-0.878163, 0.294892, 0.369461, 0.0732611)
+bones/6/rotation = Quaternion(-0.175718, -0.365895, 0.484348, 0.775017)
+bones/7/rotation = Quaternion(-0.255431, -0.301954, -0.000204661, 0.918466)
+bones/8/rotation = Quaternion(-0.0268446, 0.159229, -0.0486613, 0.985676)

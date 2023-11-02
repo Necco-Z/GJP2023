@@ -21,11 +21,16 @@ script = ExtResource("1_vj2th")
 metadata/_edit_horizontal_guides_ = []
 
 [node name="IngredientsBG" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 72.0
-offset_top = 123.0
-offset_right = 400.0
-offset_bottom = 417.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.062
+anchor_top = 0.19
+anchor_right = 0.347
+anchor_bottom = 0.644
+offset_left = 0.575996
+offset_top = -0.12001
+offset_right = 0.255981
+offset_bottom = -0.312042
 texture = ExtResource("3_nrkvh")
 
 [node name="Ingredients" type="GridContainer" parent="IngredientsBG"]
@@ -87,94 +92,84 @@ size_flags_vertical = 3
 theme_override_font_sizes/font_size = 9
 text = "Gengibre"
 
-[node name="List" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.5
-anchor_right = 0.3
-anchor_bottom = 0.8
-offset_left = 40.0
-grow_horizontal = 2
-grow_vertical = 2
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="DrinkBG" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.05
-anchor_top = 0.7
-anchor_right = 0.45
-anchor_bottom = 0.9
-offset_left = 10.4
-offset_top = -0.600006
-offset_right = 24.6
-offset_bottom = 24.8
+anchor_left = 0.059
+anchor_top = 0.699
+anchor_right = 0.471
+anchor_bottom = 0.938
+offset_left = 0.0319977
+offset_top = 0.0479736
+offset_right = 0.407898
+offset_bottom = 0.175964
 texture = ExtResource("4_7tx2i")
 
-[node name="StartOver" type="TextureButton" parent="."]
+[node name="DrinkItems" type="HBoxContainer" parent="DrinkBG"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.074
+anchor_top = 0.181
+anchor_right = 0.901
+anchor_bottom = 0.858
+offset_left = -0.150002
+offset_top = -0.0550022
+offset_right = 0.0249939
+offset_bottom = 0.00999451
+grow_vertical = 0
+theme_override_constants/separation = 42
+
+[node name="Item1" type="Label" parent="DrinkBG/DrinkItems"]
 layout_mode = 2
-anchor_left = 0.431
-anchor_top = 0.717
-anchor_right = 0.431
-anchor_bottom = 0.717
-offset_left = 4.48798
-offset_top = 10.384
-offset_right = 36.488
-offset_bottom = 42.384
+size_flags_horizontal = 3
+size_flags_vertical = 1
+label_settings = SubResource("LabelSettings_dimya")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Item2" type="Label" parent="DrinkBG/DrinkItems"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+label_settings = SubResource("LabelSettings_dimya")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Item3" type="Label" parent="DrinkBG/DrinkItems"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+label_settings = SubResource("LabelSettings_dimya")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartOver" type="TextureButton" parent="DrinkBG"]
+layout_mode = 2
+anchor_left = 0.912
+anchor_top = 0.142
+anchor_right = 0.979
+anchor_bottom = 0.348
+offset_left = -0.200073
+offset_top = -0.0100002
+offset_right = -0.0250244
+offset_bottom = 0.0600052
 size_flags_horizontal = 3
 texture_normal = ExtResource("3_hm1kj")
 texture_pressed = ExtResource("4_pyyv0")
 texture_hover = ExtResource("4_pyyv0")
 stretch_mode = 0
 
-[node name="Deliver" type="TextureButton" parent="."]
+[node name="Deliver" type="TextureButton" parent="DrinkBG"]
 layout_mode = 2
-anchor_left = 0.428
-anchor_top = 0.71
-anchor_right = 0.428
+anchor_left = 0.931
+anchor_top = 0.316
+anchor_right = 1.057
 anchor_bottom = 0.71
-offset_left = 16.944
-offset_top = 41.92
-offset_right = 76.944
-offset_bottom = 102.92
+offset_left = -0.225037
+offset_top = 0.0199966
+offset_right = -0.0750122
+offset_bottom = -0.0500031
 size_flags_horizontal = 3
 texture_normal = ExtResource("5_2rs5w")
 texture_pressed = ExtResource("6_a2q2o")
 texture_hover = ExtResource("6_a2q2o")
-
-[node name="DrinkItems" type="HBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 103.0
-offset_top = -167.0
-offset_right = 496.0
-offset_bottom = -62.0
-grow_vertical = 0
-theme_override_constants/separation = 42
-
-[node name="Item1" type="Label" parent="DrinkItems"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 1
-label_settings = SubResource("LabelSettings_dimya")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Item2" type="Label" parent="DrinkItems"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 1
-label_settings = SubResource("LabelSettings_dimya")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Item3" type="Label" parent="DrinkItems"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 1
-label_settings = SubResource("LabelSettings_dimya")
-horizontal_alignment = 1
-vertical_alignment = 1

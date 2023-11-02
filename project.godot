@@ -53,6 +53,14 @@ variables={
 }
 text/autocolor_names=false
 
+[display]
+
+window/stretch/mode="canvas_items"
+
+[editor]
+
+movie_writer/movie_file="/home/necco/temp/test-gjp2023/gameplay.avi"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")

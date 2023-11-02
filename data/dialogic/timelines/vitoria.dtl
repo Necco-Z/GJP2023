@@ -1,5 +1,4 @@
 barista: Ei. Tá tudo bem? Desde que chegou você parece ter muita coisa acontecendo aí nessa cabeça.
-jump Test
 vitoria: Difícil dizer o quanto eu queria que não tivesse nem 10% do que tá aqui dentro.
 barista: Dia difícil? Ou semana?
 vitoria: Vida...
@@ -10,7 +9,6 @@ barista: O movimento nunca foi tão grande. Consigo sobreviver e mesmo que fique
 barista: Porque? Vai começar um negócio?
 vitoria: É bem mais complexo que isso... Também não é algo que eu tenha controle sobre também.
 vitoria: Só queria poder sumir.
-label Test
 barista: Bem. Isso eu não consigo ti ajudar. Mas, vai alguma bebida?
 vitoria: Pode ser... Me vê algo aí que deixe minha cabeça mais leve, que seja doce...
 [call_node path="root/GameScreen" method="show_interface"]
