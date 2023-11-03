@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsjde3alnlax4"]
+
+[ext_resource type="Script" path="res://ui/drink_button.gd" id="1_jsj3h"]
+
+[node name="DrinkButton" type="Button"]
+offset_right = 64.0
+offset_bottom = 76.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 9
+script = ExtResource("1_jsj3h")
+drink_name = null
+
+[node name="Icon" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = -5.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
