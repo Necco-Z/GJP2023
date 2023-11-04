@@ -18,9 +18,9 @@ func _ready() -> void:
 		anchor_top = -1
 		anchor_bottom = 0
 	for i in ingredient_list.get_children():
-		i.connect("pressed", _on_ingredient_chosen.bind(i.drink_name))
-	$DrinkBG/StartOver.connect("pressed", _on_start_over)
-	$DrinkBG/Deliver.connect("pressed", _on_deliver)
+		i.pressed.connect(_on_ingredient_chosen.bind(i.drink_name))
+	$DrinkBG/StartOver.pressed.connect(_on_start_over)
+	$DrinkBG/Deliver.pressed.connect(_on_deliver)
 
 
 # public
