@@ -8,7 +8,7 @@ signal drink_delivered
 var custom_recipe : Recipe
 var tween_time := 0.5
 
-@onready var ingredient_list := $IngredientsBG/Ingredients as Control
+@onready var ingredient_list := $Ingredients as Control
 @onready var drink_items := $DrinkBG/DrinkItems as Control
 
 

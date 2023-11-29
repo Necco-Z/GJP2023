@@ -2,25 +2,32 @@
 
 [ext_resource type="Script" path="res://ui/drink_button.gd" id="1_jsj3h"]
 
-[node name="DrinkButton" type="Button"]
-offset_right = 64.0
-offset_bottom = 76.0
+[node name="DrinkButton" type="Container"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1112.0
+offset_bottom = -608.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jsj3h")
+
+[node name="Button" type="Button" parent="."]
+unique_name_in_owner = true
+clip_contents = true
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 9
-script = ExtResource("1_jsj3h")
-drink_name = null
 
 [node name="Icon" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 5.0
-offset_top = 5.0
-offset_right = -5.0
-offset_bottom = -5.0
-grow_horizontal = 2
-grow_vertical = 2
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
 expand_mode = 1
 stretch_mode = 5
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="button_down" from="Button" to="." method="_on_button_down"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

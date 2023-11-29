@@ -1,9 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://dxcmyau4j1qbs"]
+[gd_scene load_steps=12 format=3 uid="uid://dxcmyau4j1qbs"]
 
 [ext_resource type="Script" path="res://ui/main_interface.gd" id="1_vj2th"]
+[ext_resource type="Texture2D" uid="uid://cc3bflhc8hvsi" path="res://assets/sprites/ingredients_v2.png" id="2_vbe44"]
 [ext_resource type="PackedScene" uid="uid://bsjde3alnlax4" path="res://ui/drink_button.tscn" id="3_bm8n4"]
 [ext_resource type="Texture2D" uid="uid://saokd3fofm10" path="res://assets/sprites/start_over_normal.png" id="3_hm1kj"]
-[ext_resource type="Texture2D" uid="uid://b2ms732rprmw6" path="res://assets/sprites/ingredients.png" id="3_nrkvh"]
 [ext_resource type="Texture2D" uid="uid://c1ipvn2sgr5rn" path="res://assets/sprites/drinks/coffee.png" id="3_ycjm3"]
 [ext_resource type="Texture2D" uid="uid://ckoviwuce3to7" path="res://assets/sprites/drink_bg.png" id="4_7tx2i"]
 [ext_resource type="Texture2D" uid="uid://dvbp8ihfckkfh" path="res://assets/sprites/drinks/milk.png" id="4_jdago"]
@@ -11,8 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://bwbqd0ebat7eb" path="res://assets/sprites/deliver_normal.png" id="5_2rs5w"]
 [ext_resource type="Texture2D" uid="uid://c48sswbydh1ji" path="res://assets/sprites/drinks/tea.png" id="5_jvb76"]
 [ext_resource type="Texture2D" uid="uid://cfvj6lixo0gdf" path="res://assets/sprites/deliver_hover.png" id="6_a2q2o"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_dimya"]
 
 [node name="MainInterface" type="Control"]
 layout_mode = 3
@@ -24,64 +22,68 @@ grow_vertical = 2
 script = ExtResource("1_vj2th")
 metadata/_edit_horizontal_guides_ = []
 
-[node name="IngredientsBG" type="TextureRect" parent="."]
+[node name="Ingredients" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.062
 anchor_top = 0.19
 anchor_right = 0.347
 anchor_bottom = 0.644
-offset_left = 0.575996
-offset_top = -0.12001
-offset_right = 0.255981
-offset_bottom = -0.312042
-texture = ExtResource("3_nrkvh")
+offset_left = -39.424
+offset_top = -87.12
+offset_right = 57.256
+offset_bottom = 20.688
+texture = ExtResource("2_vbe44")
 
-[node name="Ingredients" type="GridContainer" parent="IngredientsBG"]
+[node name="Coffee" parent="Ingredients" instance=ExtResource("3_bm8n4")]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 37.0
-offset_top = 44.0
-offset_right = -32.0
-offset_bottom = -44.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_constants/h_separation = 34
-theme_override_constants/v_separation = 54
-columns = 3
-
-[node name="Coffee" parent="IngredientsBG/Ingredients" instance=ExtResource("3_bm8n4")]
-layout_mode = 2
-button_icon = ExtResource("3_ycjm3")
+offset_left = 36.0
+offset_top = 45.0
+offset_right = -291.0
+offset_bottom = -240.0
 drink_name = "Café"
+image_normal = ExtResource("3_ycjm3")
 
-[node name="Milk" parent="IngredientsBG/Ingredients" instance=ExtResource("3_bm8n4")]
-layout_mode = 2
-button_icon = ExtResource("4_jdago")
+[node name="Milk" parent="Ingredients" instance=ExtResource("3_bm8n4")]
+layout_mode = 1
+offset_left = 306.0
+offset_top = 66.0
+offset_right = -24.0
+offset_bottom = -79.0
 drink_name = "Leite"
+image_normal = ExtResource("4_jdago")
 
-[node name="Tea" parent="IngredientsBG/Ingredients" instance=ExtResource("3_bm8n4")]
-layout_mode = 2
-button_icon = ExtResource("5_jvb76")
+[node name="Tea" parent="Ingredients" instance=ExtResource("3_bm8n4")]
+layout_mode = 1
+offset_left = 166.0
+offset_top = 46.0
+offset_right = -161.0
+offset_bottom = -240.0
 drink_name = "Chá"
+image_normal = ExtResource("5_jvb76")
 
-[node name="Cinnamon" parent="IngredientsBG/Ingredients" instance=ExtResource("3_bm8n4")]
-layout_mode = 2
-text = "Canela"
+[node name="Cinnamon" parent="Ingredients" instance=ExtResource("3_bm8n4")]
+layout_mode = 1
+offset_left = 121.0
+offset_top = 215.0
+offset_right = -249.0
+offset_bottom = -128.0
 drink_name = "Canela"
 
-[node name="Honey" parent="IngredientsBG/Ingredients" instance=ExtResource("3_bm8n4")]
-layout_mode = 2
-text = "Mel"
+[node name="Honey" parent="Ingredients" instance=ExtResource("3_bm8n4")]
+layout_mode = 1
+offset_left = 193.0
+offset_top = 215.0
+offset_right = -176.0
+offset_bottom = -128.0
 drink_name = "Mel"
 
-[node name="Ginger" parent="IngredientsBG/Ingredients" instance=ExtResource("3_bm8n4")]
-layout_mode = 2
-text = "Gengibre"
+[node name="Ginger" parent="Ingredients" instance=ExtResource("3_bm8n4")]
+layout_mode = 1
+offset_left = 121.0
+offset_top = 308.0
+offset_right = -249.0
+offset_bottom = -35.0
 drink_name = "Gengibre"
 
 [node name="DrinkBG" type="TextureRect" parent="."]
@@ -114,24 +116,21 @@ theme_override_constants/separation = 42
 [node name="Item1" type="Label" parent="DrinkBG/DrinkItems"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 1
-label_settings = SubResource("LabelSettings_dimya")
+size_flags_vertical = 5
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Item2" type="Label" parent="DrinkBG/DrinkItems"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 1
-label_settings = SubResource("LabelSettings_dimya")
+size_flags_vertical = 5
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Item3" type="Label" parent="DrinkBG/DrinkItems"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 1
-label_settings = SubResource("LabelSettings_dimya")
+size_flags_vertical = 5
 horizontal_alignment = 1
 vertical_alignment = 1
 
