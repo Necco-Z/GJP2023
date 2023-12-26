@@ -6,3 +6,8 @@
 script = ExtResource("1_qmf5o")
 name = "Café"
 is_base = true
+flavor_sweet = 0
+flavor_bitter = 3
+flavor_smooth = 0
+flavor_warm = 4
+flavor_fresh = 0
