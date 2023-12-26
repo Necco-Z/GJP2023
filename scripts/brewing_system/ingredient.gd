@@ -10,6 +10,10 @@ extends Resource
 ## Se o ingrediente tal é líquido e pode ter bebidas feitas apenas dele como base.
 @export var is_base : bool = false
 
+## Se o ingrediente é base mas pode ser incluido como aditivo em outras receitas,
+## como por exemplo o Leite.
+@export var is_milk : bool = false
+
 @export_category("Flavor Aspects")
 @export var flavor_sweet : int = 0
 @export var flavor_bitter : int = 0
