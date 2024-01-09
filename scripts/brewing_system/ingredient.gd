@@ -20,3 +20,12 @@ extends Resource
 @export var flavor_smooth : int = 0
 @export var flavor_warm : int = 0
 @export var flavor_fresh : int = 0
+
+# considerar
+#@export var aspects : Dictionary = {
+		#"sweet": 0,
+		#"bitter": 0,
+		#"smooth": 0,
+		#"warm": 0,
+		#"fresh": 0
+#}
