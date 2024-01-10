@@ -1,22 +1,47 @@
-[gd_scene load_steps=5 format=3 uid="uid://ce5kmih6bo2v"]
+[gd_scene load_steps=7 format=3 uid="uid://ce5kmih6bo2v"]
 
 [ext_resource type="Script" path="res://scenes/game_screen.gd" id="1_cj3ww"]
 [ext_resource type="PackedScene" uid="uid://dgasuc5c34kkx" path="res://scenes/bg.tscn" id="2_hn0f0"]
 [ext_resource type="PackedScene" uid="uid://dxcmyau4j1qbs" path="res://ui/main_interface.tscn" id="2_l0eg5"]
+[ext_resource type="Shader" path="res://addons/godot-psx/psx_dither.gdshader" id="3_udibs"]
 [ext_resource type="AudioStream" uid="uid://b3o3iods00umm" path="res://assets/music/game.wav" id="4_tk7ab"]
 
-[node name="GameScreen" type="Node"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fmje5"]
+shader = ExtResource("3_udibs")
+shader_parameter/color_depth = 4
+shader_parameter/dithering = true
+shader_parameter/resolution_scale = 3
+
+[node name="GameScreen" type="Node" node_paths=PackedStringArray("bg", "interface")]
 script = ExtResource("1_cj3ww")
-
-[node name="BG" type="CanvasLayer" parent="."]
-layer = -10
-
-[node name="3Dbackground" parent="BG" instance=ExtResource("2_hn0f0")]
-
-[node name="UI" type="CanvasLayer" parent="."]
-
-[node name="MainInterface" parent="UI" instance=ExtResource("2_l0eg5")]
-start_hidden = true
+bg = NodePath("SubViewportContainer/SubViewport/BG/3Dbackground")
+interface = NodePath("SubViewportContainer/SubViewport/UI/MainInterface")
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_tk7ab")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+material = SubResource("ShaderMaterial_fmje5")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+own_world_3d = true
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="BG" type="CanvasLayer" parent="SubViewportContainer/SubViewport"]
+layer = -10
+
+[node name="3Dbackground" parent="SubViewportContainer/SubViewport/BG" instance=ExtResource("2_hn0f0")]
+
+[node name="UI" type="CanvasLayer" parent="SubViewportContainer/SubViewport"]
+
+[node name="MainInterface" parent="SubViewportContainer/SubViewport/UI" instance=ExtResource("2_l0eg5")]
+start_hidden = true
