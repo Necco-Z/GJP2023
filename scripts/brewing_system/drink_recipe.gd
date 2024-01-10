@@ -1,4 +1,5 @@
 @tool
+@icon("res://assets/icons/class_icons/drink-svgrepo-com.svg")
 class_name DrinkRecipe
 extends Resource
 
@@ -77,6 +78,17 @@ func get_aspects() -> Dictionary:
 			"warm": flavor_array[3],
 			"fresh": flavor_array[4]
 	}
+
+
+## Retorna [code]true[/code] se tiverem os mesmos ingredientes.
+func compare_with(other_recipe : DrinkRecipe) -> bool:
+	if base != other_recipe.base:
+		return false
+	# comparar se dois vetores de mesmo tamanho tem os mesmos itens
+	for item in additives:
+		if additives.count(item) != other_recipe.additives.count(item):
+			return false
+	return true
 
 
 func _validate_base(base_ingredient:Ingredient) -> bool:
