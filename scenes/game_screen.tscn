@@ -3,12 +3,13 @@
 [ext_resource type="Script" path="res://scenes/game_screen.gd" id="1_cj3ww"]
 [ext_resource type="PackedScene" uid="uid://dgasuc5c34kkx" path="res://scenes/bg.tscn" id="2_hn0f0"]
 [ext_resource type="PackedScene" uid="uid://dxcmyau4j1qbs" path="res://ui/main_interface.tscn" id="2_l0eg5"]
-[ext_resource type="Shader" path="res://addons/godot-psx/psx_dither.gdshader" id="3_udibs"]
+[ext_resource type="Shader" path="res://addons/analogfeelings-godot-psx/psx_dither.gdshader" id="3_udibs"]
 [ext_resource type="AudioStream" uid="uid://b3o3iods00umm" path="res://assets/music/game.wav" id="4_tk7ab"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_fmje5"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5mmng"]
 shader = ExtResource("3_udibs")
-shader_parameter/color_depth = 4
+shader_parameter/is_enabled = true
+shader_parameter/color_depth = 5
 shader_parameter/dithering = true
 shader_parameter/resolution_scale = 3
 
@@ -21,7 +22,8 @@ interface = NodePath("SubViewportContainer/SubViewport/UI/MainInterface")
 stream = ExtResource("4_tk7ab")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
-material = SubResource("ShaderMaterial_fmje5")
+texture_filter = 1
+material = SubResource("ShaderMaterial_5mmng")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -34,6 +36,7 @@ own_world_3d = true
 handle_input_locally = false
 canvas_item_default_texture_filter = 0
 size = Vector2i(1152, 648)
+size_2d_override = Vector2i(427, 240)
 render_target_update_mode = 4
 
 [node name="BG" type="CanvasLayer" parent="SubViewportContainer/SubViewport"]
@@ -44,4 +47,5 @@ layer = -10
 [node name="UI" type="CanvasLayer" parent="SubViewportContainer/SubViewport"]
 
 [node name="MainInterface" parent="SubViewportContainer/SubViewport/UI" instance=ExtResource("2_l0eg5")]
+visible = false
 start_hidden = true
