@@ -8,17 +8,17 @@
  - **Nodes e classes:** Usar `PascalCase`
  - **Funções e variáveis:** Usar `snake_case`
  - **Sinais:**
-    - Nome: usar `snake_case`
-    - Forma: preferir usar no passado (ex: `player_dead` ao invés de `player_die`)
+	- Nome: usar `snake_case`
+	- Forma: preferir usar no passado (ex: `player_dead` ao invés de `player_die`)
  - **Constantes e enums**:
-    - Usar `CONSTANT_CASE` para nomes de constantes e de elementos de enums
-    - Usar `PascalCase` para nomes de enums. Ex:
+	- Usar `CONSTANT_CASE` para nomes de constantes e de elementos de enums
+	- Usar `PascalCase` para nomes de enums. Ex:
 		```
 		enum Elements {
-		    EARTH,
-		    WIND,
-		    AIR,
-		    WATER,
+			EARTH,
+			WIND,
+			AIR,
+			WATER,
 		}
 		```
 ### Estrutura base de pastas
@@ -39,6 +39,7 @@ res://
 ├── scripts
 │   ├── autoloads (scripts e scenes usadas para autoload)
 │   └── classes (scripts que criam classes para serem usadas no editor)
+├── tools (ferramentas para desenvolver o jogo)
 └── ui (scenes salvas especificamente para UI)
 ```
 ### Convenções para código
