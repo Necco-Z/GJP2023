@@ -12,20 +12,12 @@ extends Resource
 
 ## Se o ingrediente é base mas pode ser incluido como aditivo em outras receitas,
 ## como por exemplo o Leite.
-@export var is_milk : bool = false
+@export var can_be_additive : bool = false
 
 @export_category("Flavor Aspects")
-@export var flavor_sweet : int = 0
-@export var flavor_bitter : int = 0
-@export var flavor_smooth : int = 0
-@export var flavor_warm : int = 0
-@export var flavor_fresh : int = 0
 
-# considerar
-#@export var aspects : Dictionary = {
-		#"sweet": 0,
-		#"bitter": 0,
-		#"smooth": 0,
-		#"warm": 0,
-		#"fresh": 0
-#}
+enum Aspects {SWEET=0, BITTER=1, SMOOTH=2, WARM=3, FRESH=4}
+
+@export var aspects_dict : Dictionary = {
+		Aspects.SWEET: 0, Aspects.BITTER: 0, Aspects.SMOOTH: 0, Aspects.WARM: 0, Aspects.FRESH: 0,
+}

@@ -1,4 +1,3 @@
-@tool
 @icon("res://assets/icons/class_icons/drink-svgrepo-com.svg")
 class_name DrinkRecipe
 extends Resource
@@ -57,27 +56,22 @@ func make(ingredients : Array[Ingredient]) -> bool:
 ## Retorna um Dictionary com os aspectos separados por nome.
 func get_aspects() -> Dictionary:
 	# sweet, bitter, smooth, warm, fresh
-	#var flavor_array := [0,0,0,0,0]
-	var flavor_array := [
-			base.flavor_sweet, 
-			base.flavor_bitter,
-			base.flavor_smooth,
-			base.flavor_warm,
-			base.flavor_fresh
-	]
-	for ingredient in additives:
-		flavor_array[0] += ingredient.flavor_sweet
-		flavor_array[1] += ingredient.flavor_bitter
-		flavor_array[2] += ingredient.flavor_smooth
-		flavor_array[3] += ingredient.flavor_warm
-		flavor_array[4] += ingredient.flavor_fresh
-	return {
-			"sweet": flavor_array[0],
-			"bitter": flavor_array[1],
-			"smooth": flavor_array[2],
-			"warm": flavor_array[3],
-			"fresh": flavor_array[4]
+	var flavor_array := [0,0,0,0,0]
+	
+	# aspects vão de 0 a 4, perfeito
+	for i in range(5):
+		flavor_array[i] = base.aspects_dict[i]
+		flavor_array[i] += additives[0].aspects_dict[i]
+		flavor_array[i] += additives[1].aspects_dict[i]
+	
+	var flavor_dict = {
+			0: flavor_array[0],
+			1: flavor_array[1],
+			2: flavor_array[2],
+			3: flavor_array[3],
+			4: flavor_array[4]
 	}
+	return flavor_dict
 
 
 ## Retorna [code]true[/code] se tiverem os mesmos ingredientes.
