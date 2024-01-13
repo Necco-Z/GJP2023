@@ -434,16 +434,13 @@ transform = Transform3D(-0.997599, 0, 0.0692515, 0, 1, 0, -0.0692515, 0, -0.9975
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.23132, -2.38419e-07, 1.25819)
 
 [node name="Vitoria" parent="Characters" instance=ExtResource("15_6r4nm")]
-transform = Transform3D(-0.331634, 0, -0.943408, 0, 1, 0, 0.943408, 0, -0.331634, 2.64885, -0.318564, -0.426789)
+transform = Transform3D(-0.331633, 0, -0.943408, 0, 1, 0, 0.943408, 0, -0.331633, 2.64885, -0.318564, -0.426789)
 
 [node name="Skeleton3D" parent="Characters/Vitoria/Armature_vitoria" index="0"]
 bones/0/position = Vector3(-2.30926e-14, 1.01349, -0.093574)
 bones/1/rotation = Quaternion(-0.0341607, -2.97158e-15, -8.14453e-09, 0.999416)
 bones/2/rotation = Quaternion(-0.0597313, 2.30783e-14, -1.42411e-08, 0.998215)
-bones/5/rotation = Quaternion(-0.878163, 0.294892, 0.369461, 0.0732611)
-bones/6/rotation = Quaternion(-0.175718, -0.365895, 0.484348, 0.775017)
 bones/7/rotation = Quaternion(-0.255431, -0.301954, -0.000204665, 0.918466)
-bones/8/rotation = Quaternion(-0.0268446, 0.159229, -0.0486613, 0.985676)
 bones/9/rotation = Quaternion(-0.979199, 0.000142048, -0.202902, 0.000685635)
 bones/11/rotation = Quaternion(0.00724088, 0.0817998, 0.996413, 0.0204425)
 bones/12/rotation = Quaternion(0.11976, 0.0603204, 0.207075, 0.969092)
