@@ -2,31 +2,30 @@ class_name AspectDrinkRequest
 extends DrinkRequest
 
 
-#enum AspectType { SWEET, BITTER, SMOOTH, WARM, FRESH }
-@export var aspect : Ingredient.Aspects = Ingredient.Aspects.SWEET
+## ABOVE_THRESHOLD é maior ou igual. BELOW_THRESHOLD é menor ou igual.
+enum CompareMode { ABOVE_THRESHOLD, BELOW_THRESHOLD }
 
-enum CompareMode { MORE_THAN, MORE_OR_EQUAL, EQUAL, LESS_OR_EQUAL, LESS }
-@export var compare_mode : CompareMode = CompareMode.MORE_OR_EQUAL
-
-@export var target_value : int = 0
-
+@export var conditions : Array = []
 
 func try_fulfill_request(drink_to_test : DrinkRecipe) -> bool:
-	var value_to_compare := 0
 	var aspects_dict := drink_to_test.get_aspects()
 	
-	value_to_compare = aspects_dict[aspect]
+	for condition in conditions:
+		var passed := true
+		var aspect_to_compare = aspects_dict[condition.aspect]
+		
+		match condition.mode:
+			CompareMode.ABOVE_THRESHOLD:
+				passed = aspect_to_compare >= condition.threshold
+			CompareMode.BELOW_THRESHOLD:
+				passed = aspect_to_compare <= condition.threshold
+		
+		if not passed: return false
 	
-	match compare_mode:
-		CompareMode.MORE_THAN:
-			return value_to_compare > target_value
-		CompareMode.MORE_OR_EQUAL:
-			return value_to_compare >= target_value
-		CompareMode.EQUAL:
-			return value_to_compare == target_value
-		CompareMode.LESS_OR_EQUAL:
-			return value_to_compare <= target_value
-		CompareMode.LESS:
-			return value_to_compare < target_value
-	
-	return false
+	return true
+
+
+class AspectCondition:
+	var aspect : Ingredient.Aspects = Ingredient.Aspects.SWEET
+	var mode : CompareMode = CompareMode.ABOVE_THRESHOLD
+	var threshold : int = 0
