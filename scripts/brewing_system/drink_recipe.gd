@@ -13,6 +13,9 @@ var errors = {}
 
 @export var name : String = ""
 
+## Textura com a imagem do drink quando pronto. Pode ser usado na UI e no diário.
+@export var texture : Texture
+
 @export_category("Ingredients")
 
 ## O ingrediente líquido base da bebida.
