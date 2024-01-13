@@ -1,4 +1,3 @@
-@icon("res://assets/icons/class_icons/paper-svgrepo-com.svg")
 class_name DrinkRequest
 extends Resource
 ## Superclasse, define condições que uma bebida deve ter para que 

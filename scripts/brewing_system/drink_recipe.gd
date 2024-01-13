@@ -1,4 +1,3 @@
-@icon("res://assets/icons/class_icons/drink-svgrepo-com.svg")
 class_name DrinkRecipe
 extends Resource
 
