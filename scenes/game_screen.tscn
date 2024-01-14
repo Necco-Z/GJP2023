@@ -49,3 +49,22 @@ layer = -10
 [node name="MainInterface" parent="SubViewportContainer/SubViewport/UI" instance=ExtResource("2_l0eg5")]
 visible = false
 start_hidden = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="Control"]
+copy_mode = 2
+rect = Rect2(0, 0, 1152, 648)
+
+[node name="ColorRect" type="ColorRect" parent="Control/BackBufferCopy"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
