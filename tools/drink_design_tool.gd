@@ -12,6 +12,7 @@ var current_mode := Mode.SAVE
 @onready var extra_ingredient_2 := %ExtraIngredient2 as OptionButton
 @onready var aspect_details := %AspectDetails as Label
 @onready var file_dialog := $FileDialog as FileDialog
+@onready var status_message := $StatusMessage as Label
 
 
 # Called when the node enters the scene tree for the first time.
@@ -29,11 +30,6 @@ func _ready() -> void:
 	_clear_fields()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
-
-
 func _clear_fields() -> void:
 	for i in get_tree().get_nodes_in_group("tool_field"):
 		if i is LineEdit:
@@ -46,6 +42,12 @@ func _clear_fields() -> void:
 			i.selected = -1
 
 
+func _set_status(msg: String) -> void:
+	status_message.text = msg
+	await get_tree().create_timer(4.0).timeout
+	status_message.text = ""
+
+
 func _load_recipe(recipe: DrinkRecipe) -> void:
 	drink_name.text = recipe.name
 	#drink_image.texture = recipe.image
@@ -53,20 +55,21 @@ func _load_recipe(recipe: DrinkRecipe) -> void:
 		if base_ingredient.get_item_text(i) == recipe.base.name:
 			base_ingredient.select(i)
 			break
-	if recipe.additives.size() > 0 and recipe.additives[0] != null:
+	if recipe.additives[0] != null:
 		var additive = recipe.additives[0]
 		for i in extra_ingredient_1.item_count:
 			if extra_ingredient_1.get_item_text(i) == additive.name:
 				extra_ingredient_1.select(i)
 				extra_ingredient_2.disabled = false
 				break
-	if recipe.additives.size() > 1 and recipe.additives[1] != null:
+	if recipe.additives[1] != null:
 		var additive = recipe.additives[1]
 		for i in extra_ingredient_2.item_count:
 			if extra_ingredient_2.get_item_text(i) == additive.name:
 				extra_ingredient_2.select(i)
 				break
 	_load_aspects()
+	_set_status("Receita carregada.")
 
 
 func _load_aspects() -> void:
@@ -90,8 +93,15 @@ func _on_load_pressed() -> void:
 
 
 func _on_save_pressed() -> void:
+	if drink_name.text == "":
+		_set_status("Nenhum nome dado à bebida - não foi possível salvar.")
+		return
+	if base_ingredient.selected < 0:
+		_set_status("Bebida sem ingrediente base - não foi possível salvar.")
+		return
 	current_mode = Mode.SAVE
 	file_dialog.file_mode = FileDialog.FILE_MODE_SAVE_FILE
+	file_dialog.current_file = drink_name.text.to_snake_case() + ".tres"
 	file_dialog.popup_centered_ratio()
 
 
@@ -103,6 +113,7 @@ func _on_file_selected(path: String) -> void:
 			_load_recipe(d)
 	elif current_mode == Mode.SAVE:
 		ResourceSaver.save(current_drink, path)
+		_set_status("Receita salva.")
 
 
 func _on_drink_name_text_changed(new_text: String) -> void:
@@ -122,7 +133,7 @@ func _on_extra_ingredient_1_item_selected(index: int) -> void:
 	if index < 1:
 		extra_ingredient_2.select(-1)
 		extra_ingredient_2.disabled = true
-		current_drink.additives[0] = null
+		current_drink.additives.resize(0)
 	else:
 		extra_ingredient_2.disabled = false
 		var selected = extra_ingredient_1.get_item_text(index)
@@ -135,7 +146,7 @@ func _on_extra_ingredient_1_item_selected(index: int) -> void:
 
 func _on_extra_ingredient_2_item_selected(index: int) -> void:
 	if index < 1:
-		current_drink.additives[1] = null
+		current_drink.additives[0] = null
 	else:
 		var selected = extra_ingredient_2.get_item_text(index)
 		for i in GlobalResources.ingredients_list:
