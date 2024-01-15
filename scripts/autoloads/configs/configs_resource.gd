@@ -30,10 +30,3 @@ extends Resource
 
 func save() -> void:
 	ResourceSaver.save(self, "user://configs.tres")
-
-
-static func load_or_create() -> ConfigsResource:
-	var resource : ConfigsResource = load("user://configs.tres") as ConfigsResource
-	if not resource:
-		resource = ConfigsResource.new()
-	return resource
