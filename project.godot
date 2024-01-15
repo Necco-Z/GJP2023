@@ -23,7 +23,7 @@ Loader="*res://scripts/autoloads/loader.gd"
 Dialogic="*res://addons/dialogic/Other/DialogicGameHandler.gd"
 Data="*res://scripts/autoloads/data.gd"
 GlobalResources="*res://scripts/autoloads/global_resources.gd"
-ConfigManager="*res://scripts/autoloads/configs/ConfigManager.gd"
+ConfigsManager="*res://scripts/autoloads/configs/configs_manager.gd"
 
 [dialogic]
 
