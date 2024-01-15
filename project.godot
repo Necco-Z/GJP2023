@@ -23,6 +23,7 @@ Loader="*res://scripts/autoloads/loader.gd"
 Dialogic="*res://addons/dialogic/Other/DialogicGameHandler.gd"
 Data="*res://scripts/autoloads/data.gd"
 GlobalResources="*res://scripts/autoloads/global_resources.gd"
+ConfigManager="*res://scripts/autoloads/configs/ConfigManager.gd"
 
 [dialogic]
 
@@ -81,3 +82,9 @@ dialogic_default_action={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+[shader_globals]
+
+DITHERING_ENABLED={
+"type": "bool",
+"value": false
+}
