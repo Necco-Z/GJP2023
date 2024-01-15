@@ -55,7 +55,7 @@ own_world_3d = true
 handle_input_locally = false
 canvas_item_default_texture_filter = 0
 size = Vector2i(1920, 1080)
-size_2d_override = Vector2i(400, 200)
+size_2d_override = Vector2i(427, 240)
 render_target_update_mode = 4
 
 [node name="BG" type="CanvasLayer" parent="CenterContainer/SubViewportContainer/SubViewport"]
