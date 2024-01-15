@@ -81,6 +81,20 @@ func _load_aspects() -> void:
 	aspect_details.text = t
 
 
+## Retorna uma string vazia se não houver erros
+func _check_drink_validity() -> String:
+	var t = ""
+	if drink_name.text == "":
+		t = "Nenhum nome dado à bebida"
+	if base_ingredient.selected < 0:
+		t = "Bebida sem ingrediente base"
+	if extra_ingredient_1.selected < 1 or extra_ingredient_2.selected < 1:
+		t = "Bebida precisa ter dois ingredientes adicionais"
+	if t != "":
+		t += " - não foi possível salvar."
+	return t
+
+
 ## Signals
 func _on_new_pressed() -> void:
 	_clear_fields()
@@ -93,11 +107,9 @@ func _on_load_pressed() -> void:
 
 
 func _on_save_pressed() -> void:
-	if drink_name.text == "":
-		_set_status("Nenhum nome dado à bebida - não foi possível salvar.")
-		return
-	if base_ingredient.selected < 0:
-		_set_status("Bebida sem ingrediente base - não foi possível salvar.")
+	var t = _check_drink_validity()
+	if t != "":
+		_set_status(t)
 		return
 	current_mode = Mode.SAVE
 	file_dialog.file_mode = FileDialog.FILE_MODE_SAVE_FILE
