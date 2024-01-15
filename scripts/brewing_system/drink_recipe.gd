@@ -1,4 +1,3 @@
-@tool
 class_name DrinkRecipe
 extends Resource
 
@@ -14,6 +13,9 @@ var errors = {}
 
 @export var name : String = ""
 
+## Textura com a imagem do drink quando pronto. Pode ser usado na UI e no diário.
+@export var texture : Texture
+
 @export_category("Ingredients")
 
 ## O ingrediente líquido base da bebida.
@@ -27,9 +29,62 @@ var errors = {}
 ## Não é possível incluir ingredientes base, a não ser que sejam o mesmo
 ## da base da bebida, ou ingredientes como o Leite.
 ## A ordem não importa.
-@export var additives : Array[Ingredient] = []:
+@export var additives : Array[Ingredient] = [null, null]:
 	set(array):
-		_validate_additives(array)
+		if not _validate_additives(array):
+			push_error("Error when choosing additives for \"%s\"." % name)
+			# TODO: detectar os erros em específico.
+		array.resize(2)
+		additives = array
+
+## Cria uma receita genérica durante o jogo a partir desses ingredientes.
+## Retorna bool pois pode falhar (validação de erro).
+## Os erros podem ser obtidos posteriormente com DrinkRecipe.errors
+## Certifique-se que a base é passada como elemento de índice 0 do vetor no código.
+func make(ingredients : Array[Ingredient]) -> bool:
+	
+	var base_candidate = ingredients.pop_front() # remove a base, sobram aditivos
+	if not _validate_base(base_candidate):
+		return false
+	base = base_candidate
+	
+	if not _validate_additives(ingredients):
+		return false
+	additives = ingredients.duplicate() # ingredients pertence à uma função superior, precisa clonar
+	
+	return true
+
+
+## Retorna um Dictionary com os aspectos separados por nome.
+func get_aspects() -> Dictionary:
+	# sweet, bitter, smooth, warm, fresh
+	var flavor_array := [0,0,0,0,0]
+	
+	# aspects vão de 0 a 4, perfeito
+	for i in range(5):
+		flavor_array[i] = base.aspects_dict[i]
+		flavor_array[i] += additives[0].aspects_dict[i]
+		flavor_array[i] += additives[1].aspects_dict[i]
+	
+	var flavor_dict = {
+			0: flavor_array[0],
+			1: flavor_array[1],
+			2: flavor_array[2],
+			3: flavor_array[3],
+			4: flavor_array[4]
+	}
+	return flavor_dict
+
+
+## Retorna [code]true[/code] se tiverem os mesmos ingredientes.
+func compare_with(other_recipe : DrinkRecipe) -> bool:
+	if base != other_recipe.base:
+		return false
+	# comparar se dois vetores de mesmo tamanho tem os mesmos itens
+	for item in additives:
+		if additives.count(item) != other_recipe.additives.count(item):
+			return false
+	return true
 
 
 func _validate_base(base_ingredient:Ingredient) -> bool:
@@ -64,5 +119,6 @@ func _validate_additives(additives_array:Array[Ingredient]) -> bool:
 	return (not invalid)
 
 
-
+func _to_string():
+	return "%s: [%s, %s, %s]" % [name, base.name, additives[0].name, additives[1].name]
 
