@@ -194,6 +194,18 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 
+[node name="StatusMessage" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = -40.0
+offset_right = 600.0
+offset_bottom = -4.0
+grow_vertical = 0
+vertical_alignment = 2
+
 [connection signal="file_selected" from="FileDialog" to="." method="_on_file_selected"]
 [connection signal="pressed" from="Buttons/New" to="." method="_on_new_pressed"]
 [connection signal="pressed" from="Buttons/Load" to="." method="_on_load_pressed"]
