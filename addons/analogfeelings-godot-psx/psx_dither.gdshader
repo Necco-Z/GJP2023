@@ -39,6 +39,8 @@ shader_type canvas_item;
 
 uniform bool is_enabled = true;
 
+uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
+
 uniform int color_depth : hint_range(1, 8) = 5;
 uniform bool dithering = true;
 uniform int resolution_scale = 4;
@@ -61,7 +63,7 @@ void fragment() {
 	if (is_enabled) {
 	
 		ivec2 uv = ivec2(FRAGCOORD.xy / float(resolution_scale));
-		vec3 color = texelFetch(TEXTURE, uv * resolution_scale, 0).rgb;
+		vec3 color = texelFetch(SCREEN_TEXTURE, uv * resolution_scale, 0).rgb;
 		
 		// Convert from 0 to 1 to 0 to 255.
 		ivec3 c = ivec3(round(color * 255.0));
