@@ -16,7 +16,7 @@ shader_parameter/resolution_scale = 3
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_l253c"]
 shader = ExtResource("6_xwxvj")
-shader_parameter/vertJerkOpt = 0.2
+shader_parameter/vertJerkOpt = 0.1
 shader_parameter/vertMovementOpt = 0.0
 shader_parameter/bottomStaticOpt = 0.0
 shader_parameter/bottomStaticStrenth = 0.7
@@ -46,7 +46,7 @@ stretch = true
 own_world_3d = true
 handle_input_locally = false
 canvas_item_default_texture_filter = 0
-size = Vector2i(1152, 648)
+size = Vector2i(1920, 1080)
 size_2d_override = Vector2i(427, 240)
 render_target_update_mode = 4
 
@@ -71,7 +71,7 @@ grow_vertical = 2
 
 [node name="BackBufferCopy" type="BackBufferCopy" parent="Control"]
 copy_mode = 2
-rect = Rect2(0, 0, 1152, 648)
+rect = Rect2(0, 0, 1920, 1080)
 
 [node name="ColorRect" type="ColorRect" parent="Control/BackBufferCopy"]
 material = SubResource("ShaderMaterial_l253c")
