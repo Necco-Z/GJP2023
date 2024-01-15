@@ -6,8 +6,11 @@
 script = ExtResource("1_ovsqp")
 name = "Hortelã"
 is_base = false
-flavor_sweet = 0
-flavor_bitter = 1
-flavor_smooth = 1
-flavor_warm = 0
-flavor_fresh = 2
+can_be_additive = false
+aspects_dict = {
+0: 0,
+1: 1,
+2: 1,
+3: 0,
+4: 2
+}
