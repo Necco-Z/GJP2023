@@ -17,17 +17,17 @@ shader_parameter/resolution_scale = 4
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_buoew"]
 shader = ExtResource("6_1bd24")
-shader_parameter/amount = 0.1
+shader_parameter/amount = 0.073
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xxwim"]
 shader = ExtResource("6_xwxvj")
-shader_parameter/vertJerkOpt = 0.2
+shader_parameter/vertJerkOpt = 0.0
 shader_parameter/vertMovementOpt = 0.0
 shader_parameter/bottomStaticOpt = 0.0
-shader_parameter/bottomStaticStrenth = 0.7
-shader_parameter/scalinesOpt = 0.8
-shader_parameter/rgbOffsetOpt = 0.2
-shader_parameter/horzFuzzOpt = 0.15
+shader_parameter/bottomStaticStrenth = 0.56
+shader_parameter/scalinesOpt = 0.6
+shader_parameter/rgbOffsetOpt = 0.1
+shader_parameter/horzFuzzOpt = 0.0
 
 [node name="GameScreen" type="Node" node_paths=PackedStringArray("bg", "interface")]
 script = ExtResource("1_cj3ww")
@@ -90,6 +90,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Grain" type="BackBufferCopy" parent="ScreenspaceShaders"]
+visible = false
 copy_mode = 2
 rect = Rect2(0, 0, 1920, 1080)
 
