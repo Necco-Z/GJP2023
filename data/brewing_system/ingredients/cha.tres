@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Ingredient" load_steps=2 format=3 uid="uid://fgqjt2yd78cg"]
+
+[ext_resource type="Script" path="res://scripts/brewing_system/ingredient.gd" id="1_23fmf"]
+
+[resource]
+script = ExtResource("1_23fmf")
+name = "Chá"
+is_base = true
+can_be_additive = false
+aspects_dict = {
+0: 0,
+1: 0,
+2: 0,
+3: 0,
+4: 0
+}
