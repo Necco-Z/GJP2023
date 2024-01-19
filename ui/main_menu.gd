@@ -21,4 +21,4 @@ func _on_exit_pressed() -> void:
 
 
 func _on_options_pressed():
-	Loader.load_scene("res://scenes/menus/options_menu.tscn")
+	Loader.load_scene("res://ui/menus/options_menu.tscn")
