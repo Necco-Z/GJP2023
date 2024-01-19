@@ -1,4 +1,5 @@
 extends Node
+## ConfigsManager
 
 var configs : ConfigsResource = null
 var configs_dir := "user://configs.tres"
@@ -25,6 +26,10 @@ func reset_configs() -> void:
 	apply_configs()
 
 
+func save_configs() -> void:
+	configs.save()
+
+
 func apply_configs() -> void:
 	apply_video_settings()
 	#apply_audio_settings()
@@ -34,10 +39,11 @@ func apply_configs() -> void:
 
 func apply_video_settings() -> void:
 	var window = get_window()
-
+	
 	window.size = Vector2i(configs.WINDOW_WIDTH, configs.WINDOW_HEIGHT)
 	window.mode = configs.WINDOW_DISPLAY_MODE
-
+	window.move_to_center()
+	
 	RenderingServer.global_shader_parameter_set("DITHERING_ENABLED",
 			configs.SHADER_DITHERING_ENABLED)
 
