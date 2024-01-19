@@ -59,6 +59,7 @@ variables={
 "current_drink": ""
 }
 text/autocolor_names=false
+history/simple_history_enabled=false
 
 [display]
 
