@@ -6,6 +6,7 @@ func _ready() -> void:
 	Fader.set_transparent(false)
 	await get_tree().create_timer(0.2).timeout
 	Fader.fade_in()
+	$Buttons/Start.grab_focus()
 
 
 func _on_start_pressed() -> void:
