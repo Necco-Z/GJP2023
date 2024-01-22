@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dgasuc5c34kkx"]
+[gd_scene load_steps=24 format=3 uid="uid://dgasuc5c34kkx"]
 
 [ext_resource type="Script" path="res://scenes/bg.gd" id="1_io8xe"]
 [ext_resource type="PackedScene" uid="uid://cy88nmejb4ot8" path="res://assets/models/chao_e_paredes/amazoncafe_chao_e_paredes.gltf" id="2_8l181"]
@@ -227,6 +227,16 @@ _data = {
 "vitoria": SubResource("Animation_h6xjb")
 }
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ci0pb"]
+
+[sub_resource type="Sky" id="Sky_58peg"]
+sky_material = SubResource("ProceduralSkyMaterial_ci0pb")
+
+[sub_resource type="Environment" id="Environment_eqn4o"]
+sky = SubResource("Sky_58peg")
+ambient_light_source = 2
+ambient_light_color = Color(0.984314, 0.909804, 0.752941, 1)
+
 [node name="3Dbackground" type="Node3D"]
 script = ExtResource("1_io8xe")
 
@@ -237,7 +247,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0183778, 0, -0.0929852)
 transform = Transform3D(0.0348239, 0, 0.839278, 0, 0.84, 0, -0.839278, 0, 0.0348239, -4.17559, 0.176439, 1.57625)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.960918, 0.123384, -0.247814, 0.00770507, 0.882914, 0.469471, 0.276724, -0.453033, 0.847458, -1.224, 7.85, 10.175)
+transform = Transform3D(0.972785, -0.0400539, 0.228219, 0, 0.984946, 0.172864, -0.231708, -0.16816, 0.958141, 4.66524, 1.94163, 4.05561)
 fov = 43.3
 
 [node name="amazoncafe_balcao" parent="." instance=ExtResource("4_wr6s3")]
@@ -456,5 +466,25 @@ libraries = {
 "": SubResource("AnimationLibrary_undo2")
 }
 
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.334524, -0.61264, 0.716077, -0.0189962, 0.755316, 0.655085, -0.942196, -0.232745, 0.241034, 0.445714, 0.167687, 0.105497)
+visible = false
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_bake_mode = 0
+sky_mode = 1
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.65442, 1.56223, 2.31857)
+light_color = Color(0, 1, 1, 1)
+light_energy = 8.766
+light_specular = 0.0
+omni_range = 2.296
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_eqn4o")
+
+[editable path="amazoncafe_chao_e_paredes"]
+[editable path="amazoncafe_mesa"]
 [editable path="Characters/Ivan"]
 [editable path="Characters/Vitoria"]

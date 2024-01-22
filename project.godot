@@ -29,6 +29,11 @@ ConfigsManager="*res://scripts/autoloads/configs/configs_manager.gd"
 
 layout/styles={
 "Default": {
+"export_overrides": {
+"box_size": "Vector2(1400, 300)",
+"name_label_font_size": "40.0",
+"text_size": "40.0"
+},
 "inherits": ""
 }
 }
@@ -81,6 +86,10 @@ dialogic_default_action={
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":0,"pressure":0.0,"pressed":false,"script":null)
 ]
 }
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
 
 [shader_globals]
 
