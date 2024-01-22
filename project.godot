@@ -29,6 +29,11 @@ ConfigsManager="*res://scripts/autoloads/configs/configs_manager.gd"
 
 layout/styles={
 "Default": {
+"export_overrides": {
+"box_size": "Vector2(1400, 300)",
+"name_label_font_size": "40.0",
+"text_size": "40.0"
+},
 "inherits": ""
 }
 }

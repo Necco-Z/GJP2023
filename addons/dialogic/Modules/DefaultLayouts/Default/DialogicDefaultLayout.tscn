@@ -14,7 +14,7 @@
 [ext_resource type="Script" path="res://addons/dialogic/Modules/Choice/node_button_sound.gd" id="18"]
 [ext_resource type="Script" path="res://addons/dialogic/Modules/Text/node_next_indicator.gd" id="20_ljcq2"]
 [ext_resource type="Script" path="res://addons/dialogic/Modules/DefaultLayouts/Default/ExampleGlossaryPopup.gd" id="20_vmnp2"]
-[ext_resource type="PackedScene" path="res://addons/dialogic/Modules/DefaultLayouts/ExampleHistoryScene.tscn" id="22_854kg"]
+[ext_resource type="PackedScene" uid="uid://gcnaf70uovlb" path="res://addons/dialogic/Modules/DefaultLayouts/ExampleHistoryScene.tscn" id="22_854kg"]
 [ext_resource type="Script" path="res://addons/dialogic/Modules/TextInput/node_text_input.gd" id="22_ltkcf"]
 [ext_resource type="FontFile" uid="uid://vrrmdx83skor" path="res://addons/dialogic/Example Assets/Fonts/Roboto-Regular.ttf" id="23_gyqve"]
 [ext_resource type="FontFile" uid="uid://cc4xli25271fd" path="res://addons/dialogic/Example Assets/Fonts/Roboto-Bold.ttf" id="24_aa4pl"]
@@ -251,18 +251,13 @@ expand_margin_right = 5.0
 expand_margin_bottom = 5.0
 
 [node name="DefaultDialogNode" type="CanvasLayer"]
+layer = 20
 script = ExtResource("1")
 box_animation_in = 1
 box_animation_out = 1
 box_animation_new_text = 1
 name_label_box_modulate = Color(0.00784314, 0.00784314, 0.00784314, 0.843137)
 typing_sounds_sounds_folder = ""
-typing_sounds_pitch = null
-typing_sounds_volume = null
-choice_button_sounds_volume = null
-choice_button_sounds_pressed = null
-choice_button_sounds_hover = null
-choice_button_sounds_focus = null
 
 [node name="DialogicNode_BackgroundHolder" type="CanvasLayer" parent="."]
 layer = -1
@@ -350,10 +345,10 @@ mouse_filter = 2
 
 [node name="Animations" type="AnimationPlayer" parent="DefaultStyle"]
 unique_name_in_owner = true
-autoplay = "RESET"
 libraries = {
 "": SubResource("AnimationLibrary_c14kh")
 }
+autoplay = "RESET"
 script = ExtResource("16_07l6b")
 
 [node name="DialogicTextAnchor" type="Control" parent="DefaultStyle"]
