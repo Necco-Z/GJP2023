@@ -51,15 +51,24 @@ theme_override_constants/separation = 8
 [node name="Start" type="Button" parent="Buttons"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
 text = "Start"
+
+[node name="Options" type="Button" parent="Buttons"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+text = "Options"
 
 [node name="Exit" type="Button" parent="Buttons"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
 text = "Exit"
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_6ttst")
 
 [connection signal="pressed" from="Buttons/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Buttons/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Buttons/Exit" to="." method="_on_exit_pressed"]

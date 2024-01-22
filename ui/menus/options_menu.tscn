@@ -1,0 +1,176 @@
+[gd_scene load_steps=6 format=3 uid="uid://d0wngbto8fis6"]
+
+[ext_resource type="Theme" uid="uid://tdywopgexypc" path="res://ui/menus/options_menu_theme.theme" id="1_62llm"]
+[ext_resource type="Texture2D" uid="uid://d34twnrkia86n" path="res://assets/sprites/game_logo.png" id="2_gtecn"]
+[ext_resource type="Script" path="res://ui/menus/options_menu.gd" id="2_n6dwk"]
+
+[sub_resource type="Gradient" id="Gradient_lo4pf"]
+colors = PackedColorArray(0.129558, 0.129558, 0.129558, 1, 0.18359, 0.18359, 0.18359, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_khunk"]
+gradient = SubResource("Gradient_lo4pf")
+
+[node name="OptionsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_62llm")
+script = ExtResource("2_n6dwk")
+
+[node name="BG" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_khunk")
+
+[node name="Title" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.1
+anchor_right = 0.8
+anchor_bottom = 0.6
+texture = ExtResource("2_gtecn")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 120
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 80
+
+[node name="TabContainer" type="TabContainer" parent="MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="TabVideo" type="TabBar" parent="MarginContainer/TabContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+focus_neighbor_top = NodePath("../../../BtnReturn")
+
+[node name="VideoOptions" type="VBoxContainer" parent="MarginContainer/TabContainer/TabVideo"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label2" type="Label" parent="MarginContainer/TabContainer/TabVideo/VideoOptions"]
+layout_mode = 2
+text = "Window"
+horizontal_alignment = 1
+
+[node name="ScreenResolution" type="HBoxContainer" parent="MarginContainer/TabContainer/TabVideo/VideoOptions"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/TabContainer/TabVideo/VideoOptions/ScreenResolution"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Screen Resolution"
+
+[node name="Option" type="OptionButton" parent="MarginContainer/TabContainer/TabVideo/VideoOptions/ScreenResolution"]
+layout_mode = 2
+size_flags_horizontal = 3
+item_count = 3
+selected = 0
+allow_reselect = true
+popup/item_0/text = "1920x1080"
+popup/item_0/id = 0
+popup/item_1/text = "1360x768"
+popup/item_1/id = 1
+popup/item_2/text = "1280x720"
+popup/item_2/id = 2
+
+[node name="DisplayMode" type="HBoxContainer" parent="MarginContainer/TabContainer/TabVideo/VideoOptions"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/TabContainer/TabVideo/VideoOptions/DisplayMode"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Display Mode
+"
+
+[node name="Option" type="OptionButton" parent="MarginContainer/TabContainer/TabVideo/VideoOptions/DisplayMode"]
+layout_mode = 2
+size_flags_horizontal = 3
+item_count = 3
+selected = 2
+allow_reselect = true
+popup/item_0/text = "WINDOWED"
+popup/item_0/id = 0
+popup/item_1/text = "MAXIMIZED"
+popup/item_1/id = 2
+popup/item_2/text = "FULLSCREEN"
+popup/item_2/id = 3
+
+[node name="Label" type="Label" parent="MarginContainer/TabContainer/TabVideo/VideoOptions"]
+layout_mode = 2
+text = "Shaders"
+horizontal_alignment = 1
+
+[node name="ShaderDithering" type="HBoxContainer" parent="MarginContainer/TabContainer/TabVideo/VideoOptions"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/TabContainer/TabVideo/VideoOptions/ShaderDithering"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Enable Dithering Shader"
+
+[node name="CheckButton" type="CheckButton" parent="MarginContainer/TabContainer/TabVideo/VideoOptions/ShaderDithering"]
+layout_mode = 2
+size_flags_horizontal = 2
+
+[node name="ShaderScanlines" type="HBoxContainer" parent="MarginContainer/TabContainer/TabVideo/VideoOptions"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/TabContainer/TabVideo/VideoOptions/ShaderScanlines"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Enable Scanlines Shader"
+
+[node name="CheckButton" type="CheckButton" parent="MarginContainer/TabContainer/TabVideo/VideoOptions/ShaderScanlines"]
+layout_mode = 2
+size_flags_horizontal = 2
+
+[node name="TabAudio" type="TabBar" parent="MarginContainer/TabContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+focus_neighbor_top = NodePath("../../../BtnReturn")
+
+[node name="TabGameplay" type="TabBar" parent="MarginContainer/TabContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+focus_neighbor_top = NodePath("../../../BtnReturn")
+
+[node name="BtnReturn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 27.0
+offset_right = 274.0
+offset_bottom = 77.0
+text = "Save and Return"
+
+[connection signal="item_selected" from="MarginContainer/TabContainer/TabVideo/VideoOptions/ScreenResolution/Option" to="." method="_on_video_option_item_selected"]
+[connection signal="item_selected" from="MarginContainer/TabContainer/TabVideo/VideoOptions/DisplayMode/Option" to="." method="_on_video_option_item_selected"]
+[connection signal="pressed" from="BtnReturn" to="." method="_on_btn_return_pressed"]
