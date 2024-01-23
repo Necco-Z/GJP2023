@@ -1,38 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://ce5kmih6bo2v"]
+[gd_scene load_steps=6 format=3 uid="uid://ce5kmih6bo2v"]
 
 [ext_resource type="Script" path="res://scenes/game_screen.gd" id="1_cj3ww"]
 [ext_resource type="PackedScene" uid="uid://dgasuc5c34kkx" path="res://scenes/bg.tscn" id="2_hn0f0"]
 [ext_resource type="PackedScene" uid="uid://dxcmyau4j1qbs" path="res://ui/main_interface.tscn" id="2_l0eg5"]
-[ext_resource type="Shader" path="res://addons/analogfeelings-godot-psx/psx_dither.gdshader" id="3_udibs"]
 [ext_resource type="AudioStream" uid="uid://b3o3iods00umm" path="res://assets/music/game.wav" id="4_tk7ab"]
-[ext_resource type="Shader" path="res://addons/GodotRetro/Screen Shaders/SimpleGrain.gdshader" id="6_1bd24"]
-[ext_resource type="Shader" path="res://addons/GodotRetro/Screen Shaders/Aditional Shaders/Blur.gdshader" id="6_qm5wx"]
-[ext_resource type="Shader" path="res://addons/GodotRetro/Screen Shaders/TV.gdshader" id="6_xwxvj"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ktlrk"]
-shader = ExtResource("3_udibs")
-shader_parameter/is_enabled = true
-shader_parameter/color_depth = 5
-shader_parameter/dithering = true
-shader_parameter/resolution_scale = 4
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_xikrc"]
-shader = ExtResource("6_qm5wx")
-shader_parameter/amount = 0.3
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_buoew"]
-shader = ExtResource("6_1bd24")
-shader_parameter/amount = 0.073
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_xxwim"]
-shader = ExtResource("6_xwxvj")
-shader_parameter/vertJerkOpt = 0.0
-shader_parameter/vertMovementOpt = 0.0
-shader_parameter/bottomStaticOpt = 0.0
-shader_parameter/bottomStaticStrenth = 0.56
-shader_parameter/scalinesOpt = 0.6
-shader_parameter/rgbOffsetOpt = 0.1
-shader_parameter/horzFuzzOpt = 0.0
+[ext_resource type="PackedScene" uid="uid://bu30lamndivuj" path="res://scenes/screenspace_shader_stack.tscn" id="5_cl2wk"]
 
 [node name="GameScreen" type="Node" node_paths=PackedStringArray("bg", "interface")]
 script = ExtResource("1_cj3ww")
@@ -74,54 +46,4 @@ layer = -10
 visible = false
 start_hidden = true
 
-[node name="ScreenspaceShaders" type="CanvasLayer" parent="."]
-layer = 10
-
-[node name="Dithering" type="BackBufferCopy" parent="ScreenspaceShaders"]
-copy_mode = 2
-rect = Rect2(0, 0, 1920, 1080)
-
-[node name="ColorRect" type="ColorRect" parent="ScreenspaceShaders/Dithering"]
-material = SubResource("ShaderMaterial_ktlrk")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Blur" type="BackBufferCopy" parent="ScreenspaceShaders"]
-copy_mode = 2
-rect = Rect2(0, 0, 1920, 1080)
-
-[node name="ColorRect" type="ColorRect" parent="ScreenspaceShaders/Blur"]
-material = SubResource("ShaderMaterial_xikrc")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Grain2" type="BackBufferCopy" parent="ScreenspaceShaders"]
-visible = false
-copy_mode = 2
-rect = Rect2(0, 0, 1920, 1080)
-
-[node name="ColorRect" type="ColorRect" parent="ScreenspaceShaders/Grain2"]
-material = SubResource("ShaderMaterial_buoew")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="TV" type="BackBufferCopy" parent="ScreenspaceShaders"]
-copy_mode = 2
-rect = Rect2(0, 0, 1920, 1080)
-
-[node name="ColorRect" type="ColorRect" parent="ScreenspaceShaders/TV"]
-material = SubResource("ShaderMaterial_xxwim")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="ScreenspaceShaderStack" parent="." instance=ExtResource("5_cl2wk")]

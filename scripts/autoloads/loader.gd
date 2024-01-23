@@ -1,5 +1,11 @@
 extends Node
 
+var shader_stack_packed : PackedScene = preload("res://scenes/screenspace_shader_stack.tscn")
+
+
+func _ready():
+	get_tree().root.add_child(shader_stack_packed.instantiate())
+
 
 func load_scene(scene: String) -> void:
 	await Fader.fade_out()
