@@ -33,36 +33,47 @@ shader_parameter/horzFuzzOpt = 0.0
 [node name="ScreenspaceShaders" type="CanvasLayer"]
 layer = 10
 
-[node name="Dithering" type="BackBufferCopy" parent="."]
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Dithering" type="BackBufferCopy" parent="Control"]
 copy_mode = 2
 rect = Rect2(0, 0, 1920, 1080)
 
-[node name="ColorRect" type="ColorRect" parent="Dithering"]
+[node name="ColorRect" type="ColorRect" parent="Control/Dithering"]
 material = SubResource("ShaderMaterial_ktlrk")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
-[node name="Blur" type="BackBufferCopy" parent="."]
+[node name="Blur" type="BackBufferCopy" parent="Control"]
 copy_mode = 2
 rect = Rect2(0, 0, 1920, 1080)
 
-[node name="ColorRect" type="ColorRect" parent="Blur"]
+[node name="ColorRect" type="ColorRect" parent="Control/Blur"]
 material = SubResource("ShaderMaterial_xikrc")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
-[node name="Grain2" type="BackBufferCopy" parent="."]
+[node name="Grain2" type="BackBufferCopy" parent="Control"]
 visible = false
 copy_mode = 2
 rect = Rect2(0, 0, 1920, 1080)
 
-[node name="ColorRect" type="ColorRect" parent="Grain2"]
+[node name="ColorRect" type="ColorRect" parent="Control/Grain2"]
 material = SubResource("ShaderMaterial_buoew")
 anchors_preset = 15
 anchor_right = 1.0
@@ -70,11 +81,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TV" type="BackBufferCopy" parent="."]
+[node name="TV" type="BackBufferCopy" parent="Control"]
 copy_mode = 2
 rect = Rect2(0, 0, 1920, 1080)
 
-[node name="ColorRect" type="ColorRect" parent="TV"]
+[node name="ColorRect" type="ColorRect" parent="Control/TV"]
 material = SubResource("ShaderMaterial_xxwim")
 anchors_preset = 15
 anchor_right = 1.0
