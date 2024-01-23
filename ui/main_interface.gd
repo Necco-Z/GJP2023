@@ -25,6 +25,7 @@ func _ready() -> void:
 
 # public
 func show_interface() -> void:
+	print_debug("interface de drinks aberta.")
 	var t = create_tween()
 	t = t.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC).set_parallel()
 	t.tween_property(self, "anchor_top", 0, tween_time)
