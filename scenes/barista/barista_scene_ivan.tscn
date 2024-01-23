@@ -1,5 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://d3gsuuwnkqto2"]
+[gd_scene load_steps=10 format=3 uid="uid://d3gsuuwnkqto2"]
 
 [ext_resource type="PackedScene" uid="uid://w13g8cvov7ss" path="res://scenes/barista/barista_scene_template.tscn" id="1_fj3q3"]
+[ext_resource type="Resource" path="res://data/dialogic/timelines/ivan_teste.dtl" id="2_vjh1j"]
+[ext_resource type="Script" path="res://scripts/brewing_system/specific_drink_request.gd" id="3_snn3g"]
+[ext_resource type="Resource" uid="uid://rblbx3tkv6q1" path="res://data/brewing_system/recipes/cafe_com_menta.tres" id="4_ocqff"]
+[ext_resource type="Script" path="res://scripts/classes/barista_event.gd" id="5_mwxbc"]
+[ext_resource type="PackedScene" uid="uid://dgasuc5c34kkx" path="res://scenes/bg.tscn" id="6_5v7k2"]
+[ext_resource type="AudioStream" uid="uid://b4a106pos1n7t" path="res://assets/music/menu.wav" id="6_wm3o1"]
+
+[sub_resource type="Resource" id="Resource_kqa37"]
+script = ExtResource("3_snn3g")
+valid_drinks = Array[Resource("res://scripts/brewing_system/drink_recipe.gd")]([ExtResource("4_ocqff")])
+
+[sub_resource type="Resource" id="Resource_760b5"]
+script = ExtResource("5_mwxbc")
+dialogic_timeline = ExtResource("2_vjh1j")
+drink_request = SubResource("Resource_kqa37")
 
 [node name="BaristaSceneIvan" instance=ExtResource("1_fj3q3")]
+event = SubResource("Resource_760b5")
+
+[node name="Music" parent="." index="0"]
+stream = ExtResource("6_wm3o1")
+
+[node name="3Dbackground" parent="Background" index="0" instance=ExtResource("6_5v7k2")]
