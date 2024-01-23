@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://w13g8cvov7ss"]
+
+[ext_resource type="Script" path="res://scenes/barista/barista_scene.gd" id="1_lqw8k"]
+
+[node name="BaristaSceneTemplate" type="Node3D"]
+script = ExtResource("1_lqw8k")
+
+[node name="Background" type="Node3D" parent="."]
+
+[node name="Characters" type="Node3D" parent="."]
+
+[node name="Interfaces" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
