@@ -17,6 +17,8 @@ stream = ExtResource("2_agqri")
 
 [node name="Characters" type="Node3D" parent="."]
 
+[node name="Cameras" type="Node3D" parent="."]
+
 [node name="Interfaces" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15

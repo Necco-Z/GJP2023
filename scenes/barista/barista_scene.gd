@@ -20,7 +20,22 @@ func _ready():
 	brewing_interface.connect("drink_delivered", _on_drink_delivered)
 	
 	MusicPlayer.set_current($Music)
-	start_events()
+	_start_events()
+
+
+## TODO
+func play_character_animation(char_index : int, animation_name : String) -> void:
+	pass
+
+## TODO
+func change_camera(camera_index : int) -> void:
+	if $Cameras.get_child_count() <= camera_index: # não possui a camera tal
+		print_debug("WARN: Invalid camera index: %d" % camera_index)
+		return 
+	var picked_camera : Camera3D = $Cameras.get_child(camera_index)
+	
+	picked_camera.make_current()
+
 
 
 func _on_dialogic_signal_event(argument : String) -> void:
@@ -37,7 +52,7 @@ func _on_dialogic_timeline_ended() -> void:
 	if is_drink_delivered:
 		#do_next_event
 		print_debug("indo pra próxima")
-		finish_scene()
+		_finish_scene()
 
 
 func _on_drink_delivered(drink : DrinkRecipe) -> void:
@@ -53,18 +68,14 @@ func _input(input_event):
 
 
 
-func start_events() -> void:
+func _start_events() -> void:
 	# mudar pra fazer um loop pra rodar todos os eventos
 	is_drink_delivered = false
 	barista_event.open_start_dialogue()
 
 
-func finish_scene() -> void:
+func _finish_scene() -> void:
 	Loader.load_scene_from_packed(next_scene)
-
-
-func play_character_animation(char_index : int, animation_name : String) -> void:
-	pass
 
 
 func _debug_key_input(key_event : InputEventKey):
