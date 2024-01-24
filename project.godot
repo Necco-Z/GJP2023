@@ -30,9 +30,16 @@ ConfigsManager="*res://scripts/autoloads/configs/configs_manager.gd"
 layout/styles={
 "Default": {
 "export_overrides": {
-"box_size": "Vector2(1400, 300)",
-"name_label_font_size": "40.0",
-"text_size": "40.0"
+"bold_font": "\"res://assets/fonts/Play-Bold.ttf\"",
+"box_modulate": "Color(0, 0, 0, 0)",
+"name_label_box_modulate": "Color(1, 1, 1, 1)",
+"name_label_box_offset": "Vector2(-40, -54)",
+"name_label_color": "Color(0.6, 1, 1, 1)",
+"name_label_font": "\"res://assets/fonts/Play-Bold.ttf\"",
+"name_label_font_size": "36.0",
+"normal_font": "\"res://assets/fonts/Play-Regular.ttf\"",
+"text_color": "Color(0.6, 1, 1, 1)",
+"text_size": "36.0"
 },
 "inherits": ""
 }
