@@ -1,0 +1,19 @@
+[gd_scene load_steps=7 format=3 uid="uid://d3gsuuwnkqto2"]
+
+[ext_resource type="PackedScene" uid="uid://w13g8cvov7ss" path="res://scenes/barista/barista_scene_template.tscn" id="1_fj3q3"]
+[ext_resource type="Resource" path="res://data/dialogic/timelines/ivan_teste.dtl" id="2_vjh1j"]
+[ext_resource type="Script" path="res://scripts/classes/barista_event.gd" id="5_mwxbc"]
+[ext_resource type="PackedScene" uid="uid://dgasuc5c34kkx" path="res://scenes/bg.tscn" id="6_5v7k2"]
+[ext_resource type="AudioStream" uid="uid://b4a106pos1n7t" path="res://assets/music/menu.wav" id="6_wm3o1"]
+
+[sub_resource type="Resource" id="Resource_84ddj"]
+script = ExtResource("5_mwxbc")
+dialogic_timeline = ExtResource("2_vjh1j")
+
+[node name="BaristaScene" instance=ExtResource("1_fj3q3")]
+barista_event = SubResource("Resource_84ddj")
+
+[node name="Music" parent="." index="0"]
+stream = ExtResource("6_wm3o1")
+
+[node name="3Dbackground" parent="Background" index="0" instance=ExtResource("6_5v7k2")]

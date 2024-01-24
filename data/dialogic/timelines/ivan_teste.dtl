@@ -1,0 +1,23 @@
+label START
+ivan: Eu sei, eu sei. não deveria estar aqui agora, mas espero que você possa me ajudar. Não estou com coragem de voltar para casa.
+ivan: Não entendo onde estou errando, trabalho tanto para dar o melhor para eles. ‘suspiro’
+barista: Imagino que uma bebida remanescente dos velhos tempos vá lhe fazer bem então.
+ivan: Vou querer um Café Latte.
+[signal arg="brewing"]
+[end_timeline]
+label SUCCESS
+ivan: (SUCESSO) Esse café me lembra deles, quando eu ainda era casado, eu cozinhava e fazia o café da manhã. Minha mais velha vinha até mim toda alegre e pedia para fazer café para ela também.
+barista: Já entendeu o porque dele ter ficado chateado?
+ivan: Acredito que o que o mais novo queria não era o bolo, e sim compartilhar o momento.
+ivan: Conversar com você me fez perceber que eu preciso passar um tempo com eles, talvez a mais velha também sinta isso.
+ivan: Obrigado pelo café.
+[end_timeline]
+label FAILURE
+ivan: (FALHA) Isso não foi bem o que eu esperava...
+ivan: Acho que assim como em casa, eu não sei bem o que eu esperava vindo aqui.
+ivan: Ontem foi aniversário do mais novo, comprei um brinquedo de última geração para ele, afinal é disso que as crianças gostam, não?
+barista: Sim. Amanda, outra cliente minha, disse que comprou um dos novos modelos de Onça pra pequena dela e disse que ela enlouqueceu de alegria com o presente.
+ivan: Vou contratar alguém para diciplinar eles, se as coisas continuarem como estão eles vão ter dificuldades quando virarem adultos e tiverem que trabalhar.
+barista: Você quer conversar sobre mais alguma coisa?
+ivan: Não. Precisava beber algo para esclarecer meus pensamentos e agora vejo que preciso ser um pouco mais sério na forma como educo meus pequenos.
+[end_timeline]
