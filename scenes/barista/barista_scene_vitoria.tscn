@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=3 uid="uid://b55wrps31iqb5"]
+
+[ext_resource type="PackedScene" uid="uid://w13g8cvov7ss" path="res://scenes/barista/barista_scene_template.tscn" id="1_t8g51"]
+[ext_resource type="Resource" uid="uid://qwt8vmisjqji" path="res://data/barista_events/dia1_vitoria.tres" id="2_1igv7"]
+[ext_resource type="PackedScene" uid="uid://dgasuc5c34kkx" path="res://scenes/bg.tscn" id="3_fcge0"]
+
+[node name="BaristaScene" instance=ExtResource("1_t8g51")]
+barista_event = ExtResource("2_1igv7")
+
+[node name="3Dbackground" parent="Background" index="0" instance=ExtResource("3_fcge0")]
