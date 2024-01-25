@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DrinkRecipe" load_steps=3 format=3]
+
+[ext_resource type="Resource" path="res://data/brewing_system/ingredients/leite.tres" id="1_73to8"]
+[ext_resource type="Script" path="res://scripts/brewing_system/drink_recipe.gd" id="2_11if5"]
+
+[resource]
+script = ExtResource("2_11if5")
+additives = Array[Resource("res://scripts/brewing_system/ingredient.gd")]([ExtResource("1_73to8"), ExtResource("1_73to8")])
