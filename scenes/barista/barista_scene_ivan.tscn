@@ -1,15 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://d3gsuuwnkqto2"]
+[gd_scene load_steps=6 format=3 uid="uid://d3gsuuwnkqto2"]
 
 [ext_resource type="PackedScene" uid="uid://w13g8cvov7ss" path="res://scenes/barista/barista_scene_template.tscn" id="1_fj3q3"]
 [ext_resource type="Resource" uid="uid://5poteq3dy5i4" path="res://data/barista_events/dia1_ivan.tres" id="2_7tqha"]
-[ext_resource type="PackedScene" uid="uid://b55wrps31iqb5" path="res://scenes/barista/barista_scene_vitoria.tscn" id="3_b5r67"]
 [ext_resource type="PackedScene" uid="uid://qsfrt6ikn6a5" path="res://assets/models/characters/IvanAnimations.gltf" id="5_c0f76"]
 [ext_resource type="PackedScene" uid="uid://dgasuc5c34kkx" path="res://scenes/bg.tscn" id="6_5v7k2"]
 [ext_resource type="PackedScene" uid="uid://ce5vbspa5s40g" path="res://assets/models/characters/VitoriaAnimations.gltf" id="6_karbr"]
 
 [node name="BaristaScene" instance=ExtResource("1_fj3q3")]
 barista_event = ExtResource("2_7tqha")
-next_scene = ExtResource("3_b5r67")
 
 [node name="3Dbackground" parent="Background" index="0" instance=ExtResource("6_5v7k2")]
 

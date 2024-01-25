@@ -11,7 +11,7 @@ func _ready() -> void:
 
 func _on_start_pressed() -> void:
 	#Loader.load_scene("res://scenes/game_screen.tscn")
-	Loader.load_scene("res://scenes/barista/barista_scene_ivan.tscn")
+	Loader.load_scene("res://scenes/barista/barista_scene_vitoria.tscn")
 
 
 func _on_exit_pressed() -> void:
