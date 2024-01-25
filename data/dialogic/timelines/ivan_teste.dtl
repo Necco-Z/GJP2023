@@ -1,11 +1,14 @@
 label START
+[call_node path="root/BaristaScene" method="play_character_animation" args="["IvanAnimations", "Ivan_sentado_poses_001"]"]
 ivan: Eu sei, eu sei. não deveria estar aqui agora, mas espero que você possa me ajudar. Não estou com coragem de voltar para casa.
+[call_node path="root/BaristaScene" method="play_character_animation" args="["IvanAnimations", "Ivan_sentado_poses_002"]"]
 ivan: Não entendo onde estou errando, trabalho tanto para dar o melhor para eles. ‘suspiro’
 barista: Imagino que uma bebida remanescente dos velhos tempos vá lhe fazer bem então.
 ivan: Vou querer um Café Latte.
 [signal arg="brewing"]
 [end_timeline]
 label SUCCESS
+[call_node path="root/BaristaScene" method="play_character_animation" args="["IvanAnimations", "Ivan_sentado_poses_008"]"]
 ivan: (SUCESSO) Esse café me lembra deles, quando eu ainda era casado, eu cozinhava e fazia o café da manhã. Minha mais velha vinha até mim toda alegre e pedia para fazer café para ela também.
 barista: Já entendeu o porque dele ter ficado chateado?
 ivan: Acredito que o que o mais novo queria não era o bolo, e sim compartilhar o momento.
