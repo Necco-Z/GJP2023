@@ -11,7 +11,7 @@ barista: Porque? Vai começar um negócio?
 vitoria: É bem mais complexo que isso... Também não é algo que eu tenha controle sobre também.
 vitoria: Só queria poder sumir.
 barista: Bem. Isso eu não consigo ti ajudar. Mas, vai alguma bebida?
-vitoria: Pode ser... Me vê algo aí que deixe minha cabeça mais leve, que seja doce...
+vitoria: Pode ser... Me vê ai um chá com duas doses de leite...
 [signal arg="brewing"]
 [end_timeline]
 label SUCCESS
