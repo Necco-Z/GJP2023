@@ -10,6 +10,14 @@ func _ready():
 	_load_all_recipes()
 
 
+## Compara a receita do jogador com as da lista e devolve a receita correta ou null
+func compare_player_recipe(player_recipe: DrinkRecipe) -> DrinkRecipe:
+	for r : DrinkRecipe in recipes_list:
+		if r.compare_with(player_recipe) == true:
+			return r
+	return null
+
+
 func _load_all_ingredients() -> void:
 	var paths = _get_all_file_paths("res://data/brewing_system/ingredients")
 	for path in paths:
