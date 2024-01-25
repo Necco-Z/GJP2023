@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8jqjlmtnacrj"
-path="res://.godot/imported/HUD COMBINATION.png-0947b93852aed56d01ec3e7abd75f410.ctex"
+uid="uid://dkym6e248qb1s"
+path="res://.godot/imported/deliver_disabled.png-79f9274267b3233ac60af02d7118ef7b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/HUD COMBINATION.png"
-dest_files=["res://.godot/imported/HUD COMBINATION.png-0947b93852aed56d01ec3e7abd75f410.ctex"]
+source_file="res://assets/sprites/brewing_interface/deliver_disabled.png"
+dest_files=["res://.godot/imported/deliver_disabled.png-79f9274267b3233ac60af02d7118ef7b.ctex"]
 
 [params]
 

@@ -3,11 +3,34 @@ extends Resource
 
 var name : String
 ## Textura com a imagem do drink quando pronto. Pode ser usado na UI e no diário.
-var texture : Texture
+var texture : Texture2D
 ## O ingrediente líquido base da bebida.
 var base : Ingredient
 ## Os ingredientes adicionais fora a base da bebida.
 @export var additives : Array[Ingredient] = [null, null]
+
+
+func add_ingredient(ingr: Ingredient) -> void:
+	if base == null:
+		if not ingr.is_base:
+			printerr("Ingrediente inicial não é base")
+		else:
+			base = ingr
+	elif additives[0] == null or additives[1] == null:
+		if ingr.is_base and not ingr.can_be_additive:
+			printerr("Ingrediente não pode ser aditivo")
+		if additives[0] == null:
+			additives[0] = ingr
+		else:
+			additives[1] = ingr
+
+
+func list_ingredients() -> Array[Ingredient]:
+	var a : Array[Ingredient] = []
+	a.append(base)
+	a.append_array(additives)
+	a.erase(null)
+	return a
 
 
 ## Retorna um Dictionary com os aspectos separados por nome.

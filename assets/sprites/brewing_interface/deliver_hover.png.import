@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cc3bflhc8hvsi"
-path="res://.godot/imported/ingredients_v2.png-d38b3e528fb16c4d5e326618a24224d7.ctex"
+uid="uid://bs8yd1bimcwl"
+path="res://.godot/imported/deliver_hover.png-d3e16c735315119f27c717d4fe0b4946.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/ingredients_v2.png"
-dest_files=["res://.godot/imported/ingredients_v2.png-d38b3e528fb16c4d5e326618a24224d7.ctex"]
+source_file="res://assets/sprites/brewing_interface/deliver_hover.png"
+dest_files=["res://.godot/imported/deliver_hover.png-d3e16c735315119f27c717d4fe0b4946.ctex"]
 
 [params]
 

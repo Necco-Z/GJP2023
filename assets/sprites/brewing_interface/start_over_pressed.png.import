@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://saokd3fofm10"
-path="res://.godot/imported/start_over_normal.png-6ee9f14eadc1d9ce1094acfa7fd5f50d.ctex"
+uid="uid://btliv16qbyhaa"
+path="res://.godot/imported/start_over_pressed.png-dfed3186c4983321af2fedfefb68dd43.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/start_over_normal.png"
-dest_files=["res://.godot/imported/start_over_normal.png-6ee9f14eadc1d9ce1094acfa7fd5f50d.ctex"]
+source_file="res://assets/sprites/brewing_interface/start_over_pressed.png"
+dest_files=["res://.godot/imported/start_over_pressed.png-dfed3186c4983321af2fedfefb68dd43.ctex"]
 
 [params]
 
