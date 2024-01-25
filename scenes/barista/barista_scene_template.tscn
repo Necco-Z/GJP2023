@@ -28,6 +28,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="OldBrewingInterface" parent="Interfaces" instance=ExtResource("2_fm1yk")]
+visible = false
 layout_mode = 1
 
 [node name="ScreenspaceShaders" parent="." instance=ExtResource("4_tb66k")]
