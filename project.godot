@@ -24,6 +24,7 @@ Dialogic="*res://addons/dialogic/Other/DialogicGameHandler.gd"
 Data="*res://scripts/autoloads/data.gd"
 GlobalResources="*res://scripts/autoloads/global_resources.gd"
 ConfigsManager="*res://scripts/autoloads/configs/configs_manager.gd"
+AudioManager="*res://scripts/autoloads/audio_manager.gd"
 
 [dialogic]
 
