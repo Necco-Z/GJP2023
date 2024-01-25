@@ -31,12 +31,15 @@ layout/styles={
 "Default": {
 "export_overrides": {
 "bold_font": "\"res://assets/fonts/Play-Bold.ttf\"",
-"box_modulate": "Color(0.439216, 0.188235, 0.105882, 1)",
-"box_size": "Vector2(1400, 300)",
-"name_label_font_size": "30.0",
+"box_modulate": "Color(0, 0, 0, 0)",
+"name_label_box_modulate": "Color(1, 1, 1, 1)",
+"name_label_box_offset": "Vector2(-40, -54)",
+"name_label_color": "Color(0.6, 1, 1, 1)",
+"name_label_font": "\"res://assets/fonts/Play-Bold.ttf\"",
+"name_label_font_size": "36.0",
 "normal_font": "\"res://assets/fonts/Play-Regular.ttf\"",
-"text_color": "Color(0.654902, 1, 0.929412, 1)",
-"text_size": "60.0"
+"text_color": "Color(0.6, 1, 1, 1)",
+"text_size": "36.0"
 },
 "inherits": ""
 }
@@ -63,6 +66,7 @@ variables={
 "current_drink": ""
 }
 text/autocolor_names=false
+history/simple_history_enabled=false
 
 [display]
 
