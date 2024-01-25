@@ -4,7 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://b3o3iods00umm" path="res://assets/music/game.wav" id="2_me1cv"]
 [ext_resource type="Shader" path="res://addons/analogfeelings-godot-psx/psx_dither.gdshader" id="3_8ju1u"]
 [ext_resource type="PackedScene" uid="uid://dgasuc5c34kkx" path="res://scenes/bg.tscn" id="4_xstrk"]
-[ext_resource type="PackedScene" uid="uid://dxcmyau4j1qbs" path="res://ui/main_interface.tscn" id="5_8b3sm"]
+[ext_resource type="PackedScene" uid="uid://dxcmyau4j1qbs" path="res://ui/brewing_interface/brewing_interface.tscn" id="5_8b3sm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gthnc"]
 shader = ExtResource("3_8ju1u")

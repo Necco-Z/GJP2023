@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/game_screen.gd" id="1_cj3ww"]
 [ext_resource type="PackedScene" uid="uid://dgasuc5c34kkx" path="res://scenes/bg.tscn" id="2_hn0f0"]
-[ext_resource type="PackedScene" uid="uid://dxcmyau4j1qbs" path="res://ui/main_interface.tscn" id="2_l0eg5"]
+[ext_resource type="PackedScene" uid="uid://dxcmyau4j1qbs" path="res://ui/brewing_interface/brewing_interface.tscn" id="2_l0eg5"]
 [ext_resource type="AudioStream" uid="uid://b3o3iods00umm" path="res://assets/music/game.wav" id="4_tk7ab"]
 
 [node name="GameScreen" type="Node" node_paths=PackedStringArray("bg", "interface")]
