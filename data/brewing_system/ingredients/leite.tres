@@ -1,10 +1,12 @@
-[gd_resource type="Resource" script_class="Ingredient" load_steps=2 format=3 uid="uid://ddrmancmol6qh"]
+[gd_resource type="Resource" script_class="Ingredient" load_steps=3 format=3 uid="uid://ddrmancmol6qh"]
 
 [ext_resource type="Script" path="res://scripts/brewing_system/ingredient.gd" id="1_5122u"]
+[ext_resource type="Texture2D" uid="uid://dvbp8ihfckkfh" path="res://assets/sprites/drinks/milk.png" id="1_kyq8j"]
 
 [resource]
 script = ExtResource("1_5122u")
 name = "Leite"
+icon = ExtResource("1_kyq8j")
 is_base = true
 can_be_additive = true
 aspects_dict = {

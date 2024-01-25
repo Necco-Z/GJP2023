@@ -17,7 +17,7 @@ func _on_start_pressed() -> void:
 func _on_exit_pressed() -> void:
 	for button in $Buttons.get_children():
 		button.disabled = true
-	
+
 	await Fader.fade_out()
 	get_tree().quit()
 
