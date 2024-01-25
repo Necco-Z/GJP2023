@@ -21,7 +21,7 @@ func open_failure_dialogue() -> void:
 
 func receive_drink(drink : DrinkRecipe) -> void:
 	var result = drink_request.try_fulfill_request(drink)
-	
+
 	if result:
 		open_success_dialogue()
 	else:

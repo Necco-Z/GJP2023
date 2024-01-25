@@ -12,13 +12,13 @@ extends Node3D
 
 var is_drink_delivered : bool = false
 
-@onready var brewing_interface = $Interfaces/OldBrewingInterface
+@onready var brewing_interface = %BrewingInterface
 
 func _ready():
 	Dialogic.signal_event.connect(_on_dialogic_signal_event)
 	Dialogic.timeline_ended.connect(_on_dialogic_timeline_ended)
-	brewing_interface.connect("drink_delivered", _on_drink_delivered)
-	
+	brewing_interface.drink_delivered.connect(_on_drink_delivered)
+
 	MusicPlayer.set_current($Music)
 	_start_events()
 
@@ -31,9 +31,9 @@ func play_character_animation(char_index : int, animation_name : String) -> void
 func change_camera(camera_index : int) -> void:
 	if $Cameras.get_child_count() <= camera_index: # não possui a camera tal
 		print_debug("WARN: Invalid camera index: %d" % camera_index)
-		return 
+		return
 	var picked_camera : Camera3D = $Cameras.get_child(camera_index)
-	
+
 	picked_camera.make_current()
 
 
@@ -48,7 +48,7 @@ func _on_dialogic_timeline_ended() -> void:
 	print_debug("fim da timeline")
 	## TODO: alguns eventos podem não requerir drinks (motivos de plot)
 	## Decidir uma forma de tratar esses eventos (por exemplo, ligar a flag pelo dialogic)
-	# se não houve entrega de drink, 
+	# se não houve entrega de drink,
 	if is_drink_delivered:
 		#do_next_event
 		print_debug("indo pra próxima")
@@ -81,7 +81,7 @@ func _finish_scene() -> void:
 func _debug_key_input(key_event : InputEventKey):
 	if not key_event.pressed: return
 	if key_event.echo: return
-	
+
 	if key_event.keycode == KEY_F:
 		barista_event._debug_receive_drink(false)
 		is_drink_delivered = true

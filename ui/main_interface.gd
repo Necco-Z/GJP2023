@@ -110,8 +110,7 @@ func _on_start_over() -> void:
 
 func _on_deliver() -> void:
 	var result : DrinkRecipe = GlobalResources.compare_player_recipe(current_recipe)
-	# TODO: interagir com Dialogic
 	current_recipe = null
 	_update_drink()
 	await hide_interface()
-	drink_delivered.emit()
+	drink_delivered.emit(result)

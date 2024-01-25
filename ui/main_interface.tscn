@@ -20,7 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://dng6sdq8q556v" path="res://assets/sprites/brewing_interface/start_over_hover.png" id="15_fwewy"]
 [ext_resource type="Texture2D" uid="uid://dwoyx7kybbjmd" path="res://assets/sprites/brewing_interface/start_over_disabled.png" id="16_ldohp"]
 
-[node name="MainInterface" type="Control"]
+[node name="BrewinginInterface" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

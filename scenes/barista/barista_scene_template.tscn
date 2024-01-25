@@ -19,15 +19,11 @@ stream = ExtResource("2_agqri")
 
 [node name="Cameras" type="Node3D" parent="."]
 
-[node name="Interfaces" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Interfaces" type="CanvasLayer" parent="."]
+layer = 15
 
-[node name="OldBrewingInterface" parent="Interfaces" instance=ExtResource("2_fm1yk")]
-layout_mode = 1
+[node name="BrewingInterface" parent="Interfaces" instance=ExtResource("2_fm1yk")]
+unique_name_in_owner = true
+start_hidden = true
 
 [node name="ScreenspaceShaders" parent="." instance=ExtResource("4_tb66k")]

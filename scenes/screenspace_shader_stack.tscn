@@ -53,7 +53,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-metadata/_edit_use_anchors_ = true
+mouse_filter = 2
 
 [node name="Blur" type="BackBufferCopy" parent="Control"]
 copy_mode = 2
@@ -66,7 +66,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-metadata/_edit_use_anchors_ = true
+mouse_filter = 2
 
 [node name="Grain2" type="BackBufferCopy" parent="Control"]
 visible = false
@@ -80,6 +80,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="TV" type="BackBufferCopy" parent="Control"]
 copy_mode = 2
@@ -92,3 +93,4 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
