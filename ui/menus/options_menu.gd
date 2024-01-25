@@ -28,7 +28,7 @@ func load_configs_into_tabs() -> void:
 
 func load_video_configs() -> void:
 	var configs = ConfigsManager.configs
-	
+
 	#### WINDOW ####
 	var res_btn : OptionButton = %ScreenResolution/Option
 	var res_string := "%dx%d" % [configs.WINDOW_WIDTH, configs.WINDOW_HEIGHT]
@@ -41,27 +41,27 @@ func load_video_configs() -> void:
 		if display_btn.get_item_id(index) == configs.WINDOW_DISPLAY_MODE:
 			display_btn.select(index)
 			break
-	
+
 	#### SHADERS ####
 
 
 
 func apply_video_changes() -> void:
 	var configs = ConfigsManager.configs
-	
+
 	#### WINDOW ####
 	var chosen_resolution = %ScreenResolution/Option.get_item_text(%ScreenResolution/Option.selected)
 	configs.WINDOW_WIDTH = resolutions_dict[chosen_resolution].w
 	configs.WINDOW_HEIGHT = resolutions_dict[chosen_resolution].h
 	configs.WINDOW_DISPLAY_MODE = %DisplayMode/Option.get_selected_id()
-	
+
 	#if configs.WINDOW_DISPLAY_MODE == Window.Mode.MODE_FULLSCREEN:
 	#	%ScreenResolution/Option.disabled = true
 	#else:
 	#	%ScreenResolution/Option.disabled = false
-	
+
 	#### SHADERS ####
-	
+
 	ConfigsManager.apply_video_settings()
 
 
