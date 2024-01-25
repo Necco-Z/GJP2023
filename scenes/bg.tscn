@@ -246,10 +246,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0183778, 0, -0.0929852)
 [node name="amazoncafe_arvore" parent="." instance=ExtResource("3_r8lst")]
 transform = Transform3D(0.0348239, 0, 0.839278, 0, 0.84, 0, -0.839278, 0, 0.0348239, -4.17559, 0.176439, 1.57625)
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.972785, -0.0400539, 0.228219, 0, 0.984946, 0.172864, -0.231708, -0.16816, 0.958141, 4.66524, 1.94163, 4.05561)
-fov = 43.3
-
 [node name="amazoncafe_balcao" parent="." instance=ExtResource("4_wr6s3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.50109, 0, 3.68259)
 
@@ -263,7 +259,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.66084, 0.964307, -1.38426)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.88858, 0.964307, -1.07898)
 
 [node name="amazoncafe_grafico_holografico" parent="amazoncafe_balcao" instance=ExtResource("7_usct4")]
-transform = Transform3D(-0.880833, 0, 0.473427, 0, 1, 0, -0.473427, 0, -0.880833, 1.08066, 0.932895, -1.35627)
+transform = Transform3D(-0.644752, 0, 0.346539, 0, 0.73198, 0, -0.346539, 0, -0.644752, 1.08066, 0.932895, -1.35627)
 
 [node name="amazoncafe_cafeteira" parent="amazoncafe_balcao" instance=ExtResource("11_vm7ny")]
 transform = Transform3D(0.729721, 0, -0.683745, 0, 1, 0, 0.683745, 0, 0.729721, 2.9204, 0.973561, -1.24829)
@@ -442,9 +438,11 @@ transform = Transform3D(-0.997599, 0, 0.0692515, 0, 1, 0, -0.0692515, 0, -0.9975
 
 [node name="Ivan" parent="Characters" instance=ExtResource("14_lvh3x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.23132, -2.38419e-07, 1.25819)
+visible = false
 
 [node name="Vitoria" parent="Characters" instance=ExtResource("15_6r4nm")]
 transform = Transform3D(-0.331633, 0, -0.943408, 0, 1, 0, 0.943408, 0, -0.331633, 2.64885, -0.318564, -0.426789)
+visible = false
 
 [node name="Skeleton3D" parent="Characters/Vitoria/Armature_vitoria" index="0"]
 bones/0/position = Vector3(-2.30926e-14, 1.01349, -0.093574)
