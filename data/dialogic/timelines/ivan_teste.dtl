@@ -1,26 +1,59 @@
 label START
+barista: Olá, seja bem-vindo.
+barista: Gostaria de algo para beber?
 [call_node path="root/BaristaScene" method="play_character_animation" args="["IvanAnimations", "Ivan_sentado_poses_001"]"]
-ivan: Eu sei, eu sei. não deveria estar aqui agora, mas espero que você possa me ajudar. Não estou com coragem de voltar para casa.
+ivan: Eu não sei ainda.
+ivan: Estou tendo um dia meio difícil e ao ver a loja pensei em entrar para espairecer a mente.
+barista: Se precisar de alguém para conversar, sou todos ouvidos.
+ivan: Obrigado…
+Estava precisando falar com alguém, e você me parece alguém bom nisso.
+Estou tendo problema com meus filhos.
 [call_node path="root/BaristaScene" method="play_character_animation" args="["IvanAnimations", "Ivan_sentado_poses_002"]"]
-ivan: Não entendo onde estou errando, trabalho tanto para dar o melhor para eles. ‘suspiro’
-barista: Imagino que uma bebida remanescente dos velhos tempos vá lhe fazer bem então.
-ivan: Vou querer um Café Latte.
+ivan: A minha mais velha… parece impossível, me lembro de quando ela era menor, tão doce e alegre. Adolescentes, não conseguem perceber o todo.
+ivan: Eu tenho assistido a alguns vídeos sobre como educar crianças, mas parece que não tem funcionado.
+barista: Vídeos de quem?
+ivan: De uma educadora na stream Amazonia.
+ivan: No começo parecia estar funcionando, comprei um robô babá eletrônica para cuidar deles enquanto eu estava no trabalho, recomendação dessa educadora.
+ivan: Mas agora eles não querem falar comigo.
+barista: Você me parece muito tenso e sem energia, não gostaria de pedir uma bebida enquanto conversamos?
+ivan: Me parece uma boa ideia, vou querer um Café Latte.
 [signal arg="brewing"]
 [end_timeline]
 label SUCCESS
 [call_node path="root/BaristaScene" method="play_character_animation" args="["IvanAnimations", "Ivan_sentado_poses_008"]"]
-ivan: (SUCESSO) Esse café me lembra deles, quando eu ainda era casado, eu cozinhava e fazia o café da manhã. Minha mais velha vinha até mim toda alegre e pedia para fazer café para ela também.
-barista: Já entendeu o porque dele ter ficado chateado?
-ivan: Acredito que o que o mais novo queria não era o bolo, e sim compartilhar o momento.
-ivan: Conversar com você me fez perceber que eu preciso passar um tempo com eles, talvez a mais velha também sinta isso.
-ivan: Obrigado pelo café.
+ivan: (SUCESSO) Esse café me lembra deles, quando eu ainda era casado, eu cozinhava e fazia o café da manhã.
+ivan: Minha mais velha vinha até mim toda alegre e pedia para fazer café para ela também.
+barista: Você se separou recentemente?
+ivan: Sim. E a mais velha parece não estar lidando bem com isso, e agora o mais novo também.
+ivan: Umas amigas minhas tinham me recomendado uns vídeos dessa educadora ensinando sobre como cuidar de crianças para que eles virem bons adultos.
+barista: E o que exatamente era falado nesses vídeos?
+ivan: Coisas como babá eletrônica para vigiar eles à distância, rotina com horário de alimentação e até recomendação de escolas com boa disciplina e notas.
+barista: Consigo entender por que a mais velha não gostaria disso, e quanto ao mais novo?
+ivan: Ontem foi aniversário dele...
+ivan: comprei bolo e presente para entregarem pelo correio, cheguei de madrugada e encontrei eles dormindo na sala, sem terem encostado no bolo e presente.
+ivan: Hoje de manhã fui comer do bolo e quando o meu pequeno chegou na sala e me viu comendo começou a chorar.
+ivan: Ele disse... Que me odiava.
+[call_node path="root/BaristaScene" method="play_character_animation" args="["IvanAnimations", "Ivan_sentado_poses_008"]"]
+barista: Pela sua história acho que eles queriam ter comemorado junto com você.
+ivan: Talvez...
+barista: Porque você não tenta fazer um café junto a eles e conversar, talvez consiga descobrir algo que percebeu nesses vídeos que você falou.
+barista: E se não tiver como fazer o café, pode vir para cá que eu faço um para vocês, escutar sua história me faz querer torcer por vocês
+barista: Isso se você quiser visitar meu estabelecimento de novo...
+ivan: Obrigado pela bebida e pela conversa, acho que irei tentar fazer o que você me disse, me parece algo que pode funcionar.
+ivan: Na próxima vez que nos encontrarmos irei trazer eles e tentar.
 [end_timeline]
 label FAILURE
 ivan: (FALHA) Isso não foi bem o que eu esperava...
-ivan: Acho que assim como em casa, eu não sei bem o que eu esperava vindo aqui.
-ivan: Ontem foi aniversário do mais novo, comprei um brinquedo de última geração para ele, afinal é disso que as crianças gostam, não?
-barista: Sim. Amanda, outra cliente minha, disse que comprou um dos novos modelos de Onça pra pequena dela e disse que ela enlouqueceu de alegria com o presente.
-ivan: Vou contratar alguém para diciplinar eles, se as coisas continuarem como estão eles vão ter dificuldades quando virarem adultos e tiverem que trabalhar.
-barista: Você quer conversar sobre mais alguma coisa?
-ivan: Não. Precisava beber algo para esclarecer meus pensamentos e agora vejo que preciso ser um pouco mais sério na forma como educo meus pequenos.
+ivan: Mas talvez eu precise buscar por algo diferente mesmo, tudo que tenho tentado não parece estar dando certo.
+barista: Você tem certeza?
+ivan: Sim. Ontem foi aniversário do mais novo, comprei um brinquedo de última geração para ele, sabe como ele reagiu?
+barista: Imagino que não muito bem pelo teor da conversa
+ivan: Ele sequer abriu o presente. comprei o mais caro que tinha, e que me foi recomendado em um vídeo que assisti.
+ivan: Só porque eu não pude entregar pessoalmente e mandei um carteiro entregar.
+ivan: Tinha até mesmo mandado a babá eletrônica fazer um bolo, já que eu ia chegar tarde do trabalho.
+barista: Complicado, mas já pensou em tentar entender o porquê de eles estarem agindo assim?
+ivan: Não, estou meio sem tempo por causa do trabalho. Dificil cuidar deles sozinhos.
+ivan: Conversando com você me lembrei que umas amigas me recomendaram um podcast do Tio Sam, talvez encontre alguma resposta por lá.
+ivan: Obrigado pela bebida, acho que vou para o trabalho e tentar pensar em algo enquanto assino umas papeladas.
+ivan: Até mais.
 [end_timeline]
