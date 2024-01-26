@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/classes/barista_event.gd" id="1_06mrh"]
 [ext_resource type="Resource" path="res://data/dialogic/timelines/vitoria_teste.dtl" id="1_g3kog"]
 [ext_resource type="Script" path="res://scripts/brewing_system/specific_drink_request.gd" id="2_4l4fn"]
-[ext_resource type="Resource" path="res://data/brewing_system/recipes/cha_verde_com_leite.tres" id="3_hfv2p"]
+[ext_resource type="Resource" uid="uid://daf41v6egfiu5" path="res://data/brewing_system/recipes/cha_verde_com_leite.tres" id="3_hfv2p"]
 
 [sub_resource type="Resource" id="Resource_gueek"]
 script = ExtResource("2_4l4fn")
