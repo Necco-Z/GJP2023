@@ -25,10 +25,10 @@ shader = ExtResource("4_x0suo")
 shader_parameter/vertJerkOpt = 0.0
 shader_parameter/vertMovementOpt = 0.0
 shader_parameter/bottomStaticOpt = 0.0
-shader_parameter/bottomStaticStrenth = 0.56
-shader_parameter/scalinesOpt = 0.6
-shader_parameter/rgbOffsetOpt = 0.1
-shader_parameter/horzFuzzOpt = 0.0
+shader_parameter/bottomStaticStrenth = 0.113
+shader_parameter/scalinesOpt = 1.0
+shader_parameter/rgbOffsetOpt = 0.2
+shader_parameter/horzFuzzOpt = 0.1
 
 [node name="ScreenspaceShaders" type="CanvasLayer"]
 layer = 10
