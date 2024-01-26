@@ -1,5 +1,7 @@
 extends Control
 
+signal list_opened
+
 @export var anim_time := 0.5
 
 var open_pos := 1508
@@ -20,6 +22,7 @@ var current_recipe := 0:
 func _ready() -> void:
 	bg.position.x = closed_pos
 	_set_current_recipe(current_recipe)
+	list_opened.connect(PlayerData._on_list_opened)
 	anchor_top = -1
 	anchor_bottom = 0
 
@@ -59,6 +62,7 @@ func _on_call_list_pressed() -> void:
 		t.tween_property(call_list, "rotation", PI, anim_time).set_trans(Tween.TRANS_LINEAR)
 		t.tween_property(bg, "position:x", open_pos, anim_time).set_ease(Tween.EASE_OUT)
 		is_open = true
+		list_opened.emit()
 
 
 func _on_prev_pressed() -> void:
