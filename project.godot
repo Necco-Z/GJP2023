@@ -104,5 +104,9 @@ textures/canvas_textures/default_texture_filter=0
 
 DITHERING_ENABLED={
 "type": "bool",
-"value": false
+"value": true
+}
+SCANLINES_ENABLED={
+"type": "bool",
+"value": true
 }
