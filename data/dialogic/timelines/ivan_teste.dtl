@@ -1,9 +1,11 @@
 label START
 [call_node path="root/BaristaScene" method="play_character_animation" args="["Figurante 1", "Generico_falando"]"]
 [call_node path="root/BaristaScene" method="play_character_animation" args="["IvanAnimations", "Ivan_sentado_poses_008"]"]
+[call_node path="root/BaristaScene" method="play_character_animation" args="["Ivan", "Ivan_Good_Iddle"]"]
 barista: Olá, seja bem-vindo.
 barista: Gostaria de algo para beber?
 [call_node path="root/BaristaScene" method="play_character_animation" args="["IvanAnimations", "Ivan_sentado_poses_001"]"]
+[call_node path="root/BaristaScene" method="play_character_animation" args="["Ivan", "Ivan_iddle_sad"]"]
 ivan: Eu não sei ainda.
 ivan: Estou tendo um dia meio difícil e ao ver a loja pensei em entrar para espairecer a mente.
 barista: Se precisar de alguém para conversar, sou todos ouvidos.
@@ -11,6 +13,7 @@ ivan: Obrigado…
 Estava precisando falar com alguém, e você me parece alguém bom nisso.
 Estou tendo problema com meus filhos.
 [call_node path="root/BaristaScene" method="play_character_animation" args="["IvanAnimations", "Ivan_sentado_poses_002"]"]
+[call_node path="root/BaristaScene" method="play_character_animation" args="["Ivan", "Ivan_anxious"]"]
 ivan: A minha mais velha… parece impossível, me lembro de quando ela era menor, tão doce e alegre. Adolescentes, não conseguem perceber o todo.
 ivan: Eu tenho assistido a alguns vídeos sobre como educar crianças, mas parece que não tem funcionado.
 barista: Vídeos de quem?
@@ -18,6 +21,7 @@ ivan: De uma educadora na stream Amazonia.
 ivan: No começo parecia estar funcionando, comprei um robô babá eletrônica para cuidar deles enquanto eu estava no trabalho, recomendação dessa educadora.
 ivan: Mas agora eles não querem falar comigo.
 barista: Você me parece muito tenso e sem energia, não gostaria de pedir uma bebida enquanto conversamos?
+[call_node path="root/BaristaScene" method="play_character_animation" args="["Ivan", "Ivan_Good_Iddle"]"]
 ivan: Me parece uma boa ideia, vou querer um Café Latte.
 [signal arg="brewing"]
 [end_timeline]
