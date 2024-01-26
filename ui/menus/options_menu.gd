@@ -16,6 +16,7 @@ func _ready():
 
 
 func _on_btn_return_pressed():
+	apply_video_changes()
 	ConfigsManager.save_configs()
 	Loader.load_scene("res://ui/main_menu.tscn")
 
@@ -74,4 +75,8 @@ func apply_video_changes() -> void:
 
 
 func _on_video_option_item_selected(index):
+	apply_video_changes()
+
+
+func _on_video_option_button_pressed():
 	apply_video_changes()
