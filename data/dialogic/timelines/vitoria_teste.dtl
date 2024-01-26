@@ -18,6 +18,7 @@ vitoria: Pode ser... Me vê ai um chá com duas doses de leite...
 [signal arg="brewing"]
 [end_timeline]
 label SUCCESS
+[sound path="res://assets/sfx/acerto.mp3" volume="0.0"]
 [call_node path="root/BaristaScene" method="play_character_animation" args="["VitoriaAnimations", "Vitoria_sentada_poses_004"]"]
 vitoria: Hmm... Nossa. Tão suave.
 vitoria: E bem docinho. *risada*
@@ -79,6 +80,7 @@ vitoria: Bem, preciso sair. Já fiquei por aqui demais. Obrigado pelo chá. Esta
 barista: Volte sempre.
 [end_timeline]
 label FAILURE
+[sound path="res://assets/sfx/erro.mp3" volume="0.0"]
 [call_node path="root/BaristaScene" method="play_character_animation" args="["VitoriaAnimations", "Vitoria_sentada_poses_004"]"]
 vitoria: Erm... Não foi exatamente o que pedi...
 vitoria: M-Mas é bom... Erm...

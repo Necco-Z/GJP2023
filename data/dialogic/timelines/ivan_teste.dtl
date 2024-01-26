@@ -31,6 +31,7 @@ label SUCCESS
 [call_node path="root/BaristaScene" method="play_character_animation" args="["Ivan", "Ivan_good_Coffee"]"]
 [wait time="3.7"]
 [call_node path="root/BaristaScene" method="play_character_animation" args="["IvanAnimations", "Ivan_sentado_poses_008"]"]
+[sound path="res://assets/sfx/acerto.mp3" volume="0.0"]
 ivan: Esse café me lembra deles, quando eu ainda era casado, eu cozinhava e fazia o café da manhã.
 [call_node path="root/BaristaScene" method="play_character_animation" args="["Ivan", "Ivan_Good_Iddle"]"]
 ivan: Minha mais velha vinha até mim toda alegre e pedia para fazer café para ela também.
@@ -64,6 +65,7 @@ label FAILURE
 [wait time="1.6"]
 [call_node path="root/BaristaScene" method="play_character_animation" args="["Ivan", "Ivan_bad_Coffee"]"]
 [wait time="3.0"]
+[sound path="res://assets/sfx/erro.mp3" volume="0.0"]
 [call_node path="root/BaristaScene" method="play_character_animation" args="["Ivan", "Ivan_iddle_sad"]"]
 ivan: Isso não foi bem o que eu esperava...
 ivan: Mas talvez eu precise buscar por algo diferente mesmo, tudo que tenho tentado não parece estar dando certo.

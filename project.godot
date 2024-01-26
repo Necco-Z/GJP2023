@@ -68,6 +68,11 @@ variables={
 }
 text/autocolor_names=false
 history/simple_history_enabled=false
+event_default_overrides={
+"Sound": {
+"audio_bus": "SFX"
+}
+}
 
 [display]
 
