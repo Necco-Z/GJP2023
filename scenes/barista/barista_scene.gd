@@ -24,8 +24,15 @@ func _ready():
 
 
 ## TODO
-func play_character_animation(char_index : int, animation_name : String) -> void:
-	pass
+func play_character_animation(char_name : String, animation_name : String) -> void:
+	var character = $Characters.get_node_or_null(char_name)
+	if not character:
+		print_debug("WARN: Couldn't find character: %s" % char_name)
+		return
+	
+	var anim_player : AnimationPlayer = character.get_node("AnimationPlayer")
+	anim_player.play(animation_name)
+
 
 ## TODO
 func change_camera(camera_index : int) -> void:

@@ -16,6 +16,7 @@ func _ready():
 
 
 func _on_btn_return_pressed():
+	apply_video_changes()
 	ConfigsManager.save_configs()
 	Loader.load_scene("res://ui/main_menu.tscn")
 
@@ -43,6 +44,8 @@ func load_video_configs() -> void:
 			break
 
 	#### SHADERS ####
+	%ShaderDithering/CheckButton.button_pressed = configs.SHADER_DITHERING_ENABLED
+	%ShaderScanlines/CheckButton.button_pressed = configs.SHADER_SCANLINES_ENABLED
 
 
 
@@ -61,7 +64,9 @@ func apply_video_changes() -> void:
 	#	%ScreenResolution/Option.disabled = false
 
 	#### SHADERS ####
-
+	configs.SHADER_DITHERING_ENABLED = %ShaderDithering/CheckButton.button_pressed
+	configs.SHADER_SCANLINES_ENABLED = %ShaderScanlines/CheckButton.button_pressed
+	
 	ConfigsManager.apply_video_settings()
 
 
@@ -70,4 +75,8 @@ func apply_video_changes() -> void:
 
 
 func _on_video_option_item_selected(index):
+	apply_video_changes()
+
+
+func _on_video_option_button_pressed():
 	apply_video_changes()

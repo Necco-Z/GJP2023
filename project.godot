@@ -23,6 +23,7 @@ Loader="*res://scripts/autoloads/loader.gd"
 Dialogic="*res://addons/dialogic/Other/DialogicGameHandler.gd"
 GlobalResources="*res://scripts/autoloads/global_resources.gd"
 ConfigsManager="*res://scripts/autoloads/configs/configs_manager.gd"
+AudioManager="*res://scripts/autoloads/audio_manager.gd"
 
 [dialogic]
 
@@ -102,5 +103,9 @@ textures/canvas_textures/default_texture_filter=0
 
 DITHERING_ENABLED={
 "type": "bool",
-"value": false
+"value": true
+}
+SCANLINES_ENABLED={
+"type": "bool",
+"value": true
 }
