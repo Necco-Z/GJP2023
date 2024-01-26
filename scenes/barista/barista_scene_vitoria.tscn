@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://b55wrps31iqb5"]
+[gd_scene load_steps=7 format=3 uid="uid://b55wrps31iqb5"]
 
 [ext_resource type="PackedScene" uid="uid://w13g8cvov7ss" path="res://scenes/barista/barista_scene_template.tscn" id="1_t8g51"]
 [ext_resource type="Resource" uid="uid://qwt8vmisjqji" path="res://data/barista_events/dia1_vitoria.tres" id="2_1igv7"]
 [ext_resource type="PackedScene" uid="uid://dgasuc5c34kkx" path="res://scenes/bg.tscn" id="3_fcge0"]
 [ext_resource type="PackedScene" uid="uid://d3gsuuwnkqto2" path="res://scenes/barista/barista_scene_ivan.tscn" id="3_iu3ue"]
 [ext_resource type="PackedScene" uid="uid://ce5vbspa5s40g" path="res://assets/models/characters/VitoriaAnimations.gltf" id="4_uvbkk"]
+[ext_resource type="PackedScene" uid="uid://qsfrt6ikn6a5" path="res://assets/models/characters/IvanAnimations.gltf" id="6_mgda2"]
 
 [node name="BaristaScene" instance=ExtResource("1_t8g51")]
 barista_event = ExtResource("2_1igv7")
@@ -13,7 +14,7 @@ next_scene = ExtResource("3_iu3ue")
 [node name="3Dbackground" parent="Background" index="0" instance=ExtResource("3_fcge0")]
 
 [node name="VitoriaAnimations" parent="Characters" index="0" instance=ExtResource("4_uvbkk")]
-transform = Transform3D(0.965849, 0, 0.259106, 0, 1, 0, -0.259106, 0, 0.965849, 4.57746, -0.19721, 2.00305)
+transform = Transform3D(0.984808, 0, 0.173648, 0, 1, 0, -0.173648, 0, 0.984808, 4.57746, -0.19721, 2.00305)
 
 [node name="Skeleton3D" parent="Characters/VitoriaAnimations/Armature_vitoria" index="0"]
 bones/0/position = Vector3(-2.30926e-14, 1.01349, -0.093574)
@@ -36,9 +37,33 @@ bones/16/rotation = Quaternion(0.322583, 0.691324, 0.195155, 0.616382)
 bones/17/rotation = Quaternion(0.836541, -1.17895e-07, 2.06837e-07, 0.547905)
 bones/18/rotation = Quaternion(0.569568, 1.2436e-08, 1.6006e-08, 0.821944)
 
+[node name="FiguranteCena" parent="Characters" index="1" instance=ExtResource("6_mgda2")]
+transform = Transform3D(0.0978782, 0, 0.995198, 0, 1, 0, -0.995198, 0, 0.0978782, 0.792042, -0.422449, -0.726239)
+
+[node name="Skeleton3D" parent="Characters/FiguranteCena/Armature_Ivan" index="0"]
+bones/0/position = Vector3(-5.32907e-15, 1.00784, -0.116844)
+bones/0/rotation = Quaternion(0.0673591, 1.16779e-07, -2.39492e-08, 0.997729)
+bones/1/rotation = Quaternion(-0.0165556, -2.55158e-14, -3.94717e-09, 0.999863)
+bones/2/rotation = Quaternion(0.202292, 6.66134e-16, 4.82301e-08, 0.979325)
+bones/3/rotation = Quaternion(0.295438, 1.33227e-14, 7.04378e-08, 0.955362)
+bones/4/rotation = Quaternion(-0.140924, -2.06501e-14, -3.35988e-08, 0.990021)
+bones/5/rotation = Quaternion(0.113968, 0.338281, 0.915198, 0.187059)
+bones/6/rotation = Quaternion(0.593576, 0.0286728, 0.0433376, 0.803099)
+bones/7/rotation = Quaternion(0.0429717, -0.584249, 0.0412347, 0.809386)
+bones/8/rotation = Quaternion(-0.113968, 0.338281, 0.915198, -0.187059)
+bones/9/rotation = Quaternion(0.593576, -0.0286729, -0.0433376, 0.803099)
+bones/10/rotation = Quaternion(0.0429717, 0.584249, -0.0412347, 0.809386)
+bones/11/rotation = Quaternion(0.668935, -0.400278, -0.527903, 0.337079)
+bones/12/rotation = Quaternion(-0.0103511, -0.00885959, -0.674683, 0.737982)
+bones/13/rotation = Quaternion(-0.141754, 0.345131, 0.383804, 0.84468)
+bones/14/rotation = Quaternion(0.668935, 0.400278, 0.527903, 0.337079)
+bones/15/rotation = Quaternion(-0.0103511, 0.00885957, 0.674683, 0.737982)
+bones/16/rotation = Quaternion(-0.141754, -0.345131, -0.383803, 0.844681)
+
 [node name="Camera3D" type="Camera3D" parent="Cameras" index="0"]
 transform = Transform3D(0.899573, -0.182151, 0.396975, 0, 0.908888, 0.41704, -0.43677, -0.375158, 0.817611, 5.11236, 1.89246, 3.71989)
 current = true
 fov = 70.0
 
 [editable path="Characters/VitoriaAnimations"]
+[editable path="Characters/FiguranteCena"]
