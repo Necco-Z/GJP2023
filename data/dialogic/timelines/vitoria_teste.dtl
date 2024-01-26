@@ -1,4 +1,6 @@
 label START
+[call_node path="root/BaristaScene" method="play_character_animation" args="["Figurante 2", "Generico_falando"]"]
+[call_node path="root/BaristaScene" method="play_character_animation" args="["Figurante 3", "Generico_Escutando"]"]
 [call_node path="root/BaristaScene" method="play_character_animation" args="["VitoriaAnimations", "Vitoria_sentada_poses_007"]"]
 barista: Ei. Tá tudo bem? Desde que chegou você parece ter muita coisa acontecendo aí nessa cabeça.
 vitoria: Difícil dizer o quanto eu queria que não tivesse nem 10% do que tá aqui dentro.

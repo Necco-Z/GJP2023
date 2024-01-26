@@ -1,4 +1,6 @@
 label START
+[call_node path="root/BaristaScene" method="play_character_animation" args="["Figurante 1", "Generico_falando"]"]
+[call_node path="root/BaristaScene" method="play_character_animation" args="["IvanAnimations", "Ivan_sentado_poses_008"]"]
 barista: Olá, seja bem-vindo.
 barista: Gostaria de algo para beber?
 [call_node path="root/BaristaScene" method="play_character_animation" args="["IvanAnimations", "Ivan_sentado_poses_001"]"]
