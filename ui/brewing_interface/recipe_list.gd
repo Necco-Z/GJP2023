@@ -4,6 +4,7 @@ extends Control
 
 var open_pos := 1508
 var closed_pos := 1930
+var tween_time := 0.5
 var is_open := false
 var current_recipe := 0:
 	set = _set_current_recipe
@@ -19,6 +20,24 @@ var current_recipe := 0:
 func _ready() -> void:
 	bg.position.x = closed_pos
 	_set_current_recipe(current_recipe)
+	anchor_top = -1
+	anchor_bottom = 0
+
+
+# public
+func show_interface() -> void:
+	print("mostrando interface")
+	var t = create_tween()
+	t = t.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC).set_parallel()
+	t.tween_property(self, "anchor_top", 0, tween_time)
+	t.tween_property(self, "anchor_bottom", 1, tween_time)
+
+
+func hide_interface() -> void:
+	var t = create_tween()
+	t = t.set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_CUBIC).set_parallel()
+	t.tween_property(self, "anchor_top", -1, tween_time)
+	t.tween_property(self, "anchor_bottom", 0, tween_time)
 
 
 func _set_current_recipe(value: int) -> void:
