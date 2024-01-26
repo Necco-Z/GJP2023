@@ -21,7 +21,7 @@ ivan: Me parece uma boa ideia, vou querer um Café Latte.
 [end_timeline]
 label SUCCESS
 [call_node path="root/BaristaScene" method="play_character_animation" args="["IvanAnimations", "Ivan_sentado_poses_008"]"]
-ivan: (SUCESSO) Esse café me lembra deles, quando eu ainda era casado, eu cozinhava e fazia o café da manhã.
+ivan: Esse café me lembra deles, quando eu ainda era casado, eu cozinhava e fazia o café da manhã.
 ivan: Minha mais velha vinha até mim toda alegre e pedia para fazer café para ela também.
 barista: Você se separou recentemente?
 ivan: Sim. E a mais velha parece não estar lidando bem com isso, e agora o mais novo também.
@@ -43,7 +43,7 @@ ivan: Obrigado pela bebida e pela conversa, acho que irei tentar fazer o que voc
 ivan: Na próxima vez que nos encontrarmos irei trazer eles e tentar.
 [end_timeline]
 label FAILURE
-ivan: (FALHA) Isso não foi bem o que eu esperava...
+ivan: Isso não foi bem o que eu esperava...
 ivan: Mas talvez eu precise buscar por algo diferente mesmo, tudo que tenho tentado não parece estar dando certo.
 barista: Você tem certeza?
 ivan: Sim. Ontem foi aniversário do mais novo, comprei um brinquedo de última geração para ele, sabe como ele reagiu?
