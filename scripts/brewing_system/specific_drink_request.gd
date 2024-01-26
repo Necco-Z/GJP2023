@@ -7,7 +7,7 @@ extends DrinkRequest
 
 func try_fulfill_request(drink_to_test : DrinkRecipe) -> bool:
 	for each_drink in valid_drinks:
-		if each_drink.compare_with(drink_to_test) == true: 
+		if each_drink.compare_with(drink_to_test) == true:
 			return true
-	
+
 	return false

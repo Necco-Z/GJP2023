@@ -1,11 +1,11 @@
 class_name DrinkRecipe
 extends Resource
 
-var name : String
+@export var name : String
 ## Textura com a imagem do drink quando pronto. Pode ser usado na UI e no diário.
-var texture : Texture2D
+@export var texture : Texture2D
 ## O ingrediente líquido base da bebida.
-var base : Ingredient
+@export var base : Ingredient
 ## Os ingredientes adicionais fora a base da bebida.
 @export var additives : Array[Ingredient] = [null, null]
 
