@@ -37,6 +37,7 @@ SOFTWARE.
 
 shader_type canvas_item;
 
+global uniform bool DITHERING_ENABLED;
 uniform bool is_enabled = true;
 
 uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
@@ -60,7 +61,7 @@ int dithering_pattern(ivec2 fragcoord) {
 }
 
 void fragment() {
-	if (is_enabled) {
+	if (DITHERING_ENABLED) {
 	
 		ivec2 uv = ivec2(FRAGCOORD.xy / float(resolution_scale));
 		vec3 color = texelFetch(SCREEN_TEXTURE, uv * resolution_scale, 0).rgb;
@@ -78,5 +79,7 @@ void fragment() {
 
 		// Convert back to 0 to 1.
 		COLOR.rgb = vec3(c) / float(1 << color_depth);
+	} else {
+		COLOR = texture(SCREEN_TEXTURE, SCREEN_UV);
 	}
 }
