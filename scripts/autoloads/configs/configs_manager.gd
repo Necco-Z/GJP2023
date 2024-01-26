@@ -46,5 +46,7 @@ func apply_video_settings() -> void:
 	
 	RenderingServer.global_shader_parameter_set("DITHERING_ENABLED",
 			configs.SHADER_DITHERING_ENABLED)
+	RenderingServer.global_shader_parameter_set("SCANLINES_ENABLED",
+			configs.SHADER_SCANLINES_ENABLED)
 
 

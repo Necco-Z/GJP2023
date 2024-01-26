@@ -43,6 +43,8 @@ func load_video_configs() -> void:
 			break
 	
 	#### SHADERS ####
+	%ShaderDithering/CheckButton.button_pressed = configs.SHADER_DITHERING_ENABLED
+	%ShaderScanlines/CheckButton.button_pressed = configs.SHADER_SCANLINES_ENABLED
 
 
 
@@ -61,6 +63,8 @@ func apply_video_changes() -> void:
 	#	%ScreenResolution/Option.disabled = false
 	
 	#### SHADERS ####
+	configs.SHADER_DITHERING_ENABLED = %ShaderDithering/CheckButton.button_pressed
+	configs.SHADER_SCANLINES_ENABLED = %ShaderScanlines/CheckButton.button_pressed
 	
 	ConfigsManager.apply_video_settings()
 
