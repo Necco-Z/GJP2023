@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://bu30lamndivuj"]
+[gd_scene load_steps=10 format=3 uid="uid://bu30lamndivuj"]
 
+[ext_resource type="Script" path="res://scenes/screenspace_shader_stack.gd" id="1_rimro"]
 [ext_resource type="Shader" path="res://addons/analogfeelings-godot-psx/psx_dither.gdshader" id="1_xicmx"]
 [ext_resource type="Shader" path="res://addons/GodotRetro/Screen Shaders/Aditional Shaders/Blur.gdshader" id="2_g2muq"]
 [ext_resource type="Shader" path="res://addons/GodotRetro/Screen Shaders/SimpleGrain.gdshader" id="3_rn1j6"]
@@ -32,6 +33,7 @@ shader_parameter/horzFuzzOpt = 0.1
 
 [node name="ScreenspaceShaders" type="CanvasLayer"]
 layer = 10
+script = ExtResource("1_rimro")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -43,6 +45,7 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="Dithering" type="BackBufferCopy" parent="Control"]
+unique_name_in_owner = true
 copy_mode = 2
 rect = Rect2(0, 0, 1920, 1080)
 
@@ -56,6 +59,7 @@ grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Blur" type="BackBufferCopy" parent="Control"]
+unique_name_in_owner = true
 copy_mode = 2
 rect = Rect2(0, 0, 1920, 1080)
 
@@ -82,6 +86,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TV" type="BackBufferCopy" parent="Control"]
+unique_name_in_owner = true
 copy_mode = 2
 rect = Rect2(0, 0, 1920, 1080)
 
