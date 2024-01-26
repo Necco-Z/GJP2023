@@ -22,8 +22,8 @@ stream = ExtResource("2_agqri")
 [node name="Interfaces" type="CanvasLayer" parent="."]
 layer = 15
 
-[node name="OldBrewingInterface" parent="Interfaces" instance=ExtResource("2_fm1yk")]
-visible = false
-layout_mode = 1
+[node name="BrewingInterface" parent="Interfaces" instance=ExtResource("2_fm1yk")]
+unique_name_in_owner = true
+start_hidden = true
 
 [node name="ScreenspaceShaders" parent="." instance=ExtResource("4_tb66k")]

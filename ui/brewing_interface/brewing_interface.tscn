@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://ui/brewing_interface/brewing_interface.gd" id="1_vj2th"]
 [ext_resource type="Texture2D" uid="uid://cdd532nen4h3o" path="res://assets/sprites/brewing_interface/brewing_bg_light.png" id="2_mypy1"]
-[ext_resource type="PackedScene" uid="uid://bsjde3alnlax4" path="res://ui/drink_button.tscn" id="3_bm8n4"]
+[ext_resource type="PackedScene" path="res://ui/drink_button.tscn" id="3_bm8n4"]
 [ext_resource type="Resource" uid="uid://dpxe3awlpymme" path="res://data/brewing_system/ingredients/cafe.tres" id="4_hikvk"]
 [ext_resource type="Resource" uid="uid://fgqjt2yd78cg" path="res://data/brewing_system/ingredients/cha.tres" id="5_yjusf"]
 [ext_resource type="Resource" uid="uid://ddrmancmol6qh" path="res://data/brewing_system/ingredients/leite.tres" id="6_wfso4"]

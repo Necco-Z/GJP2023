@@ -30,6 +30,7 @@ func _ready() -> void:
 
 # public
 func show_interface() -> void:
+	print("mostrando interface")
 	var t = create_tween()
 	t = t.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC).set_parallel()
 	t.tween_property(self, "anchor_top", 0, tween_time)
@@ -109,8 +110,7 @@ func _on_start_over() -> void:
 
 
 func _on_deliver() -> void:
-	var result : DrinkRecipe = GlobalResources.compare_player_recipe(current_recipe)
-	current_recipe = null
-	_update_drink()
 	await hide_interface()
-	drink_delivered.emit(result)
+	drink_delivered.emit(current_recipe)
+	print(current_recipe)
+	current_recipe = null
