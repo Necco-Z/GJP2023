@@ -11,7 +11,8 @@ extends Resource
 
 ## https://godotengine.org/article/godot-40-gets-global-and-instance-shader-uniforms/
 ## Ligar e desligar global uniforms de shaders.
-@export var SHADER_DITHERING_ENABLED := false
+@export var SHADER_DITHERING_ENABLED := true
+@export var SHADER_SCANLINES_ENABLED := true
 
 @export_category("Audio Settings")
 

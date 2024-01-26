@@ -173,4 +173,6 @@ text = "Save and Return"
 
 [connection signal="item_selected" from="MarginContainer/TabContainer/TabVideo/VideoOptions/ScreenResolution/Option" to="." method="_on_video_option_item_selected"]
 [connection signal="item_selected" from="MarginContainer/TabContainer/TabVideo/VideoOptions/DisplayMode/Option" to="." method="_on_video_option_item_selected"]
+[connection signal="pressed" from="MarginContainer/TabContainer/TabVideo/VideoOptions/ShaderDithering/CheckButton" to="." method="_on_video_option_button_pressed"]
+[connection signal="pressed" from="MarginContainer/TabContainer/TabVideo/VideoOptions/ShaderScanlines/CheckButton" to="." method="_on_video_option_button_pressed"]
 [connection signal="pressed" from="BtnReturn" to="." method="_on_btn_return_pressed"]

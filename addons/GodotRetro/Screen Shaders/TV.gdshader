@@ -6,6 +6,8 @@
 
 shader_type canvas_item;
 
+global uniform bool SCANLINES_ENABLED;
+
 uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
 
 uniform float vertJerkOpt :hint_range(0,1) = 0.2;
@@ -88,39 +90,43 @@ float staticV(vec2 uv, float time){
 
 
 void fragment(){
-	vec2 uv =  FRAGCOORD.xy / (1.0 / SCREEN_PIXEL_SIZE).xy;
-	
-	float jerkOffset = (1.0-step(snoise(vec2(TIME*1.3,5.0)),0.8))*0.05;
-	
-	float fuzzOffset = snoise(vec2(TIME*15.0,uv.y*80.0))*0.003;
-	float largeFuzzOffset = snoise(vec2(TIME*1.0,uv.y*25.0))*0.004;
-	
-	float vertMovementOn = (1.0-step(snoise(vec2(TIME*0.2,8.0)),0.4))*vertMovementOpt;
-	float vertJerk = (1.0-step(snoise(vec2(TIME*1.5,5.0)),0.6))*vertJerkOpt;
-	float vertJerk2 = (1.0-step(snoise(vec2(TIME*5.5,5.0)),0.2))*vertJerkOpt;
-	float yOffset = abs(sin(TIME)*4.0)*vertMovementOn+vertJerk*vertJerk2*0.3;
-	float _y = mod(uv.y+yOffset,1.0);
-	
-	
-	float xOffset = (fuzzOffset + largeFuzzOffset) * horzFuzzOpt;
-	
-	float staticVal = 0.0;
-	
-	for (float y = -1.0; y <= 1.0; y += 1.0) {
-		float maxDist = 5.0/200.0;
-		float dist = y/200.0;
-		staticVal += staticV(vec2(uv.x,uv.y+dist), TIME)*(maxDist-abs(dist))*1.5;
+	if (SCANLINES_ENABLED) {
+		vec2 uv =  FRAGCOORD.xy / (1.0 / SCREEN_PIXEL_SIZE).xy;
+		
+		float jerkOffset = (1.0-step(snoise(vec2(TIME*1.3,5.0)),0.8))*0.05;
+		
+		float fuzzOffset = snoise(vec2(TIME*15.0,uv.y*80.0))*0.003;
+		float largeFuzzOffset = snoise(vec2(TIME*1.0,uv.y*25.0))*0.004;
+		
+		float vertMovementOn = (1.0-step(snoise(vec2(TIME*0.2,8.0)),0.4))*vertMovementOpt;
+		float vertJerk = (1.0-step(snoise(vec2(TIME*1.5,5.0)),0.6))*vertJerkOpt;
+		float vertJerk2 = (1.0-step(snoise(vec2(TIME*5.5,5.0)),0.2))*vertJerkOpt;
+		float yOffset = abs(sin(TIME)*4.0)*vertMovementOn+vertJerk*vertJerk2*0.3;
+		float _y = mod(uv.y+yOffset,1.0);
+		
+		
+		float xOffset = (fuzzOffset + largeFuzzOffset) * horzFuzzOpt;
+		
+		float staticVal = 0.0;
+		
+		for (float y = -1.0; y <= 1.0; y += 1.0) {
+			float maxDist = 5.0/200.0;
+			float dist = y/200.0;
+			staticVal += staticV(vec2(uv.x,uv.y+dist), TIME)*(maxDist-abs(dist))*1.5;
+		}
+		
+		staticVal *= bottomStaticOpt;
+		
+		float red = texture(SCREEN_TEXTURE, vec2(uv.x + xOffset -0.01*rgbOffsetOpt,_y)).r+staticVal;
+		float green = texture(SCREEN_TEXTURE, vec2(uv.x + xOffset,_y)).g+staticVal;
+		float blue = texture(SCREEN_TEXTURE, vec2(uv.x + xOffset +0.01*rgbOffsetOpt,_y)).b+staticVal;
+		
+		vec3 color = vec3(red,green,blue);
+		float scanline = sin(uv.y*800.0)*0.04*scalinesOpt;
+		color -= scanline;
+		
+		COLOR = vec4(color,1.0);
+	} else {
+		COLOR = texture(SCREEN_TEXTURE, SCREEN_UV);
 	}
-	
-	staticVal *= bottomStaticOpt;
-	
-	float red = texture(SCREEN_TEXTURE, vec2(uv.x + xOffset -0.01*rgbOffsetOpt,_y)).r+staticVal;
-	float green = texture(SCREEN_TEXTURE, vec2(uv.x + xOffset,_y)).g+staticVal;
-	float blue = texture(SCREEN_TEXTURE, vec2(uv.x + xOffset +0.01*rgbOffsetOpt,_y)).b+staticVal;
-	
-	vec3 color = vec3(red,green,blue);
-	float scanline = sin(uv.y*800.0)*0.04*scalinesOpt;
-	color -= scanline;
-	
-	COLOR = vec4(color,1.0);
 }
