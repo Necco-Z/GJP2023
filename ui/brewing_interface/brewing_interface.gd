@@ -14,6 +14,7 @@ var current_mode := Mode.BASE:
 
 @onready var brewing_items := $BrewingItems as Control
 @onready var drink_items := $DrinkBG/DrinkItems as Control
+@onready var click_sound := $ClickSound as AudioStreamPlayer
 
 
 # built-in
@@ -26,6 +27,7 @@ func _ready() -> void:
 	$DrinkBG/StartOver.pressed.connect(_on_start_over)
 	$DrinkBG/Deliver.pressed.connect(_on_deliver)
 	_set_current_mode(current_mode)
+	_connect_sound_signals()
 
 
 # public
@@ -94,6 +96,13 @@ func _set_current_mode(mode: Mode) -> void:
 			%StartOver.disabled = false
 
 
+func _connect_sound_signals() -> void:
+	for i in brewing_items.get_children():
+		i.pressed.connect(_on_button_pressed)
+	%Deliver.pressed.connect(_on_button_pressed.bind(null))
+	%StartOver.pressed.connect(_on_button_pressed.bind(null))
+
+
 # signals
 func _on_ingredient_chosen(ingredient: Ingredient) -> void:
 	if ingredient == null:
@@ -114,3 +123,7 @@ func _on_deliver() -> void:
 	drink_delivered.emit(current_recipe)
 	print(current_recipe)
 	current_recipe = null
+
+
+func _on_button_pressed(_discarded_arg) -> void:
+	click_sound.play(0.3)
