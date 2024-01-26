@@ -22,44 +22,39 @@ stream = ExtResource("3_ycm06")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.46591, -0.247799, 1.913)
 
 [node name="Skeleton3D" parent="Characters/Ivan/Armature_coffee" index="0"]
-bones/0/rotation = Quaternion(0.322089, -5.86314e-23, -7.15182e-17, 0.946709)
+bones/0/position = Vector3(2.3622e-16, 1.06384, -0.140065)
+bones/0/rotation = Quaternion(-0.00144535, 2.3133e-17, -6.76736e-17, 0.999999)
+bones/0/scale = Vector3(0.100478, 0.100478, 0.100478)
 bones/1/rotation = Quaternion(0.00144528, -2.3133e-17, 6.76736e-17, 0.999999)
 
 [node name="Copo" parent="Characters/Ivan/Armature_coffee/Skeleton3D" index="0"]
-transform = Transform3D(0.212714, -2.84661e-20, -1.96829e-17, -1.20262e-17, 0.168204, -0.13021, 1.55817e-17, 0.13021, 0.168204, 1.25541e-19, 0.000597547, -9.27167e-05)
+transform = Transform3D(0.021373, 2.88382e-25, 1.75776e-24, -1.91851e-25, 0.021373, 3.12139e-09, -1.75776e-24, -3.12139e-09, 0.021373, 2.36217e-16, 1.06383, -0.140065)
 
 [node name="Skeleton3D" parent="Characters/Ivan/Armature_Ivan" index="0"]
-bones/0/position = Vector3(-5.32907e-15, 1.00784, -0.116844)
-bones/0/rotation = Quaternion(0.0673591, 1.16779e-07, -2.39492e-08, 0.997729)
-bones/1/rotation = Quaternion(0.20325, -8.66157e-10, -3.85095e-09, 0.979127)
-bones/2/rotation = Quaternion(0.280237, 0.0562005, -0.069854, 0.955735)
+bones/1/rotation = Quaternion(-0.0156527, -4.29085e-14, -3.73189e-09, 0.999878)
+bones/2/rotation = Quaternion(-0.0573397, 6.00945e-17, -1.36709e-08, 0.998355)
 bones/2/scale = Vector3(1, 1, 1)
-bones/3/rotation = Quaternion(0.304705, -0.177172, -0.0215713, 0.935574)
-bones/4/rotation = Quaternion(-0.183331, 0.328463, 0.00700282, 0.926527)
+bones/3/rotation = Quaternion(0.133428, 1.18706e-14, 3.18118e-08, 0.991058)
 bones/4/scale = Vector3(1, 1, 1)
-bones/5/rotation = Quaternion(0.152009, 0.785557, 0.54734, 0.245384)
+bones/5/rotation = Quaternion(0.00355752, -0.078263, 0.990596, 0.11217)
 bones/5/scale = Vector3(1, 1, 1)
-bones/6/rotation = Quaternion(0.830281, 0.0843647, -0.0880199, 0.543846)
+bones/6/rotation = Quaternion(0.142164, 0.00471417, 0.0517499, 0.988478)
 bones/6/scale = Vector3(1, 1, 1)
-bones/7/rotation = Quaternion(-0.0952912, -0.202836, 0.454818, 0.861927)
-bones/8/rotation = Quaternion(-0.257714, 0.664006, 0.46558, -0.525277)
+bones/8/rotation = Quaternion(-0.00355769, -0.078263, 0.990596, -0.11217)
 bones/8/scale = Vector3(1, 1, 1)
-bones/9/rotation = Quaternion(0.603574, -0.0363006, -0.0336191, 0.795771)
+bones/9/rotation = Quaternion(0.142164, -0.00471426, -0.0517499, 0.988478)
 bones/9/scale = Vector3(1, 1, 1)
-bones/10/rotation = Quaternion(0.111925, 0.385189, 0.237379, 0.884734)
 bones/10/scale = Vector3(1, 1, 1)
-bones/11/rotation = Quaternion(0.668935, -0.400278, -0.527903, 0.337079)
-bones/12/rotation = Quaternion(-0.0103511, -0.00885959, -0.674683, 0.737982)
+bones/12/rotation = Quaternion(-0.0136258, 0.000115693, -0.0242573, 0.999613)
 bones/12/scale = Vector3(1, 1, 1)
-bones/13/rotation = Quaternion(-0.141754, 0.345131, 0.383804, 0.84468)
-bones/14/rotation = Quaternion(0.668935, 0.400278, 0.527903, 0.337079)
-bones/15/rotation = Quaternion(-0.0103511, 0.00885957, 0.674683, 0.737982)
+bones/13/rotation = Quaternion(-0.315784, 0.0569134, 0.556313, 0.766523)
+bones/14/rotation = Quaternion(0.889548, 0.0310585, 0.455755, 0.00529033)
 bones/15/scale = Vector3(1, 1, 1)
-bones/16/rotation = Quaternion(-0.141754, -0.345131, -0.383803, 0.844681)
+bones/16/rotation = Quaternion(-0.315784, -0.0569134, -0.556313, 0.766523)
 bones/16/scale = Vector3(1, 1, 1)
 
 [node name="AnimationPlayer" parent="Characters/Ivan" index="2"]
-playback_default_blend_time = 0.5
+playback_default_blend_time = 0.4
 
 [node name="IvanAnimations" parent="Characters" index="1" instance=ExtResource("5_c0f76")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.48445, -0.216823, 1.84495)
