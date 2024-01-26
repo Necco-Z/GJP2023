@@ -40,12 +40,12 @@ func show_interface() -> void:
 
 
 func hide_interface() -> void:
+	interface_hidden.emit()
 	var t = create_tween()
 	t = t.set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_CUBIC).set_parallel()
 	t.tween_property(self, "anchor_top", -1, tween_time)
 	t.tween_property(self, "anchor_bottom", 0, tween_time)
 	await t.finished
-	interface_hidden.emit()
 
 
 # private
