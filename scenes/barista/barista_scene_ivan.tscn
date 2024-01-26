@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://d3gsuuwnkqto2"]
+[gd_scene load_steps=9 format=3 uid="uid://d3gsuuwnkqto2"]
 
 [ext_resource type="PackedScene" uid="uid://w13g8cvov7ss" path="res://scenes/barista/barista_scene_template.tscn" id="1_fj3q3"]
 [ext_resource type="Resource" uid="uid://5poteq3dy5i4" path="res://data/barista_events/dia1_ivan.tres" id="2_7tqha"]
+[ext_resource type="AudioStream" uid="uid://c6p4lc7hpj8m3" path="res://assets/music/wind no tail.wav" id="3_ycm06"]
 [ext_resource type="PackedScene" uid="uid://qsfrt6ikn6a5" path="res://assets/models/characters/IvanAnimations.gltf" id="5_c0f76"]
 [ext_resource type="PackedScene" uid="uid://dgasuc5c34kkx" path="res://scenes/bg.tscn" id="6_5v7k2"]
 [ext_resource type="PackedScene" uid="uid://cfcoo0unlbskp" path="res://assets/models/characters/figurantes/Figurante 1.gltf" id="6_6s41x"]
@@ -10,6 +11,9 @@
 
 [node name="BaristaScene" instance=ExtResource("1_fj3q3")]
 barista_event = ExtResource("2_7tqha")
+
+[node name="Music" parent="." index="0"]
+stream = ExtResource("3_ycm06")
 
 [node name="3Dbackground" parent="Background" index="0" instance=ExtResource("6_5v7k2")]
 
