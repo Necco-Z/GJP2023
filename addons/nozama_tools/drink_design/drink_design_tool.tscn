@@ -1,0 +1,187 @@
+[gd_scene load_steps=3 format=3 uid="uid://co0k57todmor0"]
+
+[ext_resource type="Script" path="res://addons/nozama_tools/drink_design/drink_design_tool.gd" id="1_hd7dg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lry4g"]
+
+[node name="DrinkDesignTool" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+script = ExtResource("1_hd7dg")
+
+[node name="Version" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "v 1.0"
+
+[node name="StatusMessage" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = -40.0
+offset_right = 600.0
+offset_bottom = -4.0
+grow_vertical = 0
+vertical_alignment = 2
+
+[node name="MainContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 4
+
+[node name="Title" type="Label" parent="MainContainer"]
+layout_mode = 2
+text = "Ferramenta de design de drinks"
+label_settings = SubResource("LabelSettings_lry4g")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buttons" type="HBoxContainer" parent="MainContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="New" type="Button" parent="MainContainer/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Novo"
+
+[node name="Load" type="Button" parent="MainContainer/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Carregar"
+
+[node name="Save" type="Button" parent="MainContainer/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Salvar"
+
+[node name="Columns" type="HBoxContainer" parent="MainContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="LeftColumn" type="VBoxContainer" parent="MainContainer/Columns"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="DrinkNameLabel" type="Label" parent="MainContainer/Columns/LeftColumn"]
+layout_mode = 2
+text = "--- Nome do drink"
+
+[node name="DrinkName" type="LineEdit" parent="MainContainer/Columns/LeftColumn" groups=["tool_field"]]
+unique_name_in_owner = true
+layout_mode = 2
+placeholder_text = "Nome aqui"
+
+[node name="HSeparator" type="HSeparator" parent="MainContainer/Columns/LeftColumn"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="DrinkImageLabel" type="Label" parent="MainContainer/Columns/LeftColumn"]
+layout_mode = 2
+text = "--- Imagem do drink (ainda não implementado)"
+
+[node name="DrinkImageButton" type="Button" parent="MainContainer/Columns/LeftColumn"]
+layout_mode = 2
+size_flags_vertical = 3
+disabled = true
+
+[node name="DrinkImage" type="TextureRect" parent="MainContainer/Columns/LeftColumn/DrinkImageButton" groups=["tool_field"]]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+mouse_filter = 2
+stretch_mode = 5
+
+[node name="VSeparator" type="VSeparator" parent="MainContainer/Columns"]
+layout_mode = 2
+
+[node name="RightColumn" type="VBoxContainer" parent="MainContainer/Columns"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="IngredientsLabel" type="Label" parent="MainContainer/Columns/RightColumn"]
+layout_mode = 2
+text = "--- Ingredientes:"
+
+[node name="BaseLabel" type="Label" parent="MainContainer/Columns/RightColumn"]
+layout_mode = 2
+text = "Base"
+
+[node name="BaseIngredient" type="OptionButton" parent="MainContainer/Columns/RightColumn" groups=["tool_field"]]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Ing1Label" type="Label" parent="MainContainer/Columns/RightColumn"]
+layout_mode = 2
+text = "Extra 1"
+
+[node name="ExtraIngredient1" type="OptionButton" parent="MainContainer/Columns/RightColumn" groups=["tool_field"]]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Ing2Label" type="Label" parent="MainContainer/Columns/RightColumn"]
+layout_mode = 2
+text = "Extra 2"
+
+[node name="ExtraIngredient2" type="OptionButton" parent="MainContainer/Columns/RightColumn" groups=["tool_field"]]
+unique_name_in_owner = true
+layout_mode = 2
+disabled = true
+fit_to_longest_item = false
+
+[node name="HSeparator" type="HSeparator" parent="MainContainer/Columns/RightColumn"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="AspectsLabel" type="Label" parent="MainContainer/Columns/RightColumn"]
+layout_mode = 2
+text = "--- Aspecto:"
+
+[node name="AspectDetails" type="Label" parent="MainContainer/Columns/RightColumn" groups=["tool_field"]]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[connection signal="pressed" from="MainContainer/Buttons/New" to="." method="_on_new_pressed"]
+[connection signal="pressed" from="MainContainer/Buttons/Load" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="MainContainer/Buttons/Save" to="." method="_on_save_pressed"]
+[connection signal="text_changed" from="MainContainer/Columns/LeftColumn/DrinkName" to="." method="_on_drink_name_text_changed"]
+[connection signal="item_selected" from="MainContainer/Columns/RightColumn/BaseIngredient" to="." method="_on_base_ingredient_item_selected"]
+[connection signal="item_selected" from="MainContainer/Columns/RightColumn/ExtraIngredient1" to="." method="_on_extra_ingredient_1_item_selected"]
+[connection signal="item_selected" from="MainContainer/Columns/RightColumn/ExtraIngredient2" to="." method="_on_extra_ingredient_2_item_selected"]

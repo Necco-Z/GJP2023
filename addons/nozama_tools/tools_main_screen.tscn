@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1grtskw3xuj6"]
+
+[ext_resource type="Script" path="res://addons/nozama_tools/tools_main_screen.gd" id="1_rwn0y"]
+[ext_resource type="PackedScene" uid="uid://co0k57todmor0" path="res://addons/nozama_tools/drink_design/drink_design_tool.tscn" id="1_ufhbm"]
+
+[node name="ToolsMainScreen" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+color = Color(0, 0, 0, 1)
+script = ExtResource("1_rwn0y")
+
+[node name="MainContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="MainContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Nozama tools"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TabContainer" type="TabContainer" parent="MainContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="DrinkDesignTool" parent="MainContainer/TabContainer" instance=ExtResource("1_ufhbm")]
+layout_mode = 2
+metadata/_tab_name = "Drink Design Tool"
