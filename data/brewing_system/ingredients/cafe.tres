@@ -1,13 +1,18 @@
-[gd_resource type="Resource" script_class="Ingredient" load_steps=2 format=3 uid="uid://dpxe3awlpymme"]
+[gd_resource type="Resource" script_class="Ingredient" load_steps=3 format=3 uid="uid://dpxe3awlpymme"]
 
+[ext_resource type="Texture2D" uid="uid://c1ipvn2sgr5rn" path="res://assets/sprites/drinks/coffee.png" id="1_kradt"]
 [ext_resource type="Script" path="res://scripts/brewing_system/ingredient.gd" id="1_qmf5o"]
 
 [resource]
 script = ExtResource("1_qmf5o")
 name = "Café"
+icon = ExtResource("1_kradt")
 is_base = true
-flavor_sweet = 0
-flavor_bitter = 3
-flavor_smooth = 0
-flavor_warm = 4
-flavor_fresh = 0
+can_be_additive = false
+aspects_dict = {
+0: 0,
+1: 3,
+2: 0,
+3: 4,
+4: 0
+}

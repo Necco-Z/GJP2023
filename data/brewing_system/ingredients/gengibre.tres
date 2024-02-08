@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Ingredient" load_steps=2 format=3 uid="uid://bieedxax03bat"]
+
+[ext_resource type="Script" path="res://scripts/brewing_system/ingredient.gd" id="1_51brg"]
+
+[resource]
+script = ExtResource("1_51brg")
+name = "Gengibre"
+is_base = false
+can_be_additive = false
+aspects_dict = {
+0: 0,
+1: 0,
+2: 0,
+3: 0,
+4: 0
+}

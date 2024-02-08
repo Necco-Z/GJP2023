@@ -4,6 +4,8 @@ enum Mode {SAVE, LOAD}
 
 var current_drink: DrinkRecipe
 var current_mode := Mode.SAVE
+var aspects := ["sweet", "bitter", "smooth", "warm", "fresh"]
+var status_tween : Tween
 
 @onready var drink_name := %DrinkName as LineEdit
 @onready var drink_image := %DrinkImage as TextureRect
@@ -21,7 +23,7 @@ func _ready() -> void:
 	for i in GlobalResources.ingredients_list:
 		if i.is_base:
 			base_ingredient.add_item(i.name)
-			if i.is_milk:
+			if i.can_be_additive:
 				extra_ingredient_1.add_item(i.name)
 				extra_ingredient_2.add_item(i.name)
 		else:
@@ -44,8 +46,12 @@ func _clear_fields() -> void:
 
 func _set_status(msg: String) -> void:
 	status_message.text = msg
-	await get_tree().create_timer(4.0).timeout
-	status_message.text = ""
+	if status_tween != null:
+		status_tween.kill()
+	status_tween = create_tween()
+	status_tween.tween_property(status_message, "text", msg, 0.05)
+	status_tween.tween_interval(3.0)
+	status_tween.tween_property(status_message, "text", "", 0.05)
 
 
 func _load_recipe(recipe: DrinkRecipe) -> void:
@@ -74,11 +80,25 @@ func _load_recipe(recipe: DrinkRecipe) -> void:
 
 func _load_aspects() -> void:
 	var t = ""
-	var aspects = current_drink.get_aspects()
-	for a in aspects:
-		t += a + ": " + str(aspects[a]) + "\n"
+	var drink_aspects = current_drink.get_aspects()
+	for a in drink_aspects:
+		t += aspects[a] + ": " + str(drink_aspects[a]) + "\n"
 	t = t.trim_suffix("\n")
 	aspect_details.text = t
+
+
+## Retorna uma string vazia se não houver erros
+func _check_drink_validity() -> String:
+	var t = ""
+	if drink_name.text == "":
+		t = "Nenhum nome dado à bebida"
+	elif base_ingredient.selected < 0:
+		t = "Bebida sem ingrediente base"
+	elif extra_ingredient_1.selected < 0 or extra_ingredient_2.selected < 0:
+		t = "Bebida precisa ter dois ingredientes adicionais"
+	if t != "":
+		t += " - não foi possível salvar."
+	return t
 
 
 ## Signals
@@ -93,11 +113,9 @@ func _on_load_pressed() -> void:
 
 
 func _on_save_pressed() -> void:
-	if drink_name.text == "":
-		_set_status("Nenhum nome dado à bebida - não foi possível salvar.")
-		return
-	if base_ingredient.selected < 0:
-		_set_status("Bebida sem ingrediente base - não foi possível salvar.")
+	var t = _check_drink_validity()
+	if t != "":
+		_set_status(t)
 		return
 	current_mode = Mode.SAVE
 	file_dialog.file_mode = FileDialog.FILE_MODE_SAVE_FILE
@@ -130,10 +148,10 @@ func _on_base_ingredient_item_selected(index: int) -> void:
 
 
 func _on_extra_ingredient_1_item_selected(index: int) -> void:
-	if index < 1:
+	if index < 0:
 		extra_ingredient_2.select(-1)
 		extra_ingredient_2.disabled = true
-		current_drink.additives.resize(0)
+		current_drink.additives[0] = null
 	else:
 		extra_ingredient_2.disabled = false
 		var selected = extra_ingredient_1.get_item_text(index)
@@ -145,8 +163,8 @@ func _on_extra_ingredient_1_item_selected(index: int) -> void:
 
 
 func _on_extra_ingredient_2_item_selected(index: int) -> void:
-	if index < 1:
-		current_drink.additives[0] = null
+	if index < 0:
+		current_drink.additives[1] = null
 	else:
 		var selected = extra_ingredient_2.get_item_text(index)
 		for i in GlobalResources.ingredients_list:

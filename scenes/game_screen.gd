@@ -6,8 +6,9 @@ var timeline_list := ["ivan", "vitoria"]
 var current_timeline := ""
 var dialog : Node
 
-@onready var interface = $UI/MainInterface
-@onready var bg = get_node("BG/3Dbackground")
+
+@export var bg : Node
+@export var interface : Node
 
 
 func _ready() -> void:

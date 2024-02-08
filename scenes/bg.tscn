@@ -1,8 +1,10 @@
-[gd_scene load_steps=21 format=3 uid="uid://dgasuc5c34kkx"]
+[gd_scene load_steps=32 format=3 uid="uid://dgasuc5c34kkx"]
 
 [ext_resource type="Script" path="res://scenes/bg.gd" id="1_io8xe"]
 [ext_resource type="PackedScene" uid="uid://cy88nmejb4ot8" path="res://assets/models/chao_e_paredes/amazoncafe_chao_e_paredes.gltf" id="2_8l181"]
+[ext_resource type="Texture2D" uid="uid://urbr5g12mdiw" path="res://assets/models/chao_e_paredes/amazoncafe_chao_e_paredes_tex_parede2.png" id="3_8gbkw"]
 [ext_resource type="PackedScene" uid="uid://dqg1x8alw3ysp" path="res://assets/models/arvore/amazoncafe_arvore.gltf" id="3_r8lst"]
+[ext_resource type="Texture2D" uid="uid://dkq4fvf5xq5nd" path="res://assets/models/chao_e_paredes/amazoncafe_chao_e_paredes_tex_parede.png" id="4_3bbey"]
 [ext_resource type="PackedScene" uid="uid://dr2d4cj3xprfo" path="res://assets/models/balcao/amazoncafe_balcao.glb" id="4_wr6s3"]
 [ext_resource type="PackedScene" uid="uid://b6hwasm0wfn8s" path="res://assets/models/copo/amazoncafe_copo.gltf" id="5_hp7ut"]
 [ext_resource type="PackedScene" uid="uid://bpk2v1c1nthpk" path="res://assets/models/mesao_janela/amazoncafe_mesa_janela.glb" id="5_sl4m3"]
@@ -16,6 +18,86 @@
 [ext_resource type="PackedScene" uid="uid://c6wy1dq1x00r5" path="res://assets/models/capivara/amazonfaca_capivara.gltf" id="13_hyj4c"]
 [ext_resource type="PackedScene" uid="uid://qsfrt6ikn6a5" path="res://assets/models/characters/IvanAnimations.gltf" id="14_lvh3x"]
 [ext_resource type="PackedScene" uid="uid://dud8hcd58patx" path="res://actors/vitoria.tscn" id="15_6r4nm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x3y8l"]
+resource_name = "Parede2"
+cull_mode = 2
+albedo_color = Color(0, 0, 0, 1)
+metallic = 1.0
+emission_enabled = true
+emission_texture = ExtResource("3_8gbkw")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_vwp4d"]
+_surfaces = [{
+"aabb": AABB(7.94609, 0, -14.5721, 0.776523, 8.25501, 33.8921),
+"format": 34896613377,
+"index_count": 54,
+"index_data": PackedByteArray(4, 0, 13, 0, 3, 0, 13, 0, 1, 0, 14, 0, 13, 0, 4, 0, 1, 0, 8, 0, 11, 0, 0, 0, 8, 0, 12, 0, 11, 0, 2, 0, 13, 0, 15, 0, 2, 0, 3, 0, 13, 0, 2, 0, 5, 0, 3, 0, 2, 0, 7, 0, 5, 0, 3, 0, 6, 0, 4, 0, 3, 0, 5, 0, 6, 0, 4, 0, 10, 0, 9, 0, 4, 0, 6, 0, 10, 0, 1, 0, 9, 0, 8, 0, 1, 0, 4, 0, 9, 0, 13, 0, 17, 0, 15, 0, 13, 0, 16, 0, 17, 0, 14, 0, 16, 0, 13, 0),
+"name": "Parede2",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 18,
+"vertex_data": PackedByteArray(42, 89, 0, 0, 0, 0, 0, 0, 42, 89, 255, 255, 0, 0, 0, 0, 42, 89, 4, 49, 174, 119, 0, 0, 42, 89, 73, 197, 174, 119, 0, 0, 42, 89, 73, 197, 15, 14, 0, 0, 255, 255, 73, 197, 174, 119, 0, 0, 255, 255, 73, 197, 15, 14, 0, 0, 255, 255, 4, 49, 174, 119, 0, 0, 42, 89, 4, 49, 0, 0, 0, 0, 42, 89, 4, 49, 15, 14, 0, 0, 255, 255, 4, 49, 15, 14, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 49, 0, 0, 0, 0, 42, 89, 90, 202, 34, 131, 0, 0, 42, 89, 255, 255, 34, 131, 0, 0, 42, 89, 4, 49, 34, 131, 0, 0, 42, 89, 255, 255, 255, 255, 0, 0, 42, 89, 4, 49, 255, 255, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_wt2t1"]
+resource_name = "amazoncafe_chao_e_paredes_Cube_002"
+_surfaces = [{
+"aabb": AABB(7.94609, 0, -14.5721, 0.776523, 8.25501, 33.8921),
+"attribute_data": PackedByteArray(194, 206, 227, 241, 255, 255, 76, 188, 12, 173, 160, 231, 194, 206, 160, 231, 12, 173, 150, 200, 194, 206, 255, 255, 194, 206, 150, 200, 64, 246, 150, 200, 194, 206, 55, 165, 194, 206, 150, 200, 104, 209, 255, 255, 104, 209, 150, 200, 104, 209, 55, 165, 104, 209, 150, 200, 104, 209, 160, 231, 255, 255, 160, 231, 194, 206, 160, 231, 64, 246, 160, 231, 194, 206, 160, 231, 104, 209, 160, 231, 88, 205, 227, 241, 88, 205, 160, 231, 228, 164, 135, 199, 228, 164, 76, 188, 138, 165, 160, 231, 146, 78, 76, 188, 146, 78, 160, 231, 228, 164, 135, 199, 228, 164, 76, 188, 138, 165, 160, 231),
+"format": 34896613399,
+"index_count": 54,
+"index_data": PackedByteArray(7, 0, 22, 0, 4, 0, 22, 0, 1, 0, 23, 0, 22, 0, 7, 0, 1, 0, 16, 0, 20, 0, 0, 0, 16, 0, 21, 0, 20, 0, 2, 0, 22, 0, 24, 0, 2, 0, 4, 0, 22, 0, 3, 0, 11, 0, 6, 0, 3, 0, 14, 0, 11, 0, 5, 0, 12, 0, 8, 0, 5, 0, 10, 0, 12, 0, 9, 0, 19, 0, 18, 0, 9, 0, 13, 0, 19, 0, 1, 0, 17, 0, 15, 0, 1, 0, 7, 0, 17, 0, 27, 0, 26, 0, 29, 0, 27, 0, 25, 0, 26, 0, 28, 0, 25, 0, 27, 0),
+"material": SubResource("StandardMaterial3D_x3y8l"),
+"name": "Parede2",
+"primitive": 3,
+"uv_scale": Vector4(1.93757, 1.56241, 0, 0),
+"vertex_count": 30,
+"vertex_data": PackedByteArray(42, 89, 0, 0, 0, 0, 0, 0, 42, 89, 255, 255, 0, 0, 0, 0, 42, 89, 4, 49, 174, 119, 0, 0, 42, 89, 4, 49, 174, 119, 0, 0, 42, 89, 73, 197, 174, 119, 0, 0, 42, 89, 73, 197, 174, 119, 255, 63, 42, 89, 73, 197, 174, 119, 0, 0, 42, 89, 73, 197, 15, 14, 0, 0, 42, 89, 73, 197, 15, 14, 255, 63, 42, 89, 73, 197, 15, 14, 255, 127, 255, 255, 73, 197, 174, 119, 255, 63, 255, 255, 73, 197, 174, 119, 0, 0, 255, 255, 73, 197, 15, 14, 255, 63, 255, 255, 73, 197, 15, 14, 255, 127, 255, 255, 4, 49, 174, 119, 0, 0, 42, 89, 4, 49, 0, 0, 0, 0, 42, 89, 4, 49, 0, 0, 0, 0, 42, 89, 4, 49, 15, 14, 0, 0, 42, 89, 4, 49, 15, 14, 255, 127, 255, 255, 4, 49, 15, 14, 255, 127, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 49, 0, 0, 0, 0, 42, 89, 90, 202, 34, 131, 0, 0, 42, 89, 255, 255, 34, 131, 0, 0, 42, 89, 4, 49, 34, 131, 0, 0, 42, 89, 255, 255, 255, 255, 0, 0, 42, 89, 4, 49, 255, 255, 0, 0, 42, 89, 90, 202, 34, 131, 0, 0, 42, 89, 255, 255, 34, 131, 0, 0, 42, 89, 4, 49, 34, 131, 0, 0, 255, 255, 255, 127, 255, 63, 255, 127, 255, 63, 255, 127, 255, 255, 255, 127, 255, 63, 255, 127, 0, 0, 255, 127, 255, 255, 255, 127, 255, 63, 255, 127, 0, 0, 255, 127, 255, 127, 255, 255, 0, 0, 255, 127, 255, 255, 255, 127, 0, 0, 255, 127, 255, 127, 255, 255, 255, 255, 255, 127, 255, 63, 255, 127, 255, 255, 255, 127, 255, 63, 255, 127, 255, 127, 255, 255, 255, 127, 255, 255, 255, 255, 255, 127, 255, 255, 255, 127, 255, 63, 255, 127, 255, 63, 255, 127, 255, 63, 255, 127, 255, 63, 255, 127, 255, 63, 255, 127, 255, 63, 255, 127, 255, 63, 255, 127, 255, 63, 255, 127)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_vwp4d")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x3v44"]
+resource_name = "parede madeira"
+cull_mode = 2
+albedo_color = Color(0, 0, 0, 1)
+metallic = 1.0
+emission_enabled = true
+emission_texture = ExtResource("4_3bbey")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_up60m"]
+_surfaces = [{
+"aabb": AABB(7.94609, 0, -14.5721, 0.776523, 1.58068, 33.8921),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray(4, 0, 2, 0, 0, 0, 4, 0, 5, 0, 2, 0, 0, 0, 11, 0, 4, 0, 0, 0, 8, 0, 11, 0, 10, 0, 11, 0, 6, 0, 11, 0, 7, 0, 6, 0, 11, 0, 8, 0, 7, 0, 8, 0, 9, 0, 7, 0, 1, 0, 8, 0, 0, 0, 1, 0, 9, 0, 8, 0, 4, 0, 10, 0, 3, 0, 4, 0, 11, 0, 10, 0),
+"name": "parede madeira",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray(42, 89, 254, 255, 174, 119, 0, 0, 42, 89, 254, 255, 255, 255, 0, 0, 255, 255, 254, 255, 174, 119, 0, 0, 42, 89, 254, 255, 0, 0, 0, 0, 42, 89, 254, 255, 15, 14, 0, 0, 255, 255, 254, 255, 15, 14, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 254, 255, 174, 119, 0, 0, 0, 0, 254, 255, 255, 255, 0, 0, 0, 0, 254, 255, 0, 0, 0, 0, 0, 0, 254, 255, 15, 14, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_36owx"]
+resource_name = "amazoncafe_chao_e_paredes_Cube_006"
+_surfaces = [{
+"aabb": AABB(7.94609, 0, -14.5721, 0.776523, 1.58068, 33.8921),
+"attribute_data": PackedByteArray(21, 255, 88, 204, 21, 255, 131, 145, 96, 253, 88, 204, 21, 255, 255, 255, 21, 255, 237, 249, 96, 253, 237, 249, 145, 255, 199, 141, 252, 49, 121, 141, 120, 159, 94, 132, 255, 255, 88, 204, 0, 50, 53, 132, 255, 255, 131, 145, 149, 255, 131, 132, 255, 255, 255, 255, 74, 244, 126, 132, 255, 255, 237, 249),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray(4, 0, 2, 0, 0, 0, 4, 0, 5, 0, 2, 0, 0, 0, 15, 0, 4, 0, 0, 0, 9, 0, 15, 0, 12, 0, 14, 0, 6, 0, 14, 0, 7, 0, 6, 0, 14, 0, 8, 0, 7, 0, 8, 0, 10, 0, 7, 0, 1, 0, 9, 0, 0, 0, 1, 0, 11, 0, 9, 0, 4, 0, 13, 0, 3, 0, 4, 0, 15, 0, 13, 0),
+"material": SubResource("StandardMaterial3D_x3v44"),
+"name": "parede madeira",
+"primitive": 3,
+"uv_scale": Vector4(1.90402, 1.96966, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray(42, 89, 254, 255, 174, 119, 255, 255, 42, 89, 254, 255, 255, 255, 255, 255, 255, 255, 254, 255, 174, 119, 255, 255, 42, 89, 254, 255, 0, 0, 255, 255, 42, 89, 254, 255, 15, 14, 255, 255, 255, 255, 254, 255, 15, 14, 255, 255, 0, 0, 0, 0, 0, 0, 11, 0, 0, 0, 0, 0, 255, 255, 11, 0, 0, 0, 254, 255, 174, 119, 11, 0, 0, 0, 254, 255, 174, 119, 255, 255, 0, 0, 254, 255, 255, 255, 11, 0, 0, 0, 254, 255, 255, 255, 255, 255, 0, 0, 254, 255, 0, 0, 11, 0, 0, 0, 254, 255, 0, 0, 255, 255, 0, 0, 254, 255, 15, 14, 11, 0, 0, 0, 254, 255, 15, 14, 255, 255, 255, 127, 255, 191, 255, 127, 255, 191, 255, 127, 255, 191, 255, 127, 255, 191, 255, 127, 255, 191, 255, 127, 255, 191, 242, 255, 5, 192, 242, 255, 5, 192, 242, 255, 5, 192, 255, 127, 255, 191, 242, 255, 5, 192, 255, 127, 255, 191, 242, 255, 5, 192, 255, 127, 255, 191, 242, 255, 5, 192, 255, 127, 255, 191)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_up60m")
 
 [sub_resource type="Animation" id="Animation_eyh3f"]
 length = 0.001
@@ -227,18 +309,37 @@ _data = {
 "vitoria": SubResource("Animation_h6xjb")
 }
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ci0pb"]
+
+[sub_resource type="Sky" id="Sky_58peg"]
+sky_material = SubResource("ProceduralSkyMaterial_ci0pb")
+
+[sub_resource type="Environment" id="Environment_eqn4o"]
+sky = SubResource("Sky_58peg")
+ambient_light_source = 2
+ambient_light_color = Color(0.984314, 0.909804, 0.752941, 1)
+
 [node name="3Dbackground" type="Node3D"]
 script = ExtResource("1_io8xe")
 
 [node name="amazoncafe_chao_e_paredes" parent="." instance=ExtResource("2_8l181")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0183778, 0, -0.0929852)
 
+[node name="parede leste" type="MeshInstance3D" parent="amazoncafe_chao_e_paredes/estrutura_interna" index="6"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.115668, 0, 4.82697)
+mesh = SubResource("ArrayMesh_wt2t1")
+skeleton = NodePath("")
+
+[node name="parede leste_001" type="MeshInstance3D" parent="amazoncafe_chao_e_paredes/estrutura_interna" index="7"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 4.68249)
+mesh = SubResource("ArrayMesh_36owx")
+skeleton = NodePath("")
+
 [node name="amazoncafe_arvore" parent="." instance=ExtResource("3_r8lst")]
 transform = Transform3D(0.0348239, 0, 0.839278, 0, 0.84, 0, -0.839278, 0, 0.0348239, -4.17559, 0.176439, 1.57625)
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.960918, 0.123384, -0.247814, 0.00770507, 0.882914, 0.469471, 0.276724, -0.453033, 0.847458, -1.224, 7.85, 10.175)
-fov = 43.3
+[node name="amazoncafe_arvore2" parent="." instance=ExtResource("3_r8lst")]
+transform = Transform3D(0.495661, 0, -0.185162, 0, 0.529116, 0, 0.185162, 0, 0.495661, -5.56955, 0.176439, -11.4074)
 
 [node name="amazoncafe_balcao" parent="." instance=ExtResource("4_wr6s3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.50109, 0, 3.68259)
@@ -253,7 +354,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.66084, 0.964307, -1.38426)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.88858, 0.964307, -1.07898)
 
 [node name="amazoncafe_grafico_holografico" parent="amazoncafe_balcao" instance=ExtResource("7_usct4")]
-transform = Transform3D(-0.880833, 0, 0.473427, 0, 1, 0, -0.473427, 0, -0.880833, 1.08066, 0.932895, -1.35627)
+transform = Transform3D(-0.644752, 0, 0.346539, 0, 0.73198, 0, -0.346539, 0, -0.644752, 1.08066, 0.932895, -1.35627)
 
 [node name="amazoncafe_cafeteira" parent="amazoncafe_balcao" instance=ExtResource("11_vm7ny")]
 transform = Transform3D(0.729721, 0, -0.683745, 0, 1, 0, 0.683745, 0, 0.729721, 2.9204, 0.973561, -1.24829)
@@ -414,7 +515,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3307, 0.771401, -0.641144)
 transform = Transform3D(0.0801989, 0.992986, 0.0868751, 0, 0.0871558, -0.996195, -0.996779, 0.0798937, 0.0069898, -1.31321, 0.839802, -3.62165)
 
 [node name="amazonfaca_capivara" parent="." instance=ExtResource("13_hyj4c")]
-transform = Transform3D(-0.153628, 0, 0.083806, 0, 0.175, 0, -0.083806, 0, -0.153628, -2.39691, 0.706706, 2.25652)
+transform = Transform3D(0.0735254, 0, 0.0719083, 0, 0.102843, 0, -0.0719083, 0, 0.0735254, 5.19463, 0.955941, 2.35537)
 
 [node name="amazoncafe_banco" parent="." instance=ExtResource("9_b7fub")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.25156, 0, -7.968)
@@ -432,9 +533,11 @@ transform = Transform3D(-0.997599, 0, 0.0692515, 0, 1, 0, -0.0692515, 0, -0.9975
 
 [node name="Ivan" parent="Characters" instance=ExtResource("14_lvh3x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.23132, -2.38419e-07, 1.25819)
+visible = false
 
 [node name="Vitoria" parent="Characters" instance=ExtResource("15_6r4nm")]
 transform = Transform3D(-0.331633, 0, -0.943408, 0, 1, 0, 0.943408, 0, -0.331633, 2.64885, -0.318564, -0.426789)
+visible = false
 
 [node name="Skeleton3D" parent="Characters/Vitoria/Armature_vitoria" index="0"]
 bones/0/position = Vector3(-2.30926e-14, 1.01349, -0.093574)
@@ -456,5 +559,25 @@ libraries = {
 "": SubResource("AnimationLibrary_undo2")
 }
 
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.334524, -0.61264, 0.716077, -0.0189962, 0.755316, 0.655085, -0.942196, -0.232745, 0.241034, 0.445714, 0.167687, 0.105497)
+visible = false
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_bake_mode = 0
+sky_mode = 1
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.65442, 1.56223, 2.31857)
+light_color = Color(0, 1, 1, 1)
+light_energy = 8.766
+light_specular = 0.0
+omni_range = 2.296
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_eqn4o")
+
+[editable path="amazoncafe_chao_e_paredes"]
+[editable path="amazoncafe_mesa"]
 [editable path="Characters/Ivan"]
 [editable path="Characters/Vitoria"]

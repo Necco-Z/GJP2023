@@ -1,0 +1,172 @@
+[gd_scene load_steps=21 format=3 uid="uid://dxcmyau4j1qbs"]
+
+[ext_resource type="Script" path="res://ui/brewing_interface/brewing_interface.gd" id="1_vj2th"]
+[ext_resource type="Texture2D" uid="uid://cdd532nen4h3o" path="res://assets/sprites/brewing_interface/brewing_bg_light.png" id="2_mypy1"]
+[ext_resource type="PackedScene" uid="uid://bsjde3alnlax4" path="res://ui/drink_button.tscn" id="3_bm8n4"]
+[ext_resource type="Resource" uid="uid://dpxe3awlpymme" path="res://data/brewing_system/ingredients/cafe.tres" id="4_hikvk"]
+[ext_resource type="Resource" uid="uid://fgqjt2yd78cg" path="res://data/brewing_system/ingredients/cha.tres" id="5_yjusf"]
+[ext_resource type="Resource" uid="uid://ddrmancmol6qh" path="res://data/brewing_system/ingredients/leite.tres" id="6_wfso4"]
+[ext_resource type="Resource" uid="uid://duugfxnbbymn5" path="res://data/brewing_system/ingredients/canela.tres" id="7_13rea"]
+[ext_resource type="Texture2D" uid="uid://1ki52xufkvkf" path="res://assets/sprites/brewing_interface/chosen_ingredients_bg_no_aspects.png" id="8_m1fw8"]
+[ext_resource type="Resource" uid="uid://b32rtfeyhj3lj" path="res://data/brewing_system/ingredients/mel.tres" id="8_rbpdh"]
+[ext_resource type="Texture2D" uid="uid://dh8a82pix6c0y" path="res://assets/sprites/brewing_interface/deliver_normal.png" id="9_5wm14"]
+[ext_resource type="Resource" uid="uid://bieedxax03bat" path="res://data/brewing_system/ingredients/gengibre.tres" id="9_6xdrw"]
+[ext_resource type="Texture2D" uid="uid://cenrb1fn6xjce" path="res://assets/sprites/brewing_interface/deliver_pressed.png" id="10_npw1f"]
+[ext_resource type="PackedScene" uid="uid://i07ayltxypvu" path="res://ui/brewing_interface/ingredient_tile.tscn" id="11_4l43y"]
+[ext_resource type="Texture2D" uid="uid://bs8yd1bimcwl" path="res://assets/sprites/brewing_interface/deliver_hover.png" id="11_ftdl5"]
+[ext_resource type="Texture2D" uid="uid://dkym6e248qb1s" path="res://assets/sprites/brewing_interface/deliver_disabled.png" id="12_h5myy"]
+[ext_resource type="Texture2D" uid="uid://drhiqhy51wm8y" path="res://assets/sprites/brewing_interface/start_over_normal.png" id="13_ctvsc"]
+[ext_resource type="Texture2D" uid="uid://btliv16qbyhaa" path="res://assets/sprites/brewing_interface/start_over_pressed.png" id="14_8ua42"]
+[ext_resource type="Texture2D" uid="uid://dng6sdq8q556v" path="res://assets/sprites/brewing_interface/start_over_hover.png" id="15_fwewy"]
+[ext_resource type="Texture2D" uid="uid://dwoyx7kybbjmd" path="res://assets/sprites/brewing_interface/start_over_disabled.png" id="16_ldohp"]
+[ext_resource type="AudioStream" uid="uid://2wk02j3tyswg" path="res://assets/sfx/click_2.mp3" id="20_gg5u2"]
+
+[node name="BrewingInterface" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vj2th")
+metadata/_edit_horizontal_guides_ = []
+
+[node name="BrewingItems" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 90.0
+offset_top = 90.0
+offset_right = 847.0
+offset_bottom = 627.0
+texture = ExtResource("2_mypy1")
+
+[node name="Coffee" parent="BrewingItems" instance=ExtResource("3_bm8n4")]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = 64.0
+offset_top = 86.0
+offset_right = -518.0
+offset_bottom = -290.0
+ingredient = ExtResource("4_hikvk")
+
+[node name="Tea" parent="BrewingItems" instance=ExtResource("3_bm8n4")]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = 295.0
+offset_top = 86.0
+offset_right = -287.0
+offset_bottom = -290.0
+ingredient = ExtResource("5_yjusf")
+
+[node name="Milk" parent="BrewingItems" instance=ExtResource("3_bm8n4")]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = 533.0
+offset_top = 103.0
+offset_right = -62.0
+offset_bottom = -100.0
+ingredient = ExtResource("6_wfso4")
+
+[node name="Cinnamon" parent="BrewingItems" instance=ExtResource("3_bm8n4")]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = 87.0
+offset_top = 329.0
+offset_right = -572.0
+offset_bottom = -101.0
+ingredient = ExtResource("7_13rea")
+
+[node name="Honey" parent="BrewingItems" instance=ExtResource("3_bm8n4")]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = 217.0
+offset_top = 329.0
+offset_right = -442.0
+offset_bottom = -101.0
+ingredient = ExtResource("8_rbpdh")
+
+[node name="Ginger" parent="BrewingItems" instance=ExtResource("3_bm8n4")]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = 346.0
+offset_top = 329.0
+offset_right = -313.0
+offset_bottom = -101.0
+ingredient = ExtResource("9_6xdrw")
+
+[node name="DrinkBG" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 103.0
+offset_top = -349.0
+offset_right = 833.0
+offset_bottom = -86.0
+grow_vertical = 0
+texture = ExtResource("8_m1fw8")
+
+[node name="DrinkItems" type="HBoxContainer" parent="DrinkBG"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 121.0
+offset_top = 33.0
+offset_right = -122.0
+offset_bottom = -96.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 42
+
+[node name="IngredientTile" parent="DrinkBG/DrinkItems" instance=ExtResource("11_4l43y")]
+layout_mode = 2
+
+[node name="IngredientTile2" parent="DrinkBG/DrinkItems" instance=ExtResource("11_4l43y")]
+layout_mode = 2
+
+[node name="IngredientTile3" parent="DrinkBG/DrinkItems" instance=ExtResource("11_4l43y")]
+layout_mode = 2
+
+[node name="Deliver" type="TextureButton" parent="DrinkBG"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 667.0
+offset_top = 105.0
+offset_right = -19.0
+offset_bottom = -114.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("9_5wm14")
+texture_pressed = ExtResource("10_npw1f")
+texture_hover = ExtResource("11_ftdl5")
+texture_disabled = ExtResource("12_h5myy")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="StartOver" type="TextureButton" parent="DrinkBG"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 672.0
+offset_top = 158.0
+offset_right = -26.0
+offset_bottom = -69.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("13_ctvsc")
+texture_pressed = ExtResource("14_8ua42")
+texture_hover = ExtResource("15_fwewy")
+texture_disabled = ExtResource("16_ldohp")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ClickSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_gg5u2")

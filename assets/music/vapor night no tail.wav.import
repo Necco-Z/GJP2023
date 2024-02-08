@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dw74qrv6lhua5"
+path="res://.godot/imported/vapor night no tail.wav-7e51fb32b6b4a64f4f383c22d7446c1b.sample"
+
+[deps]
+
+source_file="res://assets/music/vapor night no tail.wav"
+dest_files=["res://.godot/imported/vapor night no tail.wav-7e51fb32b6b4a64f4f383c22d7446c1b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -3,16 +3,18 @@ extends Container
 
 signal pressed
 
-@export var drink_name: String:
-	set = _set_drink_name
+@export var ingredient: Ingredient:
+	set = _set_ingredient
 @export_range(0, 20, 1, "or_greater", "suffix:px") var icon_margin := 5:
 	set = _set_icon_margin
-@export_group("Images", "image_")
-@export var image_normal: Texture2D:
-	set = _set_image_normal
-@export var image_hover: Texture2D
-@export var image_pressed: Texture2D
-@export var image_disabled: Texture2D
+@export var disabled = false:
+	set = _set_disabled
+#@export_group("Images", "image_")
+#@export var image_normal: Texture2D:
+	#set = _set_image_normal
+#@export var image_hover: Texture2D
+#@export var image_pressed: Texture2D
+#@export var image_disabled: Texture2D
 
 
 func _notification(what: int) -> void:
@@ -21,28 +23,41 @@ func _notification(what: int) -> void:
 		_set_image_size()
 
 
-func _set_image_normal(value: Texture2D) -> void:
-	image_normal = value
-	if value:
-		%Button.text = ""
+# Setters e getters
+func _set_ingredient(value: Ingredient) -> void:
+	ingredient = value
+	if ingredient != null:
+		if ingredient.icon != null:
+			%Button.text = ""
+			%Icon.texture = ingredient.icon
+		else:
+			%Button.text = ingredient.name
+			%Icon.texture = null
 	else:
-		%Button.text = drink_name
-	%Icon.texture = value
-	queue_sort()
+		%Button.text = ""
+		%Icon.texture = null
+		queue_sort()
+
+
+func _set_disabled(value: bool) -> void:
+	disabled = value
+	%Button.disabled = value
+
+
+#func _set_image_normal(value: Texture2D) -> void:
+	#image_normal = value
+	#if value:
+		#%Button.text = ""
+	#else:
+		#%Button.text = ingredient.name
+	#%Icon.texture = value
+	#queue_sort()
 
 
 func _set_icon_margin(value: int) -> void:
 	value = max(0, value)
 	icon_margin = value
 	queue_sort()
-
-
-func _set_drink_name(value: String) -> void:
-	drink_name = value
-	if %Icon.texture:
-		%Button.text = ""
-	else:
-		%Button.text = drink_name
 
 
 func _set_image_size() -> void:
@@ -59,22 +74,22 @@ func _set_image_size() -> void:
 
 
 func _on_button_pressed() -> void:
-	pressed.emit()
+	pressed.emit(ingredient)
 
 
-func _on_mouse_entered() -> void:
-	if image_hover:
-		%Icon.texture = image_hover
-		queue_sort()
+#func _on_mouse_entered() -> void:
+	#if image_hover:
+		#%Icon.texture = image_hover
+		#queue_sort()
 
 
-func _on_mouse_exited() -> void:
-	if image_normal:
-		%Icon.texture = image_normal
-		queue_sort()
+#func _on_mouse_exited() -> void:
+	#if image_normal:
+		#%Icon.texture = image_normal
+		#queue_sort()
 
 
-func _on_button_down() -> void:
-	if image_pressed:
-		%Icon.texture = image_pressed
-		queue_sort()
+#func _on_button_down() -> void:
+	#if image_pressed:
+		#%Icon.texture = image_pressed
+		#queue_sort()

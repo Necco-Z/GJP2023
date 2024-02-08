@@ -165,9 +165,6 @@ text = "Extra 1"
 [node name="ExtraIngredient1" type="OptionButton" parent="RightColumn" groups=["tool_field"]]
 unique_name_in_owner = true
 layout_mode = 2
-item_count = 1
-popup/item_0/text = "--- nenhum ---"
-popup/item_0/id = 0
 
 [node name="Ing2Label" type="Label" parent="RightColumn"]
 layout_mode = 2
@@ -177,9 +174,6 @@ text = "Extra 2"
 unique_name_in_owner = true
 layout_mode = 2
 disabled = true
-item_count = 1
-popup/item_0/text = "--- nenhum ---"
-popup/item_0/id = 0
 
 [node name="HSeparator" type="HSeparator" parent="RightColumn"]
 custom_minimum_size = Vector2(0, 20)

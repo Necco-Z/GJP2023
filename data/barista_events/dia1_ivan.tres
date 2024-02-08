@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="BaristaEvent" load_steps=6 format=3 uid="uid://5poteq3dy5i4"]
+
+[ext_resource type="Resource" path="res://data/dialogic/timelines/ivan_teste.dtl" id="1_fahx0"]
+[ext_resource type="Script" path="res://scripts/classes/barista_event.gd" id="1_ysv8r"]
+[ext_resource type="Script" path="res://scripts/brewing_system/specific_drink_request.gd" id="2_8i2xk"]
+[ext_resource type="Resource" path="res://data/brewing_system/recipes/cafe_latte.tres" id="3_1gp74"]
+
+[sub_resource type="Resource" id="Resource_hkste"]
+script = ExtResource("2_8i2xk")
+valid_drinks = Array[Resource("res://scripts/brewing_system/drink_recipe.gd")]([ExtResource("3_1gp74")])
+
+[resource]
+script = ExtResource("1_ysv8r")
+dialogic_timeline = ExtResource("1_fahx0")
+drink_request = SubResource("Resource_hkste")

@@ -1,13 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://bsjde3alnlax4"]
+[gd_scene load_steps=3 format=3 uid="uid://bsjde3alnlax4"]
 
 [ext_resource type="Script" path="res://ui/drink_button.gd" id="1_jsj3h"]
+[ext_resource type="FontFile" uid="uid://bp2muca7vksd5" path="res://assets/fonts/Play-Regular.ttf" id="2_djlth"]
 
 [node name="DrinkButton" type="Container"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -1112.0
-offset_bottom = -608.0
+offset_right = -1822.0
+offset_bottom = -973.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_jsj3h")
@@ -18,7 +19,10 @@ clip_contents = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 9
+theme_override_fonts/font = ExtResource("2_djlth")
+theme_override_font_sizes/font_size = 20
+text = "Teste"
+clip_text = true
 
 [node name="Icon" type="TextureRect" parent="."]
 unique_name_in_owner = true
@@ -27,7 +31,4 @@ mouse_filter = 2
 expand_mode = 1
 stretch_mode = 5
 
-[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
-[connection signal="button_down" from="Button" to="." method="_on_button_down"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

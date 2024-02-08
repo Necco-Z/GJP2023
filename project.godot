@@ -21,14 +21,27 @@ Fader="*res://scripts/autoloads/fader.tscn"
 MusicPlayer="*res://scripts/autoloads/music_player.gd"
 Loader="*res://scripts/autoloads/loader.gd"
 Dialogic="*res://addons/dialogic/Other/DialogicGameHandler.gd"
-Data="*res://scripts/autoloads/data.gd"
 GlobalResources="*res://scripts/autoloads/global_resources.gd"
-ConfigManager="*res://scripts/autoloads/configs/ConfigManager.gd"
+ConfigsManager="*res://scripts/autoloads/configs/configs_manager.gd"
+AudioManager="*res://scripts/autoloads/audio_manager.gd"
+PlayerData="*res://scripts/autoloads/player_data.gd"
 
 [dialogic]
 
 layout/styles={
 "Default": {
+"export_overrides": {
+"bold_font": "\"res://assets/fonts/Play-Bold.ttf\"",
+"box_modulate": "Color(0, 0, 0, 0)",
+"name_label_box_modulate": "Color(1, 1, 1, 1)",
+"name_label_box_offset": "Vector2(-40, -54)",
+"name_label_color": "Color(0.6, 1, 1, 1)",
+"name_label_font": "\"res://assets/fonts/Play-Bold.ttf\"",
+"name_label_font_size": "36.0",
+"normal_font": "\"res://assets/fonts/Play-Regular.ttf\"",
+"text_color": "Color(0.6, 1, 1, 1)",
+"text_size": "36.0"
+},
 "inherits": ""
 }
 }
@@ -54,9 +67,18 @@ variables={
 "current_drink": ""
 }
 text/autocolor_names=false
+history/simple_history_enabled=false
+event_default_overrides={
+"Sound": {
+"audio_bus": "SFX"
+}
+}
 
 [display]
 
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/resizable=false
 window/stretch/mode="canvas_items"
 
 [editor]
@@ -79,9 +101,17 @@ dialogic_default_action={
 ]
 }
 
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+
 [shader_globals]
 
 DITHERING_ENABLED={
 "type": "bool",
-"value": false
+"value": true
+}
+SCANLINES_ENABLED={
+"type": "bool",
+"value": true
 }

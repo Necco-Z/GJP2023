@@ -1,0 +1,85 @@
+label START
+[call_node path="root/BaristaScene" method="play_character_animation" args="["Figurante 1", "Generico_falando"]"]
+[call_node path="root/BaristaScene" method="play_character_animation" args="["IvanAnimations", "Ivan_sentado_poses_008"]"]
+[call_node path="root/BaristaScene" method="play_character_animation" args="["Ivan", "Ivan_iddle_normal"]"]
+barista: Olá, seja bem-vindo.
+barista: Gostaria de algo para beber?
+[call_node path="root/BaristaScene" method="play_character_animation" args="["IvanAnimations", "Ivan_sentado_poses_001"]"]
+[call_node path="root/BaristaScene" method="play_character_animation" args="["Ivan", "Ivan_iddle_sad"]"]
+ivan: Eu não sei ainda.
+ivan: Estou tendo um dia meio difícil e ao ver a loja pensei em entrar para espairecer a mente.
+barista: Se precisar de alguém para conversar, sou todos ouvidos.
+ivan: Obrigado…
+Estava precisando falar com alguém, e você me parece alguém bom nisso.
+Estou tendo problema com meus filhos.
+[call_node path="root/BaristaScene" method="play_character_animation" args="["IvanAnimations", "Ivan_sentado_poses_002"]"]
+[call_node path="root/BaristaScene" method="play_character_animation" args="["Ivan", "Ivan_anxious"]"]
+ivan: A minha mais velha… parece impossível, me lembro de quando ela era menor, tão doce e alegre. Adolescentes, não conseguem perceber o todo.
+ivan: Eu tenho assistido a alguns vídeos sobre como educar crianças, mas parece que não tem funcionado.
+barista: Vídeos de quem?
+ivan: De uma educadora na stream Amazonia.
+ivan: No começo parecia estar funcionando, comprei um robô babá eletrônica para cuidar deles enquanto eu estava no trabalho, recomendação dessa educadora.
+ivan: Mas agora eles não querem falar comigo.
+barista: Você me parece muito tenso e sem energia, não gostaria de pedir uma bebida enquanto conversamos?
+[call_node path="root/BaristaScene" method="play_character_animation" args="["Ivan", "Ivan_Good_Iddle"]"]
+ivan: Me parece uma boa ideia, vou querer um Café Latte.
+[signal arg="brewing"]
+[end_timeline]
+label SUCCESS
+[call_node path="root/BaristaScene" method="play_character_animation" args="["Ivan", "Ivan_drinking"]"]
+[wait time="1.6"]
+[call_node path="root/BaristaScene" method="play_character_animation" args="["Ivan", "Ivan_good_Coffee"]"]
+[wait time="3.7"]
+[call_node path="root/BaristaScene" method="play_character_animation" args="["IvanAnimations", "Ivan_sentado_poses_008"]"]
+[sound path="res://assets/sfx/acerto.mp3" volume="0.0"]
+ivan: Esse café me lembra deles, quando eu ainda era casado, eu cozinhava e fazia o café da manhã.
+[call_node path="root/BaristaScene" method="play_character_animation" args="["Ivan", "Ivan_Good_Iddle"]"]
+ivan: Minha mais velha vinha até mim toda alegre e pedia para fazer café para ela também.
+barista: Você se separou recentemente?
+[call_node path="root/BaristaScene" method="play_character_animation" args="["Ivan", "Ivan_iddle_normal"]"]
+ivan: Sim. E a mais velha parece não estar lidando bem com isso, e agora o mais novo também.
+ivan: Umas amigas minhas tinham me recomendado uns vídeos dessa educadora ensinando sobre como cuidar de crianças para que eles virem bons adultos.
+barista: E o que exatamente era falado nesses vídeos?
+ivan: Coisas como babá eletrônica para vigiar eles à distância, rotina com horário de alimentação e até recomendação de escolas com boa disciplina e notas.
+barista: Consigo entender por que a mais velha não gostaria disso, e quanto ao mais novo?
+ivan: Ontem foi aniversário dele...
+ivan: comprei bolo e presente para entregarem pelo correio, cheguei de madrugada e encontrei eles dormindo na sala, sem terem encostado no bolo e presente.
+ivan: Hoje de manhã fui comer do bolo e quando o meu pequeno chegou na sala e me viu comendo começou a chorar.
+[call_node path="root/BaristaScene" method="play_character_animation" args="["Ivan", "Ivan_desistindo_da_vida"]"]
+[wait time="3.0"]
+ivan: Ele disse... Que me odiava.
+[wait time="1.0" hide_text="false"]
+[call_node path="root/BaristaScene" method="play_character_animation" args="["IvanAnimations", "Ivan_sentado_poses_008"]"]
+barista: Pela sua história acho que eles queriam ter comemorado junto com você.
+[call_node path="root/BaristaScene" method="play_character_animation" args="["Ivan", "Ivan_iddle_sad"]"]
+ivan: Talvez...
+barista: Porque você não tenta fazer um café junto a eles e conversar, talvez consiga descobrir algo que percebeu nesses vídeos que você falou.
+barista: E se não tiver como fazer o café, pode vir para cá que eu faço um para vocês, escutar sua história me faz querer torcer por vocês
+barista: Isso se você quiser visitar meu estabelecimento de novo...
+[call_node path="root/BaristaScene" method="play_character_animation" args="["Ivan", "Ivan_Good_Iddle"]"]
+ivan: Obrigado pela bebida e pela conversa, acho que irei tentar fazer o que você me disse, me parece algo que pode funcionar.
+ivan: Na próxima vez que nos encontrarmos irei trazer eles e tentar.
+[end_timeline]
+label FAILURE
+[call_node path="root/BaristaScene" method="play_character_animation" args="["Ivan", "Ivan_drinking"]"]
+[wait time="1.6"]
+[call_node path="root/BaristaScene" method="play_character_animation" args="["Ivan", "Ivan_bad_Coffee"]"]
+[wait time="3.0"]
+[sound path="res://assets/sfx/erro.mp3" volume="0.0"]
+[call_node path="root/BaristaScene" method="play_character_animation" args="["Ivan", "Ivan_iddle_sad"]"]
+ivan: Isso não foi bem o que eu esperava...
+ivan: Mas talvez eu precise buscar por algo diferente mesmo, tudo que tenho tentado não parece estar dando certo.
+barista: Você tem certeza?
+ivan: Sim. Ontem foi aniversário do mais novo, comprei um brinquedo de última geração para ele, sabe como ele reagiu?
+barista: Pelo teor da conversa, imagino que não reagiu muito bem.
+[call_node path="root/BaristaScene" method="play_character_animation" args="["Ivan", "Ivan_desistindo_da_vida"]"]
+ivan: Ele sequer abriu o presente. comprei o mais caro que tinha, e que me foi recomendado em um vídeo que assisti.
+ivan: Só porque eu não pude entregar pessoalmente e mandei um carteiro entregar.
+ivan: Tinha até mesmo mandado a babá eletrônica fazer um bolo, já que eu ia chegar tarde do trabalho.
+[call_node path="root/BaristaScene" method="play_character_animation" args="["Ivan", "Ivan_iddle_sad"]"]
+barista: Complicado, mas já pensou em tentar entender o porquê de eles estarem agindo assim?
+ivan: Não, estou meio sem tempo por causa do trabalho. Dificil cuidar deles sozinhos.
+ivan: Conversando com você me lembrei que umas amigas me recomendaram um podcast do Tio Sam, talvez encontre alguma resposta por lá.
+ivan: Obrigado pela bebida, acho que vou para o trabalho e tentar pensar em algo enquanto assino umas papeladas.
+ivan: Até mais.
+[end_timeline]
