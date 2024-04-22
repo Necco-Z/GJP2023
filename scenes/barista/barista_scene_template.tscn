@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://w13g8cvov7ss"]
+[gd_scene load_steps=7 format=3 uid="uid://w13g8cvov7ss"]
 
 [ext_resource type="Script" path="res://scenes/barista/barista_scene.gd" id="1_lqw8k"]
 [ext_resource type="PackedScene" uid="uid://c5lm4v1oojhjm" path="res://ui/main_menu.tscn" id="2_1ml2t"]
 [ext_resource type="AudioStream" uid="uid://b3o3iods00umm" path="res://assets/music/game.wav" id="2_agqri"]
 [ext_resource type="PackedScene" uid="uid://dxcmyau4j1qbs" path="res://ui/brewing_interface/brewing_interface.tscn" id="2_fm1yk"]
 [ext_resource type="PackedScene" uid="uid://bu30lamndivuj" path="res://scenes/screenspace_shader_stack.tscn" id="4_tb66k"]
+[ext_resource type="PackedScene" uid="uid://tka4naqfc3cr" path="res://ui/brewing_interface/recipe_list.tscn" id="5_u2qmo"]
 
 [node name="BaristaScene" type="Node3D"]
 script = ExtResource("1_lqw8k")
@@ -25,5 +26,8 @@ layer = 15
 [node name="BrewingInterface" parent="Interfaces" instance=ExtResource("2_fm1yk")]
 unique_name_in_owner = true
 start_hidden = true
+
+[node name="RecipeList" parent="Interfaces" instance=ExtResource("5_u2qmo")]
+unique_name_in_owner = true
 
 [node name="ScreenspaceShaders" parent="." instance=ExtResource("4_tb66k")]

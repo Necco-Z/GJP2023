@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://i07ayltxypvu"]
 
 [ext_resource type="Script" path="res://ui/brewing_interface/ingredient_tile.gd" id="1_jfg7u"]
-[ext_resource type="FontFile" uid="uid://vo83uh13kejg" path="res://assets/fonts/Play-Regular.ttf" id="2_tcf22"]
+[ext_resource type="FontFile" uid="uid://bp2muca7vksd5" path="res://assets/fonts/Play-Regular.ttf" id="2_tcf22"]
 
 [node name="IngredientTile" type="Container"]
 offset_right = 134.0

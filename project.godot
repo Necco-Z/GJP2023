@@ -24,6 +24,7 @@ Dialogic="*res://addons/dialogic/Other/DialogicGameHandler.gd"
 GlobalResources="*res://scripts/autoloads/global_resources.gd"
 ConfigsManager="*res://scripts/autoloads/configs/configs_manager.gd"
 AudioManager="*res://scripts/autoloads/audio_manager.gd"
+PlayerData="*res://scripts/autoloads/player_data.gd"
 
 [dialogic]
 
@@ -86,7 +87,7 @@ movie_writer/movie_file="/home/necco/temp/test-gjp2023/gameplay.avi"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/nozama_tools/plugin.cfg")
 
 [input]
 

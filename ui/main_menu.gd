@@ -7,6 +7,9 @@ func _ready() -> void:
 	await get_tree().create_timer(0.2).timeout
 	Fader.fade_in()
 	$Buttons/Start.grab_focus()
+	if PlayerData.data.player_id != "":
+		PlayerData.save_data()
+	PlayerData.reset_data()
 
 
 func _on_start_pressed() -> void:

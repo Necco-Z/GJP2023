@@ -13,11 +13,13 @@ extends Node3D
 var is_drink_delivered : bool = false
 
 @onready var brewing_interface = %BrewingInterface
+@onready var recipe_list = %RecipeList
 
 func _ready():
 	Dialogic.signal_event.connect(_on_dialogic_signal_event)
 	Dialogic.timeline_ended.connect(_on_dialogic_timeline_ended)
 	brewing_interface.drink_delivered.connect(_on_drink_delivered)
+	brewing_interface.interface_hidden.connect(recipe_list.hide_interface)
 
 	MusicPlayer.set_current($Music)
 	_start_events()
@@ -29,7 +31,7 @@ func play_character_animation(char_name : String, animation_name : String) -> vo
 	if not character:
 		print_debug("WARN: Couldn't find character: %s" % char_name)
 		return
-	
+
 	var anim_player : AnimationPlayer = character.get_node("AnimationPlayer")
 	anim_player.play(animation_name)
 
@@ -49,6 +51,7 @@ func _on_dialogic_signal_event(argument : String) -> void:
 	match argument:
 		"brewing":
 			brewing_interface.show_interface()
+			recipe_list.show_interface()
 
 
 func _on_dialogic_timeline_ended() -> void:
