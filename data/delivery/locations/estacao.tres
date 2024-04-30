@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DeliveryLocation" load_steps=2 format=3 uid="uid://bpp5x7n5ae1v8"]
+
+[ext_resource type="Script" path="res://scripts/classes/delivery_location.gd" id="1_y845l"]
+
+[resource]
+script = ExtResource("1_y845l")
+name = "Estação do Silêncio"
+description = "Uma estação de metrô desativada, onde os sem-teto encontraram refúgio e onde as gangues realizam reuniões secretas."
+delivery_events = Array[Resource("res://scripts/classes/delivery_event.gd")]([])

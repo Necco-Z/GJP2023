@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DeliveryLocation" load_steps=2 format=3 uid="uid://dfiob2hnc1r4b"]
+
+[ext_resource type="Script" path="res://scripts/classes/delivery_location.gd" id="1_ipgao"]
+
+[resource]
+script = ExtResource("1_ipgao")
+name = "Praça da Resistência"
+description = "ma praça central onde os moradores se reúnem para discutir estratégias de sobrevivência e resistir à opressão das gangues rivais."
+delivery_events = Array[Resource("res://scripts/classes/delivery_event.gd")]([])

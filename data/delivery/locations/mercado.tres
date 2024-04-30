@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DeliveryLocation" load_steps=2 format=3 uid="uid://dhbtlf2am25kx"]
+
+[ext_resource type="Script" path="res://scripts/classes/delivery_location.gd" id="1_8prpt"]
+
+[resource]
+script = ExtResource("1_8prpt")
+name = "Beco das Serpentes"
+description = "Um estreito beco no coração da favela, conhecido por suas paredes grafitadas e pelos negócios obscuros que acontecem à sombra."
+delivery_events = Array[Resource("res://scripts/classes/delivery_event.gd")]([])

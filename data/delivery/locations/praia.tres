@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DeliveryLocation" load_steps=2 format=3 uid="uid://db36thwadmfqn"]
+
+[ext_resource type="Script" path="res://scripts/classes/delivery_location.gd" id="1_72mf1"]
+
+[resource]
+script = ExtResource("1_72mf1")
+name = "Praia da Maré"
+description = "Conhecida por suas correntes traiçoeiras e lendas de sereias que atraem os incautos para as profundezas."
+delivery_events = Array[Resource("res://scripts/classes/delivery_event.gd")]([])

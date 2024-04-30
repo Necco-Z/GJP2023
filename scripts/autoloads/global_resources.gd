@@ -3,11 +3,14 @@ extends Node
 
 var ingredients_list := []
 var recipes_list := []
+var deli_locations_list : Array[DeliveryLocation] = []
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	_load_all_ingredients()
 	_load_all_recipes()
+	_load_all_deli_locations()
 
 
 ## Compara a receita do jogador com as da lista e devolve a receita correta ou null
@@ -30,6 +33,15 @@ func _load_all_recipes() -> void:
 	for path in paths:
 		var recipe = ResourceLoader.load(path)
 		recipes_list.append(recipe)
+
+
+func _load_all_deli_locations() -> void:
+	var paths = _get_all_file_paths("res://data/delivery/locations")
+	#print(paths)
+	for path in paths:
+		var location = ResourceLoader.load(path)
+		deli_locations_list.append(location)
+	print(deli_locations_list.map(func(loc): return loc.name))
 
 
 func _get_all_file_paths(path: String) -> Array[String]:

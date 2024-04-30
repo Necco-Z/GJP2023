@@ -1,0 +1,121 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5gk3m5a5w5ss"]
+
+[ext_resource type="Theme" uid="uid://cf44ibfssrlix" path="res://ui/menus/delivery_menu_theme.theme" id="1_n2u6i"]
+[ext_resource type="Script" path="res://scenes/delivery/delivery_scene.gd" id="1_xxbqc"]
+
+[node name="DeliveryScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_n2u6i")
+script = ExtResource("1_xxbqc")
+
+[node name="LocationSelect" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1053.0
+offset_top = 124.0
+offset_right = 1513.0
+offset_bottom = 804.0
+theme_override_constants/separation = 20
+
+[node name="Button" type="Button" parent="LocationSelect"]
+layout_mode = 2
+text = "Location1"
+
+[node name="Button2" type="Button" parent="LocationSelect"]
+layout_mode = 2
+text = "Location2"
+
+[node name="Button3" type="Button" parent="LocationSelect"]
+layout_mode = 2
+text = "Location3"
+
+[node name="Button4" type="Button" parent="LocationSelect"]
+layout_mode = 2
+text = "Location3"
+
+[node name="Button5" type="Button" parent="LocationSelect"]
+layout_mode = 2
+text = "Location3"
+
+[node name="Button6" type="Button" parent="LocationSelect"]
+layout_mode = 2
+text = "Location3"
+
+[node name="Button7" type="Button" parent="LocationSelect"]
+layout_mode = 2
+text = "Location3"
+
+[node name="Button8" type="Button" parent="LocationSelect"]
+layout_mode = 2
+text = "Location3"
+
+[node name="Button9" type="Button" parent="LocationSelect"]
+layout_mode = 2
+text = "Location3"
+
+[node name="Button10" type="Button" parent="LocationSelect"]
+layout_mode = 2
+text = "Location3"
+
+[node name="DeliveryTypeSelect" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 1590.0
+offset_top = 112.0
+offset_right = 1876.0
+offset_bottom = 348.0
+
+[node name="Button" type="Button" parent="DeliveryTypeSelect"]
+layout_mode = 2
+text = "Nenhum
+"
+alignment = 0
+
+[node name="Button2" type="Button" parent="DeliveryTypeSelect"]
+layout_mode = 2
+text = "Pegar Informação"
+alignment = 0
+
+[node name="Button3" type="Button" parent="DeliveryTypeSelect"]
+layout_mode = 2
+text = "Afetar Mundo"
+alignment = 0
+
+[node name="Button4" type="Button" parent="DeliveryTypeSelect"]
+layout_mode = 2
+text = "Afetar Personagem"
+alignment = 0
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -960.0
+offset_top = -195.0
+offset_right = 960.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="DescriptionTextBox" type="RichTextLabel" parent="Panel/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "dwadwdwdwdwfafw"
