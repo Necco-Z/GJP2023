@@ -9,8 +9,9 @@ signal drink_received_wrong
 
 ## virtual
 func _init() -> void:
-	drink_received_correct.connect(PlayerData._on_correct_recipe)
-	drink_received_wrong.connect(PlayerData._on_wrong_recipe)
+	#drink_received_correct.connect(PlayerData._on_correct_recipe)
+	#drink_received_wrong.connect(PlayerData._on_wrong_recipe)
+	pass
 
 
 func try_fulfill_request(_drink_to_test : DrinkRecipe) -> bool:

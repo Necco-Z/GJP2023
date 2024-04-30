@@ -28,7 +28,7 @@ bones/0/scale = Vector3(0.100478, 0.100478, 0.100478)
 bones/1/rotation = Quaternion(0.00144528, -2.3133e-17, 6.76736e-17, 0.999999)
 
 [node name="Copo" parent="Characters/Ivan/Armature_coffee/Skeleton3D" index="0"]
-transform = Transform3D(0.021373, 2.88382e-25, 1.75776e-24, -1.91851e-25, 0.021373, 3.12139e-09, -1.75776e-24, -3.12139e-09, 0.021373, 2.36217e-16, 1.06383, -0.140065)
+transform = Transform3D(0.0213731, -1.20765e-25, 2.06795e-25, 2.24163e-25, 0.0213731, 2.98314e-09, -2.06795e-25, -2.98314e-09, 0.0213731, 2.36217e-16, 1.06382, -0.140065)
 
 [node name="Skeleton3D" parent="Characters/Ivan/Armature_Ivan" index="0"]
 bones/1/rotation = Quaternion(-0.0156527, -4.29085e-14, -3.73189e-09, 0.999878)

@@ -29,8 +29,8 @@ func _ready() -> void:
 	$DrinkBG/StartOver.pressed.connect(_on_start_over)
 	$DrinkBG/Deliver.pressed.connect(_on_deliver)
 	_set_current_mode(current_mode)
-	interface_reset.connect(PlayerData._on_interface_reset)
-	ingredient_clicked.connect(PlayerData._on_ingredient_clicked)
+	#interface_reset.connect(PlayerData._on_interface_reset)
+	#ingredient_clicked.connect(PlayerData._on_ingredient_clicked)
 
 
 # public

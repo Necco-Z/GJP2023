@@ -22,7 +22,7 @@ var current_recipe := 0:
 func _ready() -> void:
 	bg.position.x = closed_pos
 	_set_current_recipe(current_recipe)
-	list_opened.connect(PlayerData._on_list_opened)
+	#list_opened.connect(PlayerData._on_list_opened)
 	anchor_top = -1
 	anchor_bottom = 0
 
