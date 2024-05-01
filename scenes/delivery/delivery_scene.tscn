@@ -63,30 +63,36 @@ layout_mode = 2
 text = "Location3"
 
 [node name="DeliveryTypeSelect" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 1590.0
 offset_top = 112.0
 offset_right = 1876.0
 offset_bottom = 348.0
+mouse_filter = 0
 
 [node name="Button" type="Button" parent="DeliveryTypeSelect"]
 layout_mode = 2
+toggle_mode = true
 text = "Nenhum
 "
 alignment = 0
 
 [node name="Button2" type="Button" parent="DeliveryTypeSelect"]
 layout_mode = 2
+toggle_mode = true
 text = "Pegar Informação"
 alignment = 0
 
 [node name="Button3" type="Button" parent="DeliveryTypeSelect"]
 layout_mode = 2
+toggle_mode = true
 text = "Afetar Mundo"
 alignment = 0
 
 [node name="Button4" type="Button" parent="DeliveryTypeSelect"]
 layout_mode = 2
+toggle_mode = true
 text = "Afetar Personagem"
 alignment = 0
 
@@ -119,3 +125,16 @@ theme_override_constants/margin_bottom = 32
 unique_name_in_owner = true
 layout_mode = 2
 text = "dwadwdwdwdwfafw"
+
+[node name="SelectedCountText" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 69.0
+offset_top = 183.0
+offset_right = 668.0
+offset_bottom = 284.0
+grow_vertical = 2
+text = "Selected: X/X"

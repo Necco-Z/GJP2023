@@ -6,4 +6,6 @@
 script = ExtResource("1_ipgao")
 name = "Praça da Resistência"
 description = "ma praça central onde os moradores se reúnem para discutir estratégias de sobrevivência e resistir à opressão das gangues rivais."
-delivery_events = Array[Resource("res://scripts/classes/delivery_event.gd")]([])
+intel_events = Array[Resource("res://scripts/classes/delivery_event.gd")]([])
+place_events = Array[Resource("res://scripts/classes/delivery_event.gd")]([])
+people_events = Array[Resource("res://scripts/classes/delivery_event.gd")]([])

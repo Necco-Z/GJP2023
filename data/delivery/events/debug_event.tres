@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DeliveryEvent" load_steps=2 format=3 uid="uid://bfddsmgvndyqv"]
+
+[ext_resource type="Script" path="res://scripts/classes/delivery_event.gd" id="1_x1gwe"]
+
+[resource]
+script = ExtResource("1_x1gwe")
+event_name = "Debug Event"
+condition_flags = Array[String]([])
+is_continuous = true
+flags_to_activate = Array[String]([])
+flags_to_deactivate = Array[String]([])

@@ -1,7 +1,7 @@
 class_name DeliveryEvent
 extends Resource
 
-## Usado apenas para quesitos
+## Usado apenas para quesitos debug
 @export var event_name : String
 
 ## A linha do tempo Dialogic contendo o texto da cena desse evento.
@@ -9,6 +9,8 @@ extends Resource
 
 ## Uma lista de strings com os nomes de todas as flags que devem
 ## estar ativas para esse evento acontecer. Não checamos por flags desativadas.
+## [br][br]
+## Deixe vazio para esse evento sempre acontecer.
 @export var condition_flags : Array[String]
 
 ## Se um evento é contínuo, ele irá sobrescrever o resultado
@@ -42,6 +44,7 @@ func are_conditions_met() -> bool:
 
 
 func run() -> void:
+	print(get_self_flag_name())
 	# for flag in flags_to_activate: turn on flag
 	# for flag in flags_to_deactivate: turn off flag
 	# turn on flag get_self_flag_name()
